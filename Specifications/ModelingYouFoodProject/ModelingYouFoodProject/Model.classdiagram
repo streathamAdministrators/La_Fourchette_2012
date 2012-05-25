@@ -28,16 +28,16 @@ Notification : [OK] RabbitMQ
   </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="5c43ed45-180c-416e-af2d-9897245decb9" name="Menu" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="5c43ed45-180c-416e-af2d-9897245decb9" name="Meal" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="c565483f-0ca9-40ef-99de-898981a9e29f" />
         <ownedAttributesInternal>
           <property Id="a05f363e-0e33-4abc-9212-02989ba92233" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0730b96d-d1a6-419f-89b5-d39e6ea07e43" />
           </property>
-          <property Id="579f9857-034a-45ca-b095-b326aee85c91" name="Prix" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="579f9857-034a-45ca-b095-b326aee85c91" name="Price" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0159b2ff-e57c-4527-be03-83d25c2276d2" />
           </property>
-          <property Id="316017a1-ce3d-463b-9e6d-57eadfe1aba0" name="Nom" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="316017a1-ce3d-463b-9e6d-57eadfe1aba0" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="e46e8314-6b25-4133-869d-e8e1a58b6405" />
           </property>
           <property Id="c1c0af21-884b-4476-887b-4772a1570031" name="ListeItem" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -48,19 +48,19 @@ Notification : [OK] RabbitMQ
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="dd846082-f802-4129-ae8b-4c5aa7c882d4" name="CreateMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="dd846082-f802-4129-ae8b-4c5aa7c882d4" name="CreateMeal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c03f31bb-f1be-4add-b5f8-1d6178a515cc" />
           </operation>
-          <operation Id="9bcc0531-749c-4cbd-af51-e3a5d8ef6d0b" name="EditMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="9bcc0531-749c-4cbd-af51-e3a5d8ef6d0b" name="EditMeal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="79e35015-c5da-421d-ba2f-16dee876e0ba" />
           </operation>
-          <operation Id="cc45415c-c128-4ed1-b3ea-63de405d8ab5" name="DeleteMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="cc45415c-c128-4ed1-b3ea-63de405d8ab5" name="DeleteMeal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="45755863-ced6-4bfc-8d77-97e63aa96cb4" />
           </operation>
-          <operation Id="afbcd451-844b-4c63-aac3-85e7bf11c62c" name="GetAllMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="afbcd451-844b-4c63-aac3-85e7bf11c62c" name="GetAllMeal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="8281d306-a0be-4507-8527-a3fa93d12b70" />
           </operation>
-          <operation Id="78d05ce4-ae70-43cc-aa75-75da2a241a8b" name="GetMenuById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="78d05ce4-ae70-43cc-aa75-75da2a241a8b" name="GetMealById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="fb13d203-9010-4b5f-90fb-69623f2a6efe" />
           </operation>
         </ownedOperationsInternal>
@@ -73,13 +73,13 @@ Notification : [OK] RabbitMQ
           <property Id="90eb5910-a38c-4747-b239-48566c32587b" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="b2c98851-ee85-4550-8bd4-8153a4669574" />
           </property>
-          <property Id="31325127-670f-4c39-9d59-0eb7416d5a27" name="Prix" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="31325127-670f-4c39-9d59-0eb7416d5a27" name="Price" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="83bae06c-48f9-4e3d-bb7e-079e47f47277" />
           </property>
           <property Id="315d6cbc-8483-4484-b6ee-a38926739c07" name="ListeElement" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="bbddbe01-ecfd-4cf9-86fe-bb79da44b9ec" />
           </property>
-          <property Id="c2578b35-79e9-4c6f-99cf-b5bd5f23c3b6" name="OrderEtat" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="c2578b35-79e9-4c6f-99cf-b5bd5f23c3b6" name="OrderState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="08222543-c969-4c1a-b484-a99507dcbc29" />
           </property>
           <property Id="546f5914-7ccf-478f-9149-7d8585a924a7" name="TableId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -96,16 +96,16 @@ Notification : [OK] RabbitMQ
           <operation Id="cd8b3f08-f7da-411e-97a2-cb8397ca6f4f" name="GetAllOrderByTable" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="2c99917d-a5fa-43e6-839d-031acf7a06e2" />
           </operation>
-          <operation Id="f889a2d8-0d46-4466-b2bd-7c4ad3efedbc" name="ModifyOrderEtat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="f889a2d8-0d46-4466-b2bd-7c4ad3efedbc" name="ModifyOrderState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="845d0948-1eba-484f-a629-bc386037b17d" />
           </operation>
-          <operation Id="b2392636-e207-44b2-b9ac-6a8609e22223" name="GetOrderEtat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="b2392636-e207-44b2-b9ac-6a8609e22223" name="GetOrderState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b32b299c-082c-4e45-ae2c-80e2461aeb26" />
           </operation>
           <operation Id="cd3e40cb-a6b1-4426-9da0-7e00bb053228" name="GetOrderById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c5847e6e-97fa-4107-bd69-4747db39cdf4" />
           </operation>
-          <operation Id="ef21d889-a256-4bee-8e63-49001d974db1" name="CalculePrixTotal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="ef21d889-a256-4bee-8e63-49001d974db1" name="CalculeTotalPrice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c0a54ca0-2e65-4106-ad0a-7e6f81fbe7cd" />
           </operation>
         </ownedOperationsInternal>
@@ -118,13 +118,13 @@ Notification : [OK] RabbitMQ
           <property Id="9a346a22-1d28-4293-92a6-2a7882f1fa82" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="71029f85-e1b5-4858-a006-bd0b3ab9527e" />
           </property>
-          <property Id="e8cada4f-e271-4d24-97be-84f7a48d6cd9" name="Temps" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="e8cada4f-e271-4d24-97be-84f7a48d6cd9" name="Time" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="463fa6c9-544a-4045-90c1-9fca00e234ae" />
           </property>
-          <property Id="9c2340dd-df1e-4b71-84ad-63160295f84e" name="Prix" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="9c2340dd-df1e-4b71-84ad-63160295f84e" name="Price" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="d17fb4fc-bfca-451d-9c8a-3478a59cc075" />
           </property>
-          <property Id="f0ca3b80-3da3-4aba-b7ec-7b94d463876f" name="Nom" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="f0ca3b80-3da3-4aba-b7ec-7b94d463876f" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f504d451-5a70-4a7b-b087-5fb5339ec665" />
           </property>
           <property Id="a8b671e0-adf7-4435-99d4-7e071a819244" name="ProductType" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -159,20 +159,23 @@ Notification : [OK] RabbitMQ
           <operation Id="96d0edbc-51dd-48f8-8104-13e5818376af" name="GetCarteItemEtat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="e75fa0ba-226e-49b0-8c36-5ee3ed8a86cd" />
           </operation>
+          <operation Id="d2911fdb-1d4f-4c0d-a6b1-cacc91a59f60" name="GetItemByProductType" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="06e7c7ea-8b66-400e-8352-c939f36dccf4" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <enumeration Id="05f8b734-5765-47e1-8e97-aa1c93a9bea7" name="OrderEtat" isAbstract="false" isLeaf="false">
+      <enumeration Id="05f8b734-5765-47e1-8e97-aa1c93a9bea7" name="OrderState" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5d809934-8ec3-4081-a215-b7fd0e20555b" />
         <ownedLiterals>
           <enumerationLiteral Id="3315dd7d-ba7b-41f7-9e48-a5bb59d3ef93" name="Id">
             <elementDefinition Id="141b498d-a817-4a3b-b6f9-a247414f8109" />
           </enumerationLiteral>
-          <enumerationLiteral Id="237637e0-1e72-4776-8783-08acfed65e92" name="Nom">
+          <enumerationLiteral Id="237637e0-1e72-4776-8783-08acfed65e92" name="Name">
             <elementDefinition Id="afd7670f-9b8a-412f-9216-ce0ad0a51cf5" />
           </enumerationLiteral>
-          <enumerationLiteral Id="ba38e5aa-abfa-4d79-841a-43088c5c0b0a" name="Priorite">
+          <enumerationLiteral Id="ba38e5aa-abfa-4d79-841a-43088c5c0b0a" name="Priority">
             <elementDefinition Id="be82bdab-9c6b-4587-95a0-3c3ee3cc866c" />
           </enumerationLiteral>
         </ownedLiterals>
@@ -200,6 +203,9 @@ Notification : [OK] RabbitMQ
           <property Id="08120b17-efdb-4c39-b4a8-e2fb845d2c51" name="IsActive" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="83faf1aa-00de-4ac2-9ab3-92c04e5efddd" />
           </property>
+          <property Id="06a7cab2-9636-42d1-a4dd-f3c3f3189151" name="IsAvailable" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="71a90677-73fd-445c-b2b0-addf26bf4329" />
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="80f25958-8ebe-442c-aca8-81aeda9e1a4f" name="GetAllTable" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -211,17 +217,20 @@ Notification : [OK] RabbitMQ
           <operation Id="4fed3a7b-6383-47b0-8862-165f238955c2" name="GetTableById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="9e6d89c0-da34-4b8c-bb04-b68c487f4f08" />
           </operation>
+          <operation Id="d0843acc-3c99-43ae-9a5a-1758a2fbad69" name="CheckAvailabilitieRestauTable" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="27582e72-f24b-4591-9510-5ebc6e15b9c6" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="b8bbe08b-feed-4bda-a3d9-28054309a230" name="TypeProduit" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="b8bbe08b-feed-4bda-a3d9-28054309a230" name="ProductType" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="0fa21b7f-8abf-4187-8fc8-57000beabfa0" />
         <ownedAttributesInternal>
           <property Id="ea06b651-a008-4742-ab7f-dfd5c2498e05" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="ee034c1a-b52a-48b3-a727-62140721b16f" />
           </property>
-          <property Id="a7bd6f08-3453-46cf-9caa-520d5e9beffd" name="Nom" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="a7bd6f08-3453-46cf-9caa-520d5e9beffd" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="8b238638-4b8a-4e93-a71a-98e0c187469a" />
           </property>
         </ownedAttributesInternal>
@@ -234,7 +243,7 @@ Notification : [OK] RabbitMQ
           <property Id="0f2a6203-a419-4c3c-8add-7eccfb3d819b" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="2572a8db-8859-4a2c-a545-2e0a5ae84ba5" />
           </property>
-          <property Id="4a6b8991-32ec-4f10-ba69-52f926d57e4b" name="Ville" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="4a6b8991-32ec-4f10-ba69-52f926d57e4b" name="City" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="682d7b00-e83c-40ca-b854-c41ec5581039" />
           </property>
           <property Id="48f65c8a-4df1-4e7e-9cb9-db1e9da4d687" name="ListeTable" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -271,16 +280,16 @@ Notification : [OK] RabbitMQ
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <enumeration Id="fb61b78b-1e8e-43c4-b813-632fdbd5b158" name="ElementEtat" isAbstract="false" isLeaf="false">
+      <enumeration Id="fb61b78b-1e8e-43c4-b813-632fdbd5b158" name="ElementState" isAbstract="false" isLeaf="false">
         <elementDefinition Id="80f3a59d-8d9b-4773-989d-c137b9372ead" />
         <ownedLiterals>
           <enumerationLiteral Id="484ba740-a72d-4677-be0a-22d22d76ea3b" name="Id">
             <elementDefinition Id="a9eb8391-8bf7-4da6-9a93-36626b0fb0c9" />
           </enumerationLiteral>
-          <enumerationLiteral Id="13961a11-30a2-40ed-a750-736af595377a" name="Nom">
+          <enumerationLiteral Id="13961a11-30a2-40ed-a750-736af595377a" name="Name">
             <elementDefinition Id="78e683f4-fcc9-4476-b54b-ebc16548828e" />
           </enumerationLiteral>
-          <enumerationLiteral Id="1b2e74e0-1d2d-46ce-9358-b384238cd771" name="IdEtatPrecedent">
+          <enumerationLiteral Id="1b2e74e0-1d2d-46ce-9358-b384238cd771" name="Priority">
             <elementDefinition Id="2b425bb4-7059-4897-92d5-13b852545284" />
           </enumerationLiteral>
         </ownedLiterals>
@@ -296,7 +305,7 @@ Notification : [OK] RabbitMQ
           <property Id="d80423a8-fcd0-44a3-b080-f069370a781b" name="ItemId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="86a34e2b-54e7-4f46-8076-753291b86ebf" />
           </property>
-          <property Id="e2e5bbaf-4db2-4814-a6b5-f444e17d0c3e" name="ElementEtat" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="e2e5bbaf-4db2-4814-a6b5-f444e17d0c3e" name="ElementStateId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="d405ab3b-6b38-4006-adfe-917c7f9dbe52" />
           </property>
           <property Id="cbcc7fc8-9d08-4993-9d55-9295aa3a11f2" name="OrderId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -304,7 +313,7 @@ Notification : [OK] RabbitMQ
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="2854882f-ed21-4314-9bf4-c05c1b85c60d" name="ModifyElementEtat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="2854882f-ed21-4314-9bf4-c05c1b85c60d" name="ModifyElementState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="cb32db7c-74f7-4402-8988-bfb7175e2df5" />
           </operation>
         </ownedOperationsInternal>

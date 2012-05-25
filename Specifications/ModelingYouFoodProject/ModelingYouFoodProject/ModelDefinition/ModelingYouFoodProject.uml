@@ -47,7 +47,7 @@ Notification : [OK] RabbitMQ
     <packageHasNamedElement>
       <class
         Id="c565483f-0ca9-40ef-99de-898981a9e29f"
-        name="Menu"
+        name="Meal"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -65,7 +65,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="0159b2ff-e57c-4527-be03-83d25c2276d2"
-            name="Prix"
+            name="Price"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -76,7 +76,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="e46e8314-6b25-4133-869d-e8e1a58b6405"
-            name="Nom"
+            name="Name"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -111,7 +111,7 @@ Notification : [OK] RabbitMQ
         <ownedOperationsInternal>
           <operation
             Id="c03f31bb-f1be-4add-b5f8-1d6178a515cc"
-            name="CreateMenu"
+            name="CreateMeal"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -119,7 +119,7 @@ Notification : [OK] RabbitMQ
             isQuery="false" />
           <operation
             Id="79e35015-c5da-421d-ba2f-16dee876e0ba"
-            name="EditMenu"
+            name="EditMeal"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -127,7 +127,7 @@ Notification : [OK] RabbitMQ
             isQuery="false" />
           <operation
             Id="45755863-ced6-4bfc-8d77-97e63aa96cb4"
-            name="DeleteMenu"
+            name="DeleteMeal"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -135,7 +135,7 @@ Notification : [OK] RabbitMQ
             isQuery="false" />
           <operation
             Id="8281d306-a0be-4507-8527-a3fa93d12b70"
-            name="GetAllMenu"
+            name="GetAllMeal"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -143,7 +143,7 @@ Notification : [OK] RabbitMQ
             isQuery="false" />
           <operation
             Id="fb13d203-9010-4b5f-90fb-69623f2a6efe"
-            name="GetMenuById"
+            name="GetMealById"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -173,7 +173,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="83bae06c-48f9-4e3d-bb7e-079e47f47277"
-            name="Prix"
+            name="Price"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -195,7 +195,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="08222543-c969-4c1a-b484-a99507dcbc29"
-            name="OrderEtat"
+            name="OrderState"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -243,7 +243,7 @@ Notification : [OK] RabbitMQ
             isQuery="false" />
           <operation
             Id="845d0948-1eba-484f-a629-bc386037b17d"
-            name="ModifyOrderEtat"
+            name="ModifyOrderState"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -251,7 +251,7 @@ Notification : [OK] RabbitMQ
             isQuery="false" />
           <operation
             Id="b32b299c-082c-4e45-ae2c-80e2461aeb26"
-            name="GetOrderEtat"
+            name="GetOrderState"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -267,7 +267,7 @@ Notification : [OK] RabbitMQ
             isQuery="false" />
           <operation
             Id="c0a54ca0-2e65-4106-ad0a-7e6f81fbe7cd"
-            name="CalculePrixTotal"
+            name="CalculeTotalPrice"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -297,7 +297,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="463fa6c9-544a-4045-90c1-9fca00e234ae"
-            name="Temps"
+            name="Time"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -308,7 +308,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="d17fb4fc-bfca-451d-9c8a-3478a59cc075"
-            name="Prix"
+            name="Price"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -319,7 +319,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="f504d451-5a70-4a7b-b087-5fb5339ec665"
-            name="Nom"
+            name="Name"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -416,6 +416,14 @@ Notification : [OK] RabbitMQ
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="06e7c7ea-8b66-400e-8352-c939f36dccf4"
+            name="GetItemByProductType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -438,7 +446,7 @@ Notification : [OK] RabbitMQ
     <packageHasNamedElement>
       <enumeration
         Id="5d809934-8ec3-4081-a215-b7fd0e20555b"
-        name="OrderEtat"
+        name="OrderState"
         isAbstract="false"
         isLeaf="false">
         <ownedLiterals>
@@ -447,10 +455,10 @@ Notification : [OK] RabbitMQ
             name="Id" />
           <enumerationLiteral
             Id="afd7670f-9b8a-412f-9216-ce0ad0a51cf5"
-            name="Nom" />
+            name="Name" />
           <enumerationLiteral
             Id="be82bdab-9c6b-4587-95a0-3c3ee3cc866c"
-            name="Priorite" />
+            name="Priority" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
@@ -550,6 +558,17 @@ Notification : [OK] RabbitMQ
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="71a90677-73fd-445c-b2b0-addf26bf4329"
+            name="IsAvailable"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -576,13 +595,21 @@ Notification : [OK] RabbitMQ
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="27582e72-f24b-4591-9510-5ebc6e15b9c6"
+            name="CheckAvailabilitieRestauTable"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="0fa21b7f-8abf-4187-8fc8-57000beabfa0"
-        name="TypeProduit"
+        name="ProductType"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -600,7 +627,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="8b238638-4b8a-4e93-a71a-98e0c187469a"
-            name="Nom"
+            name="Name"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -633,7 +660,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="682d7b00-e83c-40ca-b854-c41ec5581039"
-            name="Ville"
+            name="City"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -757,7 +784,7 @@ Notification : [OK] RabbitMQ
     <packageHasNamedElement>
       <enumeration
         Id="80f3a59d-8d9b-4773-989d-c137b9372ead"
-        name="ElementEtat"
+        name="ElementState"
         isAbstract="false"
         isLeaf="false">
         <ownedLiterals>
@@ -766,10 +793,10 @@ Notification : [OK] RabbitMQ
             name="Id" />
           <enumerationLiteral
             Id="78e683f4-fcc9-4476-b54b-ebc16548828e"
-            name="Nom" />
+            name="Name" />
           <enumerationLiteral
             Id="2b425bb4-7059-4897-92d5-13b852545284"
-            name="IdEtatPrecedent" />
+            name="Priority" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
@@ -805,7 +832,7 @@ Notification : [OK] RabbitMQ
             isComposite="false" />
           <property
             Id="d405ab3b-6b38-4006-adfe-917c7f9dbe52"
-            name="ElementEtat"
+            name="ElementStateId"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -829,7 +856,7 @@ Notification : [OK] RabbitMQ
         <ownedOperationsInternal>
           <operation
             Id="cb32db7c-74f7-4402-8988-bfb7175e2df5"
-            name="ModifyElementEtat"
+            name="ModifyElementState"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
