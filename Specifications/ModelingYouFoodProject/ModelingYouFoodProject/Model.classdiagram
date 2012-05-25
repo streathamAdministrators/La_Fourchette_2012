@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="be6d87f1-cebc-40c9-bea3-23e9697a28cc" name="Model" linkedPackageId="3bff2302-be47-4f2f-a552-4c219918bfea" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="60f89d8f-6926-4af8-9db4-aa8968b44519">
-      <profileInstance Id="397d5783-3260-45a7-819c-d1906641d52b" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="460bc9db-8b58-4212-970b-92d8801e8997">
-      <profileInstance Id="39246929-15e6-481d-af5a-3894753e71e5" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+  <ownedCommentsInternal>
+    <comment Id="7c4363ab-5a03-4d01-9c6b-e962f11facd6">
+      <elementDefinition Id="247655a3-2762-4db7-91b3-f2004c3ed928" />
+      <body>BDD : [OK] MySQL (fit for a production database, can scale well if tuned properly, can manage users, permissions, etc) plutot que SQLite (great for temporary (testing databases), great for rapid development, great for embedding in an application, not fit for production (in large scale), doesn't have user management, doesn't have many performance features, doesn't scale well, file based databas
+
+Paiment : [A DISCUTER]
+
+Print : [A DISCUTER]
+
+App mobile : IPAD (aucune conccurence à l'horizon !)
+
+</body>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="5c43ed45-180c-416e-af2d-9897245decb9" name="Menu" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -64,13 +64,36 @@
           <property Id="315d6cbc-8483-4484-b6ee-a38926739c07" name="ListeCarteitem" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="bbddbe01-ecfd-4cf9-86fe-bb79da44b9ec" />
           </property>
-          <property Id="c2578b35-79e9-4c6f-99cf-b5bd5f23c3b6" name="Etat" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="c2578b35-79e9-4c6f-99cf-b5bd5f23c3b6" name="OrderEtat" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="08222543-c969-4c1a-b484-a99507dcbc29" />
           </property>
           <property Id="546f5914-7ccf-478f-9149-7d8585a924a7" name="Table" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f83d643f-ffa9-41ba-8950-7f660e38dbc1" />
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="9062fb58-9162-4347-822c-0f8b17fbb393" name="CreateOrder" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b3d36813-4a47-475c-9af0-33001c05c172" />
+          </operation>
+          <operation Id="1f722350-92d3-49c4-b491-f8b579f676bd" name="GetAllOrder" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e255efa0-4fdc-4643-8ced-4f5a7e3b966b" />
+          </operation>
+          <operation Id="cd8b3f08-f7da-411e-97a2-cb8397ca6f4f" name="GetAllOrderByTable" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2c99917d-a5fa-43e6-839d-031acf7a06e2" />
+          </operation>
+          <operation Id="f889a2d8-0d46-4466-b2bd-7c4ad3efedbc" name="ModifyOrderEtat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="845d0948-1eba-484f-a629-bc386037b17d" />
+          </operation>
+          <operation Id="b2392636-e207-44b2-b9ac-6a8609e22223" name="GetOrderEtat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b32b299c-082c-4e45-ae2c-80e2461aeb26" />
+          </operation>
+          <operation Id="cd3e40cb-a6b1-4426-9da0-7e00bb053228" name="GetOrderById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c5847e6e-97fa-4107-bd69-4747db39cdf4" />
+          </operation>
+          <operation Id="ef21d889-a256-4bee-8e63-49001d974db1" name="CalculePrixTotal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0a54ca0-2e65-4106-ad0a-7e6f81fbe7cd" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -112,11 +135,17 @@
           <operation Id="4d486844-d02a-4627-8391-92c7682e5fcf" name="GetCarteItemById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="abc649f8-37fa-4e64-af52-d7bceeaac6fa" />
           </operation>
+          <operation Id="a20a38a1-ed3a-4356-9e70-fe3cca71b806" name="ModifyCarteItemEtat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="edfea6ba-70a5-49d4-8716-de2226372909" />
+          </operation>
+          <operation Id="96d0edbc-51dd-48f8-8104-13e5818376af" name="GetCarteItemEtat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e75fa0ba-226e-49b0-8c36-5ee3ed8a86cd" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <enumeration Id="05f8b734-5765-47e1-8e97-aa1c93a9bea7" name="Etat" isAbstract="false" isLeaf="false">
+      <enumeration Id="05f8b734-5765-47e1-8e97-aa1c93a9bea7" name="OrderEtat" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5d809934-8ec3-4081-a215-b7fd0e20555b" />
         <ownedLiterals>
           <enumerationLiteral Id="3315dd7d-ba7b-41f7-9e48-a5bb59d3ef93" name="Id">
@@ -124,6 +153,9 @@
           </enumerationLiteral>
           <enumerationLiteral Id="237637e0-1e72-4776-8783-08acfed65e92" name="Nom">
             <elementDefinition Id="afd7670f-9b8a-412f-9216-ce0ad0a51cf5" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="ba38e5aa-abfa-4d79-841a-43088c5c0b0a" name="IdEtatPrecedent">
+            <elementDefinition Id="be82bdab-9c6b-4587-95a0-3c3ee3cc866c" />
           </enumerationLiteral>
         </ownedLiterals>
       </enumeration>
@@ -141,11 +173,25 @@
           <property Id="7f30703d-9bfd-4bdd-851f-f1516d5b09ec" name="Restaurant" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="d251e38c-bb99-4c94-a9dd-6e18caa536b7" />
           </property>
+          <property Id="45177290-9f99-4fbf-8ed1-64c9d5527896" name="NbSeat" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ec55cb3f-caa6-47f2-960a-ff20ddf0b89a" />
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="80f25958-8ebe-442c-aca8-81aeda9e1a4f" name="GetAllTable" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1dcc2ba1-6a18-4d14-9347-45666e8c9c3e" />
+          </operation>
+          <operation Id="ce5a49f1-0e8e-42e6-ace0-9df25701a18f" name="GetAllTableByrestaurant" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b825a533-a16b-49ac-bae8-d37bd212b47e" />
+          </operation>
+          <operation Id="4fed3a7b-6383-47b0-8862-165f238955c2" name="GetTableById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9e6d89c0-da34-4b8c-bb04-b68c487f4f08" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="b8bbe08b-feed-4bda-a3d9-28054309a230" name="ProductType" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="b8bbe08b-feed-4bda-a3d9-28054309a230" name="TypeProduit" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="0fa21b7f-8abf-4187-8fc8-57000beabfa0" />
         <ownedAttributesInternal>
           <property Id="ea06b651-a008-4742-ab7f-dfd5c2498e05" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -171,10 +217,15 @@
             <elementDefinition Id="77fb042c-da80-4bcc-a6a4-73b7a23ee6a1" />
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="54bb52ac-bccb-47df-bd8d-f2ec68f732f8" name="GetRestaurantById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a578c07-bdcd-4e56-840e-de0e2f094868" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="ab7a4f69-6823-4400-975c-f61ba37c3b1a" name="Employee" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="ab7a4f69-6823-4400-975c-f61ba37c3b1a" name="Serveur" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="8aa9b587-7ecf-49b6-8ef3-92dd4c7f173f" />
         <ownedAttributesInternal>
           <property Id="869d188d-21ca-4bf3-bb8d-8d515ddd8031" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -189,11 +240,54 @@
           <property Id="d6a27ecf-dc15-4e7c-a685-a2f33275f97c" name="Restaurant" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="8c9fa4e8-c5bb-41d1-a409-b12281b3be21" />
           </property>
+          <property Id="df1d30b5-9e37-4973-84ff-6d917bdaf2b3" name="ListeTable" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cc677b92-edac-47f2-be29-7cdd476172ee" />
+          </property>
         </ownedAttributesInternal>
       </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a93a094a-28a4-4941-92fb-c674ceb4603e" name="Cuisinier" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7465dabe-1d4c-4512-bcea-dbf30bf04a01" />
+        <ownedAttributesInternal>
+          <property Id="6eb9aba3-1b40-45fe-b15d-500af30f96c1" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8a07c633-9cdf-448e-b2aa-7d40e0eb9ab4" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="fb61b78b-1e8e-43c4-b813-632fdbd5b158" name="CarteItemEtat" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="80f3a59d-8d9b-4773-989d-c137b9372ead" />
+        <ownedLiterals>
+          <enumerationLiteral Id="484ba740-a72d-4677-be0a-22d22d76ea3b" name="Id">
+            <elementDefinition Id="a9eb8391-8bf7-4da6-9a93-36626b0fb0c9" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="13961a11-30a2-40ed-a750-736af595377a" name="Nom">
+            <elementDefinition Id="78e683f4-fcc9-4476-b54b-ebc16548828e" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="1b2e74e0-1d2d-46ce-9358-b384238cd771" name="IdEtatPrecedent">
+            <elementDefinition Id="2b425bb4-7059-4897-92d5-13b852545284" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="3bff2302-be47-4f2f-a552-4c219918bfea" name="ModelingYouFoodProject">
     <elementDefinition Id="7e90cab5-c837-408f-9b50-e45b001b69c5" />
+    <profileInstances>
+      <packageHasProfileInstances Id="60f89d8f-6926-4af8-9db4-aa8968b44519">
+        <profileInstance Id="397d5783-3260-45a7-819c-d1906641d52b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="460bc9db-8b58-4212-970b-92d8801e8997">
+        <profileInstance Id="39246929-15e6-481d-af5a-3894753e71e5" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
