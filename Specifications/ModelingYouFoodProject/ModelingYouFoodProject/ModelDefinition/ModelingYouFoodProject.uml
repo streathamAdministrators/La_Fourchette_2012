@@ -6,15 +6,25 @@
   <ownedCommentsInternal>
     <comment
       Id="247655a3-2762-4db7-91b3-f2004c3ed928">
-      <body>BDD : [OK] MySQL (fit for a production database, can scale well if tuned properly, can manage users, permissions, etc) plutot que SQLite (great for temporary (testing databases), great for rapid development, great for embedding in an application, not fit for production (in large scale), doesn't have user management, doesn't have many performance features, doesn't scale well, file based databas
+      <body>BDD : [OK] MySQL (fit for a production database, can scale well if tuned properly, can manage users, permissions, etc) plutot que SQLite (great for temporary (testing databases), great for rapid development, great for embedding in an application, not fit for production (in large scale), doesn't have user management, doesn't have many performance features, doesn't scale well, file based database
 
-Paiment : [A DISCUTER]
+
+Paiment : [OK] FAKE
+
+
 
 Print : [A DISCUTER]
 
-App mobile : IPAD (aucune conccurence à l'horizon !)
 
-Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a faire la dessus
+http://www.tobinharris.com/past/2009/3/9/6-ways-to-run-background-jobs-in-rubyonrails/
+http://www.igvita.com/2007/03/29/scheduling-tasks-in-ruby-rails/
+http://aslam-revised.blogspot.co.uk/2009/12/ruby-on-rails-pdf-generator-prawn-gem.html
+
+App mobile : [OK] IPAD (aucune conccurence à l'horizon !)
+
+
+
+Notification : [OK] RabbitMQ
 
 </body>
     </comment>
@@ -77,7 +87,18 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
             isComposite="false" />
           <property
             Id="1ea17a83-97d2-49d3-bf11-488f663e6cb1"
-            name="ListeCarteItem"
+            name="ListeItem"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="73203c3d-f141-4d2d-b979-5a7933e593b9"
+            name="IsActive"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -163,7 +184,7 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
             isComposite="false" />
           <property
             Id="bbddbe01-ecfd-4cf9-86fe-bb79da44b9ec"
-            name="ListeCarteitem"
+            name="ListeElement"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -185,7 +206,7 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
             isComposite="false" />
           <property
             Id="f83d643f-ffa9-41ba-8950-7f660e38dbc1"
-            name="Table"
+            name="TableId"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -258,7 +279,7 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
     <packageHasNamedElement>
       <class
         Id="ff1d57f0-88d0-45ca-a11a-b60e1b410b6a"
-        name="Carte"
+        name="Item"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -276,7 +297,7 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
             isComposite="false" />
           <property
             Id="463fa6c9-544a-4045-90c1-9fca00e234ae"
-            name="Type"
+            name="Temps"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -310,6 +331,17 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
           <property
             Id="34147308-2d96-4ae2-90c4-453737846714"
             name="ProductType"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c363b9fd-4d3e-49fa-91de-0e7e3766b6c2"
+            name="IsActive"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -418,7 +450,7 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
             name="Nom" />
           <enumerationLiteral
             Id="be82bdab-9c6b-4587-95a0-3c3ee3cc866c"
-            name="IdEtatPrecedent" />
+            name="Priorite" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
@@ -476,7 +508,7 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
             isComposite="false" />
           <property
             Id="d251e38c-bb99-4c94-a9dd-6e18caa536b7"
-            name="Restaurant"
+            name="RestaurantId"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -488,6 +520,28 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
           <property
             Id="ec55cb3f-caa6-47f2-960a-ff20ddf0b89a"
             name="NbSeat"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="56e12209-5330-4e4c-aca6-932be485a1fd"
+            name="NumeroTable"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="83faf1aa-00de-4ac2-9ab3-92c04e5efddd"
+            name="IsActive"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -615,7 +669,7 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
     <packageHasNamedElement>
       <class
         Id="8aa9b587-7ecf-49b6-8ef3-92dd4c7f173f"
-        name="Serveur"
+        name="Employee"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -655,7 +709,7 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
             isComposite="false" />
           <property
             Id="8c9fa4e8-c5bb-41d1-a409-b12281b3be21"
-            name="Restaurant"
+            name="RestaurantId"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -703,7 +757,7 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
     <packageHasNamedElement>
       <enumeration
         Id="80f3a59d-8d9b-4773-989d-c137b9372ead"
-        name="CarteItemEtat"
+        name="ElementEtat"
         isAbstract="false"
         isLeaf="false">
         <ownedLiterals>
@@ -718,6 +772,71 @@ Notification : [A DISCUTER] a réfléchir un long moment, ya un gros travail a f
             name="IdEtatPrecedent" />
         </ownedLiterals>
       </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f637523a-32f7-4d43-b319-1ae823a071c5"
+        name="Element"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="5682c7a6-c36c-4ceb-a12a-8d9b415dd2f1"
+            name="Id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="86a34e2b-54e7-4f46-8076-753291b86ebf"
+            name="ItemId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d405ab3b-6b38-4006-adfe-917c7f9dbe52"
+            name="ElementEtat"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="20f1d28a-1c18-4285-ba40-0a896bb01ebb"
+            name="OrderId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cb32db7c-74f7-4402-8988-bfb7175e2df5"
+            name="ModifyElementEtat"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
