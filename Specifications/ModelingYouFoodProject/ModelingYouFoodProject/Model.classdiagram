@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="be6d87f1-cebc-40c9-bea3-23e9697a28cc" name="Model" linkedPackageId="3bff2302-be47-4f2f-a552-4c219918bfea" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="60f89d8f-6926-4af8-9db4-aa8968b44519">
+      <profileInstance Id="397d5783-3260-45a7-819c-d1906641d52b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="460bc9db-8b58-4212-970b-92d8801e8997">
+      <profileInstance Id="39246929-15e6-481d-af5a-3894753e71e5" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5c43ed45-180c-416e-af2d-9897245decb9" name="Menu" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c565483f-0ca9-40ef-99de-898981a9e29f" />
+        <ownedAttributesInternal>
+          <property Id="a05f363e-0e33-4abc-9212-02989ba92233" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0730b96d-d1a6-419f-89b5-d39e6ea07e43" />
+          </property>
+          <property Id="579f9857-034a-45ca-b095-b326aee85c91" name="Prix" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0159b2ff-e57c-4527-be03-83d25c2276d2" />
+          </property>
+          <property Id="316017a1-ce3d-463b-9e6d-57eadfe1aba0" name="Nom" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e46e8314-6b25-4133-869d-e8e1a58b6405" />
+          </property>
+          <property Id="c1c0af21-884b-4476-887b-4772a1570031" name="ListeCarteItem" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1ea17a83-97d2-49d3-bf11-488f663e6cb1" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="dd846082-f802-4129-ae8b-4c5aa7c882d4" name="CreateMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c03f31bb-f1be-4add-b5f8-1d6178a515cc" />
+          </operation>
+          <operation Id="9bcc0531-749c-4cbd-af51-e3a5d8ef6d0b" name="EditMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="79e35015-c5da-421d-ba2f-16dee876e0ba" />
+          </operation>
+          <operation Id="cc45415c-c128-4ed1-b3ea-63de405d8ab5" name="DeleteMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="45755863-ced6-4bfc-8d77-97e63aa96cb4" />
+          </operation>
+          <operation Id="afbcd451-844b-4c63-aac3-85e7bf11c62c" name="GetAllMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8281d306-a0be-4507-8527-a3fa93d12b70" />
+          </operation>
+          <operation Id="78d05ce4-ae70-43cc-aa75-75da2a241a8b" name="GetMenuById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fb13d203-9010-4b5f-90fb-69623f2a6efe" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="657c4bc7-acb4-4691-8c86-644640e5111a" name="Order" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="432b3838-929e-4a5f-9dc9-f78ae63c646a" />
+        <ownedAttributesInternal>
+          <property Id="90eb5910-a38c-4747-b239-48566c32587b" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b2c98851-ee85-4550-8bd4-8153a4669574" />
+          </property>
+          <property Id="31325127-670f-4c39-9d59-0eb7416d5a27" name="Prix" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="83bae06c-48f9-4e3d-bb7e-079e47f47277" />
+          </property>
+          <property Id="315d6cbc-8483-4484-b6ee-a38926739c07" name="ListeCarteitem" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bbddbe01-ecfd-4cf9-86fe-bb79da44b9ec" />
+          </property>
+          <property Id="c2578b35-79e9-4c6f-99cf-b5bd5f23c3b6" name="Etat" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="08222543-c969-4c1a-b484-a99507dcbc29" />
+          </property>
+          <property Id="546f5914-7ccf-478f-9149-7d8585a924a7" name="Table" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f83d643f-ffa9-41ba-8950-7f660e38dbc1" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a4a8d14e-56fc-4999-b194-1877b3fe5862" name="Carte" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ff1d57f0-88d0-45ca-a11a-b60e1b410b6a" />
+        <ownedAttributesInternal>
+          <property Id="9a346a22-1d28-4293-92a6-2a7882f1fa82" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="71029f85-e1b5-4858-a006-bd0b3ab9527e" />
+          </property>
+          <property Id="e8cada4f-e271-4d24-97be-84f7a48d6cd9" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="463fa6c9-544a-4045-90c1-9fca00e234ae" />
+          </property>
+          <property Id="9c2340dd-df1e-4b71-84ad-63160295f84e" name="Prix" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d17fb4fc-bfca-451d-9c8a-3478a59cc075" />
+          </property>
+          <property Id="f0ca3b80-3da3-4aba-b7ec-7b94d463876f" name="Nom" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f504d451-5a70-4a7b-b087-5fb5339ec665" />
+          </property>
+          <property Id="a8b671e0-adf7-4435-99d4-7e071a819244" name="ProductType" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="34147308-2d96-4ae2-90c4-453737846714" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="02f3db3b-86cb-4905-9f39-d5c16fd3075c" name="CreateCarteItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="20c1c09b-7c0d-475f-96f8-70fac9470a40" />
+          </operation>
+          <operation Id="ff262ecd-5f33-495e-b5ae-5f814148be41" name="EditCarteItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bf683393-1071-403f-a6bf-929154cb2aff" />
+          </operation>
+          <operation Id="59b785cb-c1bf-4652-8eff-6583249a5a33" name="DeleteCarteItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="583c969e-d147-4d49-aec9-30986e6ff498" />
+          </operation>
+          <operation Id="21cec59d-4155-4519-9c14-5e95c2af0558" name="GetCarteItemByType" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eb185b04-7668-48a0-9c7e-aa3adfa5be17" />
+          </operation>
+          <operation Id="4b0d68e8-df81-40da-ba88-519c61ce87bb" name="GetAllCarteItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3ae436bb-26fd-4eb1-b646-5bd6c260c28f" />
+          </operation>
+          <operation Id="4d486844-d02a-4627-8391-92c7682e5fcf" name="GetCarteItemById" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="abc649f8-37fa-4e64-af52-d7bceeaac6fa" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="05f8b734-5765-47e1-8e97-aa1c93a9bea7" name="Etat" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5d809934-8ec3-4081-a215-b7fd0e20555b" />
+        <ownedLiterals>
+          <enumerationLiteral Id="3315dd7d-ba7b-41f7-9e48-a5bb59d3ef93" name="Id">
+            <elementDefinition Id="141b498d-a817-4a3b-b6f9-a247414f8109" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="237637e0-1e72-4776-8783-08acfed65e92" name="Nom">
+            <elementDefinition Id="afd7670f-9b8a-412f-9216-ce0ad0a51cf5" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4ab047b3-e079-4d8a-86c9-217709da9b6d" name="Table" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="97c0e24a-84c9-407e-9391-c9b78f2751f8" />
+        <ownedAttributesInternal>
+          <property Id="1417c7ef-85b3-4c9f-83d4-e23e64e5f52d" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="77f44c62-e84c-4bac-bd44-ed38b85a7c6e" />
+          </property>
+          <property Id="3766a2e5-884d-491e-95d1-752907ee454f" name="ListeOrder" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4d013974-b8e2-4f94-99aa-227151bb3d0e" />
+          </property>
+          <property Id="7f30703d-9bfd-4bdd-851f-f1516d5b09ec" name="Restaurant" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d251e38c-bb99-4c94-a9dd-6e18caa536b7" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b8bbe08b-feed-4bda-a3d9-28054309a230" name="ProductType" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0fa21b7f-8abf-4187-8fc8-57000beabfa0" />
+        <ownedAttributesInternal>
+          <property Id="ea06b651-a008-4742-ab7f-dfd5c2498e05" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ee034c1a-b52a-48b3-a727-62140721b16f" />
+          </property>
+          <property Id="a7bd6f08-3453-46cf-9caa-520d5e9beffd" name="Nom" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8b238638-4b8a-4e93-a71a-98e0c187469a" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="24a832a7-815e-4e5d-b307-551bb1560530" name="Restaurant" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a9afea15-c2cd-40c7-970d-725008db2736" />
+        <ownedAttributesInternal>
+          <property Id="0f2a6203-a419-4c3c-8add-7eccfb3d819b" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2572a8db-8859-4a2c-a545-2e0a5ae84ba5" />
+          </property>
+          <property Id="4a6b8991-32ec-4f10-ba69-52f926d57e4b" name="Ville" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="682d7b00-e83c-40ca-b854-c41ec5581039" />
+          </property>
+          <property Id="48f65c8a-4df1-4e7e-9cb9-db1e9da4d687" name="ListeTable" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="77fb042c-da80-4bcc-a6a4-73b7a23ee6a1" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ab7a4f69-6823-4400-975c-f61ba37c3b1a" name="Employee" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8aa9b587-7ecf-49b6-8ef3-92dd4c7f173f" />
+        <ownedAttributesInternal>
+          <property Id="869d188d-21ca-4bf3-bb8d-8d515ddd8031" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="432ec5ad-12bf-4129-aa98-07f8b6e80e0b" />
+          </property>
+          <property Id="d123742d-a605-4378-9408-25a3bcb86a59" name="Username" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6d26e1c9-17d6-4c4d-8afb-7735d5a050a6" />
+          </property>
+          <property Id="7a00722e-1fec-403e-be93-14c329c537de" name="Password" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="85300b77-dbeb-4acc-a0c6-c35abf5ab7e8" />
+          </property>
+          <property Id="d6a27ecf-dc15-4e7c-a685-a2f33275f97c" name="Restaurant" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8c9fa4e8-c5bb-41d1-a409-b12281b3be21" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="3bff2302-be47-4f2f-a552-4c219918bfea" name="ModelingYouFoodProject">
+    <elementDefinition Id="7e90cab5-c837-408f-9b50-e45b001b69c5" />
+  </package>
+</logicalClassDesignerModel>
