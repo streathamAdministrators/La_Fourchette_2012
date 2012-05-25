@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="24f379d2-0d38-4c2d-9d4b-603cf634d2d3" name="ViewModel" linkedPackageId="6fbee4f4-252a-4f6e-9b8e-323fedd9858a" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="d99e407f-cd4f-47f9-a02e-b206bc24fefc">
+      <profileInstance Id="c88375b2-1f13-4808-bd8c-7e16030ee6db" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="14e5af37-a496-4362-9537-ef497b0e8132">
+      <profileInstance Id="5f5f589e-1b94-45d2-af0e-f1668c9d3611" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c5c1ae07-ed1a-4856-8211-edc34ef5d034" name="OrderViewModel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b205e72c-e4d7-4c50-bbe4-abdac946e2c5" />
+        <ownedAttributesInternal>
+          <property Id="a89f971d-c165-451e-8fd5-3883b4c31fc2" name="List&lt;MenuViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f30055d3-f014-489b-9394-1e42185e20cc" />
+          </property>
+          <property Id="fc0132b7-b2ba-4a2c-b9ae-3747b7b74728" name="List&lt;ItemViewModel&gt;" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="23d93c96-1a14-40fe-bef6-190ab4f1ed98" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="152faf2c-0527-406d-b96c-1ce52aa848be" name="ItemViewModel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c9c0bbab-4c38-477d-b72a-f74a64874714" />
+        <ownedAttributesInternal>
+          <property Id="8bd0d663-6df4-43b5-8ac3-a29760e7a3e9" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8286eafc-c6ae-4538-926d-e748cb82bc65" />
+          </property>
+          <property Id="d8c99c3c-cfaa-4cb3-8518-b577bc18bd8a" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4aa4482d-649a-461e-9eba-ffa2006de532" />
+          </property>
+          <property Id="59a2c044-a1f3-4372-9c5b-168647d688c2" name="Price" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d1b08410-0d6e-463b-91c8-058a06ae882b" />
+          </property>
+          <property Id="c9b2c105-63d4-4e3b-84c3-74d35056c813" name="ProductType" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1034ff33-ac0f-4148-ab7d-4f27e5f2e65d" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="41784c0b-8551-4f10-adb2-6b380cb626db" name="MenuViewModel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f22d4730-340d-46ce-9939-3e37c657c85a" />
+        <ownedAttributesInternal>
+          <property Id="ab40f6c2-78ea-48d1-af59-990dec8a72a5" name="List&lt;ItemViewModel&gt;" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1c905155-2964-42cf-8d0a-1bce5fc59a84" />
+          </property>
+          <property Id="b234a3af-ccde-4248-9610-60cf99081f1c" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8c77a227-2f17-4040-91c0-7619b9b0e883" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="de67fc1e-3381-4837-80de-90636566441c" name="ProductTypeViewModel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="590ee4ca-7ecd-4ff6-849c-6655ad609e81" />
+        <ownedAttributesInternal>
+          <property Id="cc0b3441-ed73-4c94-967e-ba5c44cc1868" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3c18e53b-1d23-4d87-b53e-43e71dcdb31f" />
+          </property>
+          <property Id="e9e4ac1b-f343-4c68-8b8f-7d2ee2da58af" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d4fa4d84-35f9-48fb-aeb4-24a0df7da9a4" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="6fbee4f4-252a-4f6e-9b8e-323fedd9858a" name="ModelingYouFoodProject">
+    <elementDefinition Id="7e90cab5-c837-408f-9b50-e45b001b69c5" />
+  </package>
+</logicalClassDesignerModel>

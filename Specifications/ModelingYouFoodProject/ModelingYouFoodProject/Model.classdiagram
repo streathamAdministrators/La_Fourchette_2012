@@ -23,7 +23,7 @@ App mobile : [OK] IPAD (aucune conccurence à l'horizon !)
 
 Notification : [OK] RabbitMQ
 
-</body>
+ -&gt; trop lourd a mettre en place et pas adapter a nos besoins. On utilisera ActiveRecord::Notifications intégré directement a Rails 3.2.3</body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -248,6 +248,9 @@ Notification : [OK] RabbitMQ
           </property>
           <property Id="48f65c8a-4df1-4e7e-9cb9-db1e9da4d687" name="ListeTable" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="77fb042c-da80-4bcc-a6a4-73b7a23ee6a1" />
+          </property>
+          <property Id="c088c9b3-faaa-4e7a-be6d-ecb0d39438d1" name="IsActive" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="186dd555-18c9-4fae-9b11-0c6e3a3b034c" />
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
