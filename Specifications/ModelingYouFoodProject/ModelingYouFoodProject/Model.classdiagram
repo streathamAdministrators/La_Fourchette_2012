@@ -133,6 +133,9 @@ Notification : [OK] RabbitMQ
           <property Id="a35c4d4a-2c88-4c25-9130-001c0ad61c63" name="IsActive" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="c363b9fd-4d3e-49fa-91de-0e7e3766b6c2" />
           </property>
+          <property Id="b9a85d28-3bed-43df-9b65-4500b41860ca" name="Image" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8db50dcc-cb60-4cd6-a6b4-5cfd89f34940" />
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="02f3db3b-86cb-4905-9f39-d5c16fd3075c" name="CreateCarteItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -161,6 +164,9 @@ Notification : [OK] RabbitMQ
           </operation>
           <operation Id="d2911fdb-1d4f-4c0d-a6b1-cacc91a59f60" name="GetItemByProductType" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="06e7c7ea-8b66-400e-8352-c939f36dccf4" />
+          </operation>
+          <operation Id="4027b091-855a-49cf-9b7a-641c111fe70b" name="AddImage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7a89143c-a986-4d38-9871-5a21c3f07df4" />
           </operation>
         </ownedOperationsInternal>
       </class>

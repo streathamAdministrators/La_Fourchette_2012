@@ -350,6 +350,17 @@ Notification : [OK] RabbitMQ
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="8db50dcc-cb60-4cd6-a6b4-5cfd89f34940"
+            name="Image"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -419,6 +430,14 @@ Notification : [OK] RabbitMQ
           <operation
             Id="06e7c7ea-8b66-400e-8352-c939f36dccf4"
             name="GetItemByProductType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7a89143c-a986-4d38-9871-5a21c3f07df4"
+            name="AddImage"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
