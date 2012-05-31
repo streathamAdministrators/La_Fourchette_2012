@@ -21,9 +21,16 @@ ActiveRecord::Schema.define(:version => 20120530233034) do
   end
 
   create_table "elements", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "order_id"
+    t.integer  "element_state_id"
+    t.integer  "item_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
+
+  add_index "elements", ["element_state_id"], :name => "index_elements_on_element_state_id"
+  add_index "elements", ["item_id"], :name => "index_elements_on_item_id"
+  add_index "elements", ["order_id"], :name => "index_elements_on_order_id"
 
   create_table "employees", :force => true do |t|
     t.string   "password"
@@ -35,11 +42,14 @@ ActiveRecord::Schema.define(:version => 20120530233034) do
   create_table "items", :force => true do |t|
     t.boolean  "is_active"
     t.string   "name"
-    t.decimal  "price",      :precision => 10, :scale => 0
+    t.decimal  "price"
     t.datetime "time"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.integer  "product_type_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
+
+  add_index "items", ["product_type_id"], :name => "index_items_on_product_type_id"
 
   create_table "meals", :force => true do |t|
     t.boolean  "is_active"
@@ -58,9 +68,14 @@ ActiveRecord::Schema.define(:version => 20120530233034) do
 
   create_table "orders", :force => true do |t|
     t.integer  "price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "table_id"
+    t.integer  "order_state_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
+
+  add_index "orders", ["order_state_id"], :name => "index_orders_on_order_state_id"
+  add_index "orders", ["table_id"], :name => "index_orders_on_table_id"
 
   create_table "product_types", :force => true do |t|
     t.string   "name"
@@ -80,8 +95,13 @@ ActiveRecord::Schema.define(:version => 20120530233034) do
     t.boolean  "is_available"
     t.integer  "nb_seat"
     t.integer  "numero_table"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "employee_id"
+    t.integer  "restaurant_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
+
+  add_index "tables", ["employee_id"], :name => "index_tables_on_employee_id"
+  add_index "tables", ["restaurant_id"], :name => "index_tables_on_restaurant_id"
 
 end
