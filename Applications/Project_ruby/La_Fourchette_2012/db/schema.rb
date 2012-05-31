@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530233034) do
+ActiveRecord::Schema.define(:version => 20120531145158) do
 
   create_table "element_states", :force => true do |t|
-    t.string   "name"
-    t.integer  "priority"
+    t.string   "name",       :null => false
+    t.integer  "priority",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "elements", :force => true do |t|
-    t.integer  "order_id"
-    t.integer  "element_state_id"
-    t.integer  "item_id"
+    t.integer  "order_id",         :null => false
+    t.integer  "element_state_id", :null => false
+    t.integer  "item_id",          :null => false
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -33,18 +33,18 @@ ActiveRecord::Schema.define(:version => 20120530233034) do
   add_index "elements", ["order_id"], :name => "index_elements_on_order_id"
 
   create_table "employees", :force => true do |t|
-    t.string   "password"
-    t.string   "username"
+    t.string   "password",   :null => false
+    t.string   "username",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "items", :force => true do |t|
-    t.boolean  "is_active"
-    t.string   "name"
-    t.decimal  "price"
+    t.boolean  "is_active",       :null => false
+    t.string   "name",            :null => false
+    t.decimal  "price",           :null => false
     t.datetime "time"
-    t.integer  "product_type_id"
+    t.integer  "product_type_id", :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
@@ -52,24 +52,29 @@ ActiveRecord::Schema.define(:version => 20120530233034) do
   add_index "items", ["product_type_id"], :name => "index_items_on_product_type_id"
 
   create_table "meals", :force => true do |t|
-    t.boolean  "is_active"
-    t.string   "name"
+    t.boolean  "is_active",  :null => false
+    t.string   "name",       :null => false
     t.integer  "price"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+  create_table "meals_items", :force => true do |t|
+    t.integer "meal_id", :null => false
+    t.integer "item_id", :null => false
+  end
+
   create_table "order_states", :force => true do |t|
-    t.string   "name"
-    t.integer  "priority"
+    t.string   "name",       :null => false
+    t.integer  "priority",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "orders", :force => true do |t|
     t.integer  "price"
-    t.integer  "table_id"
-    t.integer  "order_state_id"
+    t.integer  "table_id",       :null => false
+    t.integer  "order_state_id", :null => false
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -78,25 +83,25 @@ ActiveRecord::Schema.define(:version => 20120530233034) do
   add_index "orders", ["table_id"], :name => "index_orders_on_table_id"
 
   create_table "product_types", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "restaurants", :force => true do |t|
-    t.string   "city"
-    t.boolean  "is_active"
+    t.string   "city",       :null => false
+    t.boolean  "is_active",  :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "tables", :force => true do |t|
-    t.boolean  "is_active"
-    t.boolean  "is_available"
-    t.integer  "nb_seat"
-    t.integer  "numero_table"
-    t.integer  "employee_id"
-    t.integer  "restaurant_id"
+    t.boolean  "is_active",     :null => false
+    t.boolean  "is_available",  :null => false
+    t.integer  "nb_seat",       :null => false
+    t.integer  "numero_table",  :null => false
+    t.integer  "employee_id",   :null => false
+    t.integer  "restaurant_id", :null => false
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
