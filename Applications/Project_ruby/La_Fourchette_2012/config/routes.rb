@@ -1,6 +1,20 @@
 LaFourchette2012::Application.routes.draw do
-  get "admin/index"
-  root :to => 'admin#index'
+  get "bla/index"
+
+  root :to => 'client#index'
+
+  get "client/index"
+  
+#  resources :admin, :namespace => "admin", :controller => "admin"
+
+    
+    namespace :admin do
+      resources :test, :bla
+    end
+  
+ # map.connect :admin, :namespace => "admin", :controller => "admin"
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
