@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  is_active: false
+  name: MyString
+  price: 1
+
+two:
+  is_active: false
+  name: MyString
+  price: 1

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  is_active: false
+  is_available: false
+  nb_seat: 1
+  numero_table: 1
+
+two:
+  is_active: false
+  is_available: false
+  nb_seat: 1
+  numero_table: 1

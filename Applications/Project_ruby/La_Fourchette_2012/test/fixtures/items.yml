@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  is_active: false
+  name: MyString
+  price: 9.99
+  time: 2012-05-30 23:39:55
+
+two:
+  is_active: false
+  name: MyString
+  price: 9.99
+  time: 2012-05-30 23:39:55
