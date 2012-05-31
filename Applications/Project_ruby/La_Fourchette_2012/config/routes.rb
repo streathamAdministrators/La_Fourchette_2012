@@ -9,7 +9,7 @@ LaFourchette2012::Application.routes.draw do
 
     
     namespace :admin do
-      resources :test, :bla
+      resources :restaurants
     end
   
  # map.connect :admin, :namespace => "admin", :controller => "admin"
