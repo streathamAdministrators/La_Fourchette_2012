@@ -52,16 +52,12 @@ class TablesController < ApplicationController
   
   
   def initTable
-    
     if params['table'] == Table.find(params['table'])
-    #if @table = Table.find(params['idTable'])
-    @table = params['idTable']
+      #if @table = Table.find(params['idTable'])
+      @table = params['idTable']
     else
       #format.html{redirect_to index }
     end
-    
-    
-    
     
     #if params['regis'] == 'test' && params['aubin'] == 'test'
       #@test = "Regis !!"
