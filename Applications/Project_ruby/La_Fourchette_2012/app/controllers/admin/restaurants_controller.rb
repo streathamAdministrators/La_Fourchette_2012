@@ -41,11 +41,11 @@ class Admin::RestaurantsController < ApplicationController
   # POST /admin/restaurants
   # POST /admin/restaurants.json
   def create
-    @admin_restaurant = Restaurant.new(params[:admin_restaurant])
+    @admin_restaurant = Restaurant.new(params[:restaurant])
 
     respond_to do |format|
       if @admin_restaurant.save
-        format.html { redirect_to @admin_restaurant, notice: 'Restaurant was successfully created.' }
+        format.html { redirect_to admin_restaurant_path, notice: 'Restaurant was successfully created.' }
         format.json { render json: @admin_restaurant, status: :created, location: @admin_restaurant }
       else
         format.html { render action: "new" }

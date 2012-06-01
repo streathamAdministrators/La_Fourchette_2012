@@ -1,21 +1,24 @@
-<%= form_for [@admin_restaurant], :url => admin_restaurant_path do |admin_restaurant| %>
+<%= form_for ([:admin, @admin_restaurant]), :url => { :action => "create" } do |f| %>
 	<% if @admin_restaurant.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@admin_restaurant.errors.count, "error") %> prohibited this admin_restaurant from being saved:</h2>
-	
-	      <ul>
-	      <% @admin_restaurant.errors.full_messages.each do |msg| %>
-	        <li><%= msg %></li>
-	      <% end %>
-	      </ul>
-	    </div>
+    	<div id="error_explanation">
+      		<h2><%= pluralize(@admin_restaurant.errors.count, "error") %> prohibited this admin_restaurant from being saved:</h2>
+      		<ul>
+      		<% @admin_restaurant.errors.full_messages.each do |msg| %>
+        		<li><%= msg %></li>
+      		<% end %>
+      		</ul>
+    	</div>
 	<% end %>
-	
+
 	<div class="field">
-    	<%= post_form.label :city %><br />
-    	<%= post_form.text_field :city %>
-  	</div>
-  	<div class="actions">
-    	<%= post_form.submit %>
-  	</div>
+   		<%= f.label :city %><br />
+   		<%= f.text_field :city %>
+ 	</div>
+	<div class="field">
+   		<%= f.radio_button :is_active, true %> <%= f.label :is_active, "Yes" %>
+		<%= f.radio_button :is_active, false %> <%= f.label :is_active, "No" %>
+ 	</div>
+ 	<div class="actions">
+   		<%= f.submit %>
+ 	</div>
 <%end%>

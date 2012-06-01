@@ -4,6 +4,7 @@ LaFourchette2012::Application.routes.draw do
   root :to => 'client#index'
 
   get "client/index"
+  match "/admin" => redirect("/admin/employees")
   
 #  resources :admin, :namespace => "admin", :controller => "admin"
 
