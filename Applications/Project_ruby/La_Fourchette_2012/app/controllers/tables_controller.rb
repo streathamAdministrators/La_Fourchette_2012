@@ -51,8 +51,11 @@ class TablesController < ApplicationController
   
   
   
+
   def initTable
-    if params['table'] == Table.find(params['table'])
+    #num_table = Table.find(:all, :conditions => {:numero_table => 'table'})
+    @table = Table.find_by_numero_table(params['table'])
+    if @table.id == 
       #if @table = Table.find(params['idTable'])
       redirect_to :action => :show
     else
