@@ -42,10 +42,10 @@ gem 'jquery-rails'
 =======
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+#gem 'rails', '3.2.2'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 
@@ -58,7 +58,7 @@ gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
@@ -66,6 +66,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'backbone-rails', git: 'https://github.com/rubymaverick/backbone-rails.git'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -80,5 +82,9 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
+<<<<<<< HEAD
 # gem 'ruby-debug19', :require => 'ruby-debug'
 >>>>>>> dfaf3ba23335b6cd13322b4c112e1e355dc4852c
+=======
+gem 'ruby-debug19', :require => 'ruby-debug'
+>>>>>>> 80ea79656800f733d4630d280523ff151af1b90b
