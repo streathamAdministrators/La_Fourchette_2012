@@ -54,9 +54,10 @@ class TablesController < ApplicationController
   def initTable
     if params['table'] == Table.find(params['table'])
       #if @table = Table.find(params['idTable'])
-      @table = params['idTable']
+      redirect_to :action => :show
     else
-      #format.html{redirect_to index }
+      #index avec message la table n'existe pas
+      redirect_to :action => :index 
     end
     
     #if params['regis'] == 'test' && params['aubin'] == 'test'
