@@ -10,8 +10,6 @@
  			<td>ID</td>
  			<td>Is active</td>
  			<td>City</td>
- 			<td>Creation</td>
- 			<td>Update</td>
  			<td></td>
  			<td></td>
  			<td></td>
@@ -23,8 +21,6 @@
 	  	<td><%= admin_restaurant.id%></td>
 	  	<td><%= admin_restaurant.is_active%></td>
 	  	<td><%= admin_restaurant.city%></td>
-	  	<td><%= admin_restaurant.created_at%></td>
-	  	<td><%= admin_restaurant.updated_at%></td>
 	    <td><%= link_to 'Show', admin_restaurant_path(admin_restaurant) %></td>
 	    <td><%= link_to 'Edit', edit_admin_restaurant_path(admin_restaurant) %></td>
 	    <td><%= link_to 'Destroy', admin_restaurant_path(admin_restaurant), confirm: 'Are you sure?', method: :delete %></td>

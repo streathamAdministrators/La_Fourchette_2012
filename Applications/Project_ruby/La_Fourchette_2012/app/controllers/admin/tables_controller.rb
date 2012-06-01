@@ -26,6 +26,8 @@ class Admin::TablesController < ApplicationController
   # GET /admin/tables/new.json
   def new
     @admin_table = Table.new
+    @restaurant = Restaurant.all
+    @employee = Employee.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,11 +43,11 @@ class Admin::TablesController < ApplicationController
   # POST /admin/tables
   # POST /admin/tables.json
   def create
-    @admin_table = Table.new(params[:admin_table])
+    @admin_table = Table.new(params[:table])
 
     respond_to do |format|
       if @admin_table.save
-        format.html { redirect_to @admin_table, notice: 'Table was successfully created.' }
+        format.html { redirect_to admin_table_path(@admin_table), notice: 'Table was successfully created.' }
         format.json { render json: @admin_table, status: :created, location: @admin_table }
       else
         format.html { render action: "new" }
@@ -60,8 +62,8 @@ class Admin::TablesController < ApplicationController
     @admin_table = Table.find(params[:id])
 
     respond_to do |format|
-      if @admin_table.update_attributes(params[:admin_table])
-        format.html { redirect_to @admin_table, notice: 'Table was successfully updated.' }
+      if @admin_table.update_attributes(params[:table])
+        format.html { redirect_to admin_table_path(@admin_table), notice: 'Table was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -26,6 +26,7 @@ class Admin::EmployeesController < ApplicationController
   # GET /admin/employees/new.json
   def new
     @admin_employee = Employee.new
+    @restaurant = Restaurant.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,16 +37,17 @@ class Admin::EmployeesController < ApplicationController
   # GET /admin/employees/1/edit
   def edit
     @admin_employee = Employee.find(params[:id])
+    @restaurant = Restaurant.all
   end
 
   # POST /admin/employees
   # POST /admin/employees.json
   def create
-    @admin_employee = Employee.new(params[:admin_employee])
+    @admin_employee = Employee.new(params[:employee])
 
     respond_to do |format|
       if @admin_employee.save
-        format.html { redirect_to @admin_employee, notice: 'Employee was successfully created.' }
+        format.html { redirect_to admin_employee_path(@admin_employee), notice: 'Employee was successfully created.' }
         format.json { render json: @admin_employee, status: :created, location: @admin_employee }
       else
         format.html { render action: "new" }
@@ -60,8 +62,8 @@ class Admin::EmployeesController < ApplicationController
     @admin_employee = Employee.find(params[:id])
 
     respond_to do |format|
-      if @admin_employee.update_attributes(params[:admin_employee])
-        format.html { redirect_to @admin_employee, notice: 'Employee was successfully updated.' }
+      if @admin_employee.update_attributes(params[:employee])
+        format.html { redirect_to admin_employee_path(@admin_employee), notice: 'Employee was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

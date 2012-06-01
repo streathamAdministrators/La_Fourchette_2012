@@ -1,4 +1,5 @@
 <%= form_for(@admin_table) do |f| %>
+
   <% if @admin_table.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@admin_table.errors.count, "error") %> prohibited this admin_table from being saved:</h2>
@@ -10,6 +11,36 @@
       </ul>
     </div>
   <% end %>
+  
+  <p class="field">
+   		<%= f.label :is_active %>
+   		<%= f.text_field :is_active %>
+ 	</p>
+ 	
+ 	<p class="field">
+   		<%= f.label :is_available %>
+   		<%= f.text_field :is_available %>
+ 	</p>
+ 	
+ 	<p class="field">
+   		<%= f.label :nb_seat %>
+   		<%= f.text_field :nb_seat %>
+ 	</p>
+ 	
+ 	<p class="field">
+   		<%= f.label :numero_table %>
+   		<%= f.text_field :numero_table %>
+ 	</p>
+ 	
+ 	<p class="field">
+   		<%= f.label :employee_id %>
+   		<%= collection_select(:table, :employee_id, employee, :id, :username, { :prompt => 'None'}) %>
+ 	</p>
+ 	
+ 	<p class="field">
+   		<%= f.label :restaurant_id %>
+   		<%= collection_select(:table, :restaurant_id, restaurant, :id, :city, { :prompt => 'None'}) %>
+ 	</p>
 
   <div class="actions">
     <%= f.submit :class => 'btn btn-primary btn-large' %>

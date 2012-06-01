@@ -9,8 +9,8 @@
 		<tr>
 			<td>ID</td>
 			<td>Username</td>
-			<td>Creation</td>
-			<td>Update</td>
+			<td>Password</td>
+			<td>Restaurant</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -21,8 +21,8 @@
 		<tr>
 			<td><%= admin_employee.id%></td>
 			<td><%= admin_employee.username%></td>
-			<td><%= admin_employee.created_at%></td>
-			<td><%= admin_employee.updated_at%></td>
+			<td><%= admin_employee.password%></td>
+			<td><%= admin_employee.restaurant_id%></td>
 		    <td><%= link_to 'Show', admin_employee_path(admin_employee) %></td>
 		    <td><%= link_to 'Edit', edit_admin_employee_path(admin_employee) %></td>
 		    <td><%= link_to 'Destroy', admin_employee_path(admin_employee), confirm: 'Are you sure?', method: :delete %></td>

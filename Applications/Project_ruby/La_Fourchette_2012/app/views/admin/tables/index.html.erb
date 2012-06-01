@@ -15,8 +15,6 @@
 			<td>Table nb</td>
 			<td>Employee</td>
 			<td>Restaurant</td>
-			<td>Creation</td>
-			<td>Update</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -32,8 +30,6 @@
 			<td><%= admin_table.numero_table%></td>
 			<td><%= admin_table.employee_id%></td>
 			<td><%= admin_table.restaurant_id%></td>
-			<td><%= admin_table.created_at%></td>
-			<td><%= admin_table.updated_at%></td>
 		    <td><%= link_to 'Show', admin_table_path(admin_table) %></td>
 		    <td><%= link_to 'Edit', edit_admin_table_path(admin_table) %></td>
 		    <td><%= link_to 'Destroy', admin_table_path(admin_table), confirm: 'Are you sure?', method: :delete %></td>
