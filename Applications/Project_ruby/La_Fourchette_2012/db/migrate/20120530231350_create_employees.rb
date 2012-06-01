@@ -8,6 +8,6 @@ class CreateEmployees < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :employees, :restaurant_id, :null => false
+    add_index :employees, :restaurant_id
   end
 end

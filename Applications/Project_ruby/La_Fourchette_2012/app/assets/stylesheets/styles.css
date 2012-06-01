@@ -1,6 +1,11 @@
-.test{
-	min-height: 1000px;
-	background-color: #EEE;
+body {
+	background-image: url(../images/grid.png);
+	background-repeat: repeat-x;
+	background-position: 0 40px;
+}
+
+.content{
+	padding: 60px;
 }
 
 

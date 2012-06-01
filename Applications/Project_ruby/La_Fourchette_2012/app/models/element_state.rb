@@ -1,3 +1,3 @@
 class ElementState < ActiveRecord::Base
-  has_many :element
+  has_many :elements
 end
