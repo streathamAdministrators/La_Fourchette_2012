@@ -13,3 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+ window.App = {
+    Views: {},
+    Controllers: {},
+    Collections: {},
+    Models: {},
+    Seeds: {},
+    initialize: function() {
+      this.controller = new App.controllers.LaFourchette();
+      return Backbone.history.start();
+    }
+  };
