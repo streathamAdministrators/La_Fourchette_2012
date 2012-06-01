@@ -1,5 +1,4 @@
 LaFourchette2012::Application.routes.draw do
-    get "bla/index"
 
     root :to => 'client#index'
 
