@@ -4,33 +4,33 @@
 
 <p>
   <b>Id :</b>
-  <%= @admin_employee.id %>
+  <%= @employee.id %>
 </p>
 
 <p>
   <b>Username :</b>
-  <%= @admin_employee.username %>
+  <%= @employee.username %>
 </p>
 
 <p>
   <b>Password :</b>
-  <%= @admin_employee.password %>
+  <%= @employee.password %>
 </p>
 
 <p>
   <b>Restaurant :</b>
-  <%= @admin_employee.restaurant_id %>
+  <%= @employee.restaurant_id %>
 </p>
 
 <p>
   <b>Creation :</b>
-  <%= @admin_employee.created_at %>
+  <%= @employee.created_at %>
 </p>
 
 <p>
   <b>Update :</b>
-  <%= @admin_employee.updated_at %>
+  <%= @employee.updated_at %>
 </p>
 
-<%= link_to 'Edit', edit_admin_employee_path(@admin_employee) %> |
+<%= link_to 'Edit', edit_admin_employee_path(@employee) %> |
 <%= link_to 'Back', admin_employees_path %>
