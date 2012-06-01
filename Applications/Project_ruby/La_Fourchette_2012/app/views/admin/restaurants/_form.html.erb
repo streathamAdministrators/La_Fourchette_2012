@@ -10,15 +10,16 @@
     	</div>
 	<% end %>
 
-	<div class="field">
-   		<%= f.label :city %><br />
+	<p class="field">
+   		<%= f.label :city %>
    		<%= f.text_field :city %>
- 	</div>
-	<div class="field">
+ 	</p>
+	<p class="field">
+		<%= f.label :is_active %>
    		<%= f.radio_button :is_active, true %> <%= f.label :is_active, "Yes" %>
 		<%= f.radio_button :is_active, false %> <%= f.label :is_active, "No" %>
- 	</div>
- 	<div class="actions">
-   		<%= f.submit %>
- 	</div>
+ 	</p>
+ 	<p class="actions">
+   		<%= f.submit :class => 'btn btn-primary btn-large' %>
+ 	</p>
 <%end%>
