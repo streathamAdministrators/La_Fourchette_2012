@@ -1,24 +1,19 @@
 LaFourchette2012::Application.routes.draw do
-  get "bla/index"
+    get "bla/index"
 
-  root :to => 'customer#index'
+    root :to => 'client#index'
 
-<<<<<<< HEAD
- resources :tables
-=======
-  get "client/index"
-  match "/admin" => redirect("/admin/employees")
->>>>>>> 17660c4762001d24b1f8ebf7f2a45581bbc8f176
-  
-#  resources :admin, :namespace => "admin", :controller => "admin"
+    get "client/index"
+    match "/admin" => redirect("/admin/employees")
 
-    
-    namespace :admin do
-      resources :restaurants, :employees, :tables
-    end
-  
- # map.connect :admin, :namespace => "admin", :controller => "admin"
-  
+  #  resources :admin, :namespace => "admin", :controller => "admin"
+
+
+      namespace :admin do
+        resources :restaurants, :employees, :tables
+      end
+
+   # map.connect :admin, :namespace => "admin", :controller => "admin"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
