@@ -1,6 +1,7 @@
 LaFourchette2012::Application.routes.draw do
-
-    root :to => 'client#index'
+    
+    #Point d'entrée par l'index de la vue index de tables
+    root :to => 'tables#index'
 
     get "client/index"
     match "/admin" => redirect("/admin/employees")
