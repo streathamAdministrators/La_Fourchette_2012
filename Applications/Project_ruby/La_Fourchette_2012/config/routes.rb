@@ -3,13 +3,18 @@ LaFourchette2012::Application.routes.draw do
 
   root :to => 'customer#index'
 
+<<<<<<< HEAD
  resources :tables
+=======
+  get "client/index"
+  match "/admin" => redirect("/admin/employees")
+>>>>>>> 17660c4762001d24b1f8ebf7f2a45581bbc8f176
   
 #  resources :admin, :namespace => "admin", :controller => "admin"
 
     
     namespace :admin do
-      resources :restaurants
+      resources :restaurants, :employees, :tables
     end
   
  # map.connect :admin, :namespace => "admin", :controller => "admin"
