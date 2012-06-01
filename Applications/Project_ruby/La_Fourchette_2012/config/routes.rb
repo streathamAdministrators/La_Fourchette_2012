@@ -1,11 +1,6 @@
 LaFourchette2012::Application.routes.draw do
   get "bla/index"
 
-  controller :tables do
-    post 'table/test'     => :test
-  end
-
-
   root :to => 'customer#index'
 
  resources :tables
@@ -14,7 +9,7 @@ LaFourchette2012::Application.routes.draw do
 
     
     namespace :admin do
-      resources :test, :bla
+      resources :restaurants
     end
   
  # map.connect :admin, :namespace => "admin", :controller => "admin"

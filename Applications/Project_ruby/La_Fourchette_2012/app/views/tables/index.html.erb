@@ -1,0 +1,14 @@
+<h1>Index tables</h1>
+
+
+<br />
+
+<!--<%= link_to 'New Table', new_table_path %>-->
+
+
+<%= form_for @table, :url => { :action => "initTable" } do |f|%>
+	<%= f.label :table_id %>
+  	<%= f.text_field 'table' %>
+  	<div><%= f.submit 'Envoyer' %></div>
+<% end -%>
+
