@@ -1,0 +1,36 @@
+<h1>Employees</h1>
+
+<% if @admin_employees.empty? %>
+	<h3>No employees in database</h3>
+<% else %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Username</td>
+			<td>Creation</td>
+			<td>Update</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @admin_employees.each do |admin_employee| %>
+		<tr>
+			<td><%= admin_employee.id%></td>
+			<td><%= admin_employee.username%></td>
+			<td><%= admin_employee.created_at%></td>
+			<td><%= admin_employee.updated_at%></td>
+		    <td><%= link_to 'Show', admin_employee_path(admin_employee) %></td>
+		    <td><%= link_to 'Edit', edit_admin_employee_path(admin_employee) %></td>
+		    <td><%= link_to 'Destroy', admin_employee_path(admin_employee), confirm: 'Are you sure?', method: :delete %></td>
+	    </tr>
+	   <% end %>
+	</tbody>
+</table>
+<%end%>
+<br />
+
+<%= link_to 'New Employee', new_admin_employee_path, :class => 'btn btn-primary btn-large' %>

@@ -1,0 +1,47 @@
+<h1>Tables</h1>
+
+<% if @admin_tables.empty? %>
+	<h3>No tables in database</h3>
+<% else %>
+
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Is active</td>
+			<td>Available</td>
+			<td>Nb of seat</td>
+			<td>Table nb</td>
+			<td>Employee</td>
+			<td>Restaurant</td>
+			<td>Creation</td>
+			<td>Update</td>
+			<td></td>
+			<td></td>
+			<td></td>
+	    </tr>
+	</thead>
+	<tbody>
+		<% @admin_tables.each do |admin_table| %>
+		  <tr>
+		  	<td><%= admin_table.id%></td>
+			<td><%= admin_table.is_active%></td>
+			<td><%= admin_table.is_available%></td>
+			<td><%= admin_table.nb_seat%></td>
+			<td><%= admin_table.numero_table%></td>
+			<td><%= admin_table.employee_id%></td>
+			<td><%= admin_table.restaurant_id%></td>
+			<td><%= admin_table.created_at%></td>
+			<td><%= admin_table.updated_at%></td>
+		    <td><%= link_to 'Show', admin_table_path(admin_table) %></td>
+		    <td><%= link_to 'Edit', edit_admin_table_path(admin_table) %></td>
+		    <td><%= link_to 'Destroy', admin_table_path(admin_table), confirm: 'Are you sure?', method: :delete %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>
+<% end %>
+<br />
+
+<%= link_to 'New Table', new_admin_table_path, :class => 'btn btn-primary btn-large' %>
