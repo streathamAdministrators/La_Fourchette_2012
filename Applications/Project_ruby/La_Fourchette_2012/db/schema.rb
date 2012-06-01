@@ -33,11 +33,14 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
   add_index "elements", ["order_id"], :name => "index_elements_on_order_id"
 
   create_table "employees", :force => true do |t|
-    t.string   "password",   :null => false
-    t.string   "username",   :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "password",      :null => false
+    t.string   "username",      :null => false
+    t.integer  "restaurant_id", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
+
+  add_index "employees", ["restaurant_id"], :name => "index_employees_on_restaurant_id"
 
   create_table "items", :force => true do |t|
     t.boolean  "is_active",       :null => false

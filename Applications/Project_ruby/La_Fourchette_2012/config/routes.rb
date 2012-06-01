@@ -1,20 +1,24 @@
 LaFourchette2012::Application.routes.draw do
-  get "bla/index"
 
-  root :to => 'client#index'
+    root :to => 'client#index'
 
-  get "client/index"
-  match "/admin" => redirect("/admin/employees")
-  
-#  resources :admin, :namespace => "admin", :controller => "admin"
+    get "client/index"
+    match "/admin" => redirect("/admin/employees")
 
-    
-    namespace :admin do
-      resources :restaurants, :employees, :tables
-    end
+  #  resources :admin, :namespace => "admin", :controller => "admin"
   
- # map.connect :admin, :namespace => "admin", :controller => "admin"
-  
+    #Routes pour le controller Table
+    #1: Routes scaffolding de base
+    #2: Routes post pour la methode initTable
+    resources :tables
+    post "/tables/initTable" => "tables#initTable"
+
+    #Routes pour le namspace Admin
+      namespace :admin do
+        resources :restaurants, :employees, :tables
+      end
+
+   # map.connect :admin, :namespace => "admin", :controller => "admin"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

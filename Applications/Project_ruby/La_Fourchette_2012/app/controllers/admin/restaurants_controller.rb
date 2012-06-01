@@ -45,7 +45,7 @@ class Admin::RestaurantsController < ApplicationController
 
     respond_to do |format|
       if @admin_restaurant.save
-        format.html { redirect_to admin_restaurant_path, notice: 'Restaurant was successfully created.' }
+        format.html { redirect_to admin_restaurant_path(@admin_restaurant), notice: 'Restaurant was successfully created.' }
         format.json { render json: @admin_restaurant, status: :created, location: @admin_restaurant }
       else
         format.html { render action: "new" }
@@ -60,8 +60,8 @@ class Admin::RestaurantsController < ApplicationController
     @admin_restaurant = Restaurant.find(params[:id])
 
     respond_to do |format|
-      if @admin_restaurant.update_attributes(params[:admin_restaurant])
-        format.html { redirect_to @admin_restaurant, notice: 'Restaurant was successfully updated.' }
+      if @admin_restaurant.update_attributes(params[:restaurant])
+        format.html { redirect_to admin_restaurant_path(@admin_restaurant), notice: 'Restaurant was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
