@@ -4,7 +4,7 @@ class CreateTables < ActiveRecord::Migration
       t.boolean :is_active, :null => false
       t.boolean :is_available, :null => false
       t.integer :nb_seat, :null => false
-      t.integer :number_table, :null => false
+      t.integer :numero_table, :null => false
 
       t.references :employee, :null => false
       t.references :restaurant, :null => false
