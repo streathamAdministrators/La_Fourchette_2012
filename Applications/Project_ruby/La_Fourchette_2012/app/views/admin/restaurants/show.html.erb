@@ -4,28 +4,28 @@
 
 <p>
   <b>Id :</b>
-  <%= @admin_restaurant.id %>
+  <%= @restaurant.id %>
 </p>
 
 <p>
   <b>Is active :</b>
-  <%= @admin_restaurant.is_active %>
+  <%= @restaurant.is_active %>
 </p>
 
 <p>
   <b>City :</b>
-  <%= @admin_restaurant.city %>
+  <%= @restaurant.city %>
 </p>
 
 <p>
   <b>Creation date :</b>
-  <%= @admin_restaurant.created_at %>
+  <%= @restaurant.created_at %>
 </p>
 
 <p>
   <b>Updated date :</b>
-  <%= @admin_restaurant.updated_at %>
+  <%= @restaurant.updated_at %>
 </p>
 
-<%= link_to 'Edit', edit_admin_restaurant_path(@admin_restaurant) %> |
+<%= link_to 'Edit', edit_admin_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', admin_restaurants_path %>
