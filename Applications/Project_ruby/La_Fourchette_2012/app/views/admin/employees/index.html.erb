@@ -1,6 +1,6 @@
 <h1>Employees</h1>
 
-<% if @admin_employees.empty? %>
+<% if @employees.empty? %>
 	<h3>No employees in database</h3>
 <% else %>
 
@@ -17,15 +17,15 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @admin_employees.each do |admin_employee| %>
+		<% @employees.each do |employee| %>
 		<tr>
-			<td><%= admin_employee.id%></td>
-			<td><%= admin_employee.username%></td>
-			<td><%= admin_employee.password%></td>
-			<td><%= admin_employee.restaurant_id%></td>
-		    <td><%= link_to 'Show', admin_employee_path(admin_employee) %></td>
-		    <td><%= link_to 'Edit', edit_admin_employee_path(admin_employee) %></td>
-		    <td><%= link_to 'Destroy', admin_employee_path(admin_employee), confirm: 'Are you sure?', method: :delete %></td>
+			<td><%= employee.id%></td>
+			<td><%= employee.username%></td>
+			<td><%= employee.password%></td>
+			<td><%= employee.restaurant_id%></td>
+		    <td><%= link_to 'Show', admin_employee_path(employee) %></td>
+		    <td><%= link_to 'Edit', edit_admin_employee_path(employee) %></td>
+		    <td><%= link_to 'Destroy', admin_employee_path(employee), confirm: 'Are you sure?', method: :delete %></td>
 	    </tr>
 	   <% end %>
 	</tbody>

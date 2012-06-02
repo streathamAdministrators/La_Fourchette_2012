@@ -1,7 +1,7 @@
 <h1>Restaurants</h1>
 <p class="lead">List of the different restaurants of FoodInc</p>
 
-<% if @admin_restaurants.empty? %>
+<% if @restaurants.empty? %>
 	<h3>No restaurant in database</h3>
 <% else %>
 
@@ -17,14 +17,14 @@
  		</tr>
  	</thead>
  	<tbody>
-	  <% @admin_restaurants.each do |admin_restaurant| %>
+	  <% @restaurants.each do |restaurant| %>
 	  <tr>
-	  	<td><%= admin_restaurant.id%></td>
-	  	<td><%= admin_restaurant.is_active%></td>
-	  	<td><%= admin_restaurant.city%></td>
-	    <td><%= link_to 'Show', admin_restaurant_path(admin_restaurant) %></td>
-	    <td><%= link_to 'Edit', edit_admin_restaurant_path(admin_restaurant) %></td>
-	    <td><%= link_to 'Destroy', admin_restaurant_path(admin_restaurant), confirm: 'Are you sure?', method: :delete %></td>
+	  	<td><%= restaurant.id%></td>
+	  	<td><%= restaurant.is_active%></td>
+	  	<td><%= restaurant.city%></td>
+	    <td><%= link_to 'Show', admin_restaurant_path(restaurant) %></td>
+	    <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>
+	    <td><%= link_to 'Destroy', admin_restaurant_path(restaurant), confirm: 'Are you sure?', method: :delete %></td>
 	  </tr>
 	<% end %>
  	</tbody>
