@@ -56,7 +56,11 @@ class TablesController < ApplicationController
     #num_table = Table.find(:all, :conditions => {:numero_table => 'table'})
     @table = Table.find_by_numero_table(params['table'])
     if @table.id != null && @table.is_avalaible == true 
+<<<<<<< HEAD
       redirect_to :action => 'show', notice: 'je sais pas plus trop encore pas'
+=======
+      redirect_to :action => 'show', notice: 'je sais pas plus trop encore trop'
+>>>>>>> 78ca874ef7a4857a1ce817e3782be8ea13c222f5
     else
       #index avec message la table n'existe pas
       redirect_to :action => 'index' #, :notice => 'Table occupée ou inexistante' 
