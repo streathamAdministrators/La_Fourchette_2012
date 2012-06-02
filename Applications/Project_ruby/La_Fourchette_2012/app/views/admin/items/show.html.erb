@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Item details :</h2>
+
+<p>
+  <b>Id :</b>
+  <%= @admin_item.id %>
+</p>
+
+<p>
+  <b>Name :</b>
+  <%= @admin_item.name %>
+</p>
+
+<p>
+  <b>Is active :</b>
+  <%= @admin_item.is_active %>
+</p>
+
+<p>
+  <b>Description :</b>
+  <%= @admin_item.description %>
+</p>
+
+<p>
+  <b>Price :</b>
+  <%= @admin_item.price %>
+</p>
+
+<p>
+  <b>Time :</b>
+  <%= @admin_item.time %>
+</p>
+
+<p>
+  <b>Product type :</b>
+  <%= @admin_item.product_type %>
+</p>
+
+<p>
+  <b>Creation :</b>
+  <%= @admin_item.created_at %>
+</p>
+
+<p>
+  <b>Update :</b>
+  <%= @admin_item.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_admin_item_path(@admin_item) %> |
+<%= link_to 'Back', admin_items_path %>

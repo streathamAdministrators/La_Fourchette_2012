@@ -1,0 +1,40 @@
+<h1>Items</h1>
+
+<% if @admin_items.empty? %>
+	<h3>No items in database</h3>
+<% else %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+		    <th>Id</th>
+		    <th>Name</th>
+		    <th>Is active</th>
+		    <th>Price</th>
+		    <th>Time</th>
+		    <th>Product type</th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+  		</tr>
+	</thead>
+	<tbody>
+		<% @admin_items.each do |admin_item| %>
+		  <tr>
+		  	<td><%= admin_item.id%></td>
+		  	<td><%= admin_item.name%></td>
+		  	<td><%= admin_item.is_active%></td>
+		  	<td><%= admin_item.price%></td>
+		  	<td><%= admin_item.time%></td>
+		  	<td><%= admin_item.product_type%></td>
+		    <td><%= link_to 'Show', admin_item_path(admin_item) %></td>
+		    <td><%= link_to 'Edit', edit_admin_item_path(admin_item) %></td>
+		    <td><%= link_to 'Destroy', admin_item_path(admin_item), confirm: 'Are you sure?', method: :delete %></td>
+		  </tr>
+		<%end%>
+	</tbody>
+</table>
+<% end %>
+<br />
+
+<%= link_to 'New Item', new_admin_item_path, :class => 'btn btn-primary btn-large'  %>
