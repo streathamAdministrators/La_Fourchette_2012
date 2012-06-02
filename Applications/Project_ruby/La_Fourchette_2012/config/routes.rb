@@ -25,8 +25,9 @@ LaFourchette2012::Application.routes.draw do
 
       #Routes pour le namspace Admin
       namespace :admin do
-        resources :restaurants, :employees, :tables, :javascripts, :product_types
+        resources :restaurants, :employees, :tables, :javascripts, :product_types, :items
         get "/admin/javascripts/dynamic_employee", "/admin/javascripts/dynamic_restaurant"
+        get '/employees/show/:restaurant_id' => "employees#show", :as => "employees_restaurant"
       end
       
     get "javascripts/dynamic_employee", "javascripts/dynamic_restaurant"
