@@ -13,6 +13,9 @@ LaFourchette2012::Application.routes.draw do
     #2: Routes post pour la methode initTable
     resources :tables
     post "/tables/initTable" => "tables#initTable"
+    
+    get "tables/show"
+    get "tables/index"
 
     #Routes pour le namspace Admin
       namespace :admin do
