@@ -17,10 +17,13 @@ LaFourchette2012::Application.routes.draw do
     get "tables/show"
     get "tables/index"
 
-    #Routes pour le namspace Admin
+      #Routes pour le namspace Admin
       namespace :admin do
-        resources :restaurants, :employees, :tables
+        resources :restaurants, :employees, :tables, :javascripts
+        get "/admin/javascripts/dynamic_employee", "/admin/javascripts/dynamic_restaurant"
       end
+      
+    get "javascripts/dynamic_employee", "javascripts/dynamic_restaurant"
 
    # map.connect :admin, :namespace => "admin", :controller => "admin"
   
