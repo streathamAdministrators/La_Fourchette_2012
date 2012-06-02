@@ -1,7 +1,7 @@
 <%= form_for(@admin_table) do |f| %>
 
-<% javascript 'dynamic_employee' %>
-<% javascript 'dynamic_restaurant' %>
+<% javascript '/javascripts/dynamic_employee' %>
+
 
   <% if @admin_table.errors.any? %>
     <div id="error_explanation">
