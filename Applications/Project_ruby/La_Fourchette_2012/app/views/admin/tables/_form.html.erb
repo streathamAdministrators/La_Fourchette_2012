@@ -35,14 +35,14 @@
    		<%= f.text_field :numero_table %>
  	</p>
  	
- 	<p class="employee_field">
- 		<label for="table_employee_id">Employee</label>
-   		<%= collection_select(:admin_table, :employee_id, employee, :id, :username, { :prompt => 'employee'}) %>
- 	</p>
- 	
  	<p class="restaurant_field">
    		<label for="table_restaurant_id">Restaurant</label>
    		<%= collection_select(:admin_table, :restaurant_id, restaurant, :id, :city, { :prompt => 'restaurant'}) %>
+ 	</p>
+ 	
+ 	<p class="employee_field">
+ 		<label for="table_employee_id">Employee</label>
+   		<%= collection_select(:admin_table, :employee_id, employee, :id, :username, { :prompt => 'employee'}) %>
  	</p>
 
   <div class="actions">

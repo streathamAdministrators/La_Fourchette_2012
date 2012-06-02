@@ -21,6 +21,11 @@ class Admin::EmployeesController < ApplicationController
       format.json { render json: @employee }
     end
   end
+  
+  def employee_by_restauration
+    @employees = Employee.find_by_restaurant(params[:restaurant])
+    render :action => 'index'
+  end
 
   # GET /admin/employees/new
   # GET /admin/employees/new.json

@@ -6,13 +6,5 @@ class JavascriptsController < ApplicationController
       format.js {render :content_type => 'text/javascript'}
     end
   end
-  
-  def dynamic_restaurant
-    @restaurant = Restaurant.find(:all)
-    respond_to do |format|
-      format.js {render :content_type => 'text/javascript'}
-    end
-  end
-
 
 end
