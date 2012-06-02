@@ -1,5 +1,8 @@
 <%= form_for(@admin_table) do |f| %>
 
+<% javascript 'dynamic_employee' %>
+<% javascript 'dynamic_restaurant' %>
+
   <% if @admin_table.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@admin_table.errors.count, "error") %> prohibited this admin_table from being saved:</h2>
@@ -32,14 +35,14 @@
    		<%= f.text_field :numero_table %>
  	</p>
  	
- 	<p class="field">
-   		<%= f.label :employee_id %>
-   		<%= collection_select(:table, :employee_id, employee, :id, :username, { :prompt => 'None'}) %>
+ 	<p class="employee_field">
+ 		<label for="table_employee_id">Employee</label>
+   		<%= collection_select(:admin_table, :employee_id, employee, :id, :username, { :prompt => 'employee'}) %>
  	</p>
  	
- 	<p class="field">
-   		<%= f.label :restaurant_id %>
-   		<%= collection_select(:table, :restaurant_id, restaurant, :id, :city, { :prompt => 'None'}) %>
+ 	<p class="restaurant_field">
+   		<label for="table_restaurant_id">Restaurant</label>
+   		<%= collection_select(:admin_table, :restaurant_id, restaurant, :id, :city, { :prompt => 'restaurant'}) %>
  	</p>
 
   <div class="actions">

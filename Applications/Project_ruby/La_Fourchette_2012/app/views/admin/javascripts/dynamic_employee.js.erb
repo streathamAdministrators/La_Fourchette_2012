@@ -1,0 +1,25 @@
+	var employees = new Array();
+	<% for employee in @employee -%>
+	  employees.push(new Array(<%= employee.restaurant_id %>, '<%=h employee.username %>', <%= employee.id %>));
+	<% end -%>
+	
+	function restaurantSelected() {
+	  restaurant_id = $('admin_table_restaurant_id').getValue();
+	  options = $('admin_table_employee_id').options;
+	  options.length = 1;
+	  employees.each(function(employee) {
+	    if (employee[0] == restaurant_id) {
+	      options[options.length] = new Option(employee[1], employee[2]);
+	    }
+	  });
+	  if (options.length == 1) {
+	    $('employee_field').hide();
+	  } else {
+	    $('employee_field').show();
+	  }
+	}
+	
+	document.observe('dom:loaded', function() {
+	  restaurantSelected();
+	  $('admin_table_restaurant_id').observe('change', restaurantSelected);
+	});
