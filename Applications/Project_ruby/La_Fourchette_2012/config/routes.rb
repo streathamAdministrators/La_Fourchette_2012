@@ -5,20 +5,21 @@ LaFourchette2012::Application.routes.draw do
 
     get "client/index"
     match "/admin" => redirect("/admin/employees")
-
   #  resources :admin, :namespace => "admin", :controller => "admin"
   
     #Routes pour le controller Table
     #1: Routes scaffolding de base
     #2: Routes post pour la methode initTable
-    resources :tables
+    resources :tables, :javascipts
     post "/tables/initTable" => "tables#initTable"
 
     #Routes pour le namspace Admin
       namespace :admin do
-        resources :restaurants, :employees, :tables
+        resources :restaurants, :employees, :tables, :javascripts
+        get "/admin/javascripts/dynamic_employee", "/admin/javascripts/dynamic_restaurant"
       end
-
+      
+  get "javascripts/dynamic_employee", "javascripts/dynamic_restaurant"
    # map.connect :admin, :namespace => "admin", :controller => "admin"
   
   # The priority is based upon order of creation:
