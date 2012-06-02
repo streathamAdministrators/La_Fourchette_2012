@@ -19,8 +19,13 @@
  	
  	<p class="field">
    		<%= f.label :password %>
-   		<%= f.text_field :password %>
+   		<%= f.password_field :password %>
  	</p>
+
+	<p>
+		<label>Password Confirmation: </label>
+		<%= f.password_field :password_confirmation %>
+	</p>
  	
  	<p class="field">
  		<%= f.label :restaurant_id%>

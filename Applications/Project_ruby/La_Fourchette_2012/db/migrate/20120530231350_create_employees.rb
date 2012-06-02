@@ -1,7 +1,8 @@
 class CreateEmployees < ActiveRecord::Migration
   def change
     create_table :employees do |t|
-      t.string :password, :null => false
+      t.string :password_hash, :null => false
+      t.string :password_salt, :null => false
       t.string :username, :null => false
       
       t.references :restaurant, :null => false

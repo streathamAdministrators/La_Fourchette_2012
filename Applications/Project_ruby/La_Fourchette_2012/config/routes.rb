@@ -5,6 +5,12 @@ LaFourchette2012::Application.routes.draw do
 
     get "client/index"
     match "/admin" => redirect("/admin/employees")
+    
+    #Gestion de l'authentification
+    get "login" => "sessions#new", :as => 'login'
+    get "logout" => "sessions#destroy", :as => 'logout'
+
+    resources :sessions
 
   #  resources :admin, :namespace => "admin", :controller => "admin"
   

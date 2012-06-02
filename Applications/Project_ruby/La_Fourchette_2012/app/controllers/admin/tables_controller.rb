@@ -1,4 +1,5 @@
 class Admin::TablesController < ApplicationController
+  before_filter :login_required
   layout 'admin'
   # GET /admin/tables
   # GET /admin/tables.json
