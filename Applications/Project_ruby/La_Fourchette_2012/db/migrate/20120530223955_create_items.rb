@@ -3,6 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.boolean :is_active, :null => false
       t.string :name, :null => false
+      t.string :description, :null => false
       t.decimal :price, :null => false
       t.datetime :time
       
