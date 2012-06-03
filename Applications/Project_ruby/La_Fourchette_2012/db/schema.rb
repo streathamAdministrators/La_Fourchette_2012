@@ -33,7 +33,8 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
   add_index "elements", ["order_id"], :name => "index_elements_on_order_id"
 
   create_table "employees", :force => true do |t|
-    t.string   "password",      :null => false
+    t.string   "password_hash", :null => false
+    t.string   "password_salt", :null => false
     t.string   "username",      :null => false
     t.integer  "restaurant_id", :null => false
     t.datetime "created_at",    :null => false
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
   create_table "items", :force => true do |t|
     t.boolean  "is_active",       :null => false
     t.string   "name",            :null => false
+    t.string   "description",     :null => false
     t.decimal  "price",           :null => false
     t.datetime "time"
     t.integer  "product_type_id", :null => false
@@ -93,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
 
   create_table "restaurants", :force => true do |t|
     t.string   "city",       :null => false
+    t.string   "name",       :null => false
     t.boolean  "is_active",  :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -102,7 +105,7 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
     t.boolean  "is_active",     :null => false
     t.boolean  "is_available",  :null => false
     t.integer  "nb_seat",       :null => false
-    t.integer  "numero_table",  :null => false
+    t.integer  "number_table",  :null => false
     t.integer  "employee_id",   :null => false
     t.integer  "restaurant_id", :null => false
     t.datetime "created_at",    :null => false

@@ -1,0 +1,33 @@
+<h1>Product types</h1>
+<p class="lead">List of the different product type of FoodInc</p>
+
+<% if @product_types.empty? %>
+	<h3>No product type in database</h3>
+<% else %>
+
+ <table class="table table-striped">
+ 	<thead>
+	  <tr>
+	    <th>Id</th>
+	    <th>Name</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tbody>
+	<% @product_types.each do |product_type| %>
+	  <tr>
+	  	<th><%= product_type.id%></th>
+	  	<th><%= product_type.name%></th>
+	    <td><%= link_to 'Show', admin_product_type_path(product_type) %></td>
+	    <td><%= link_to 'Edit', edit_admin_product_type_path(product_type) %></td>
+	    <td><%= link_to 'Destroy', admin_product_type_path(product_type), confirm: 'Are you sure?', method: :delete %></td>
+	  </tr>
+	<% end %>	
+	</tbody>
+</table>
+<% end %>
+<br />
+
+<%= link_to 'New Product type', new_admin_product_type_path, :class => 'btn btn-primary btn-large'  %>

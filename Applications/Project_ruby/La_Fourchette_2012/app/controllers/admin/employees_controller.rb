@@ -14,12 +14,29 @@ class Admin::EmployeesController < ApplicationController
   # GET /admin/employees/1
   # GET /admin/employees/1.json
   def show
+    if params[:id] != nil
     @employee = Employee.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @employee }
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @employee }
+      end
+    elsif params[:restaurant_id] != nil
+      #restaurant = Restaurant.find(params[:restaurant_id])
+      @employees = Employee.find_all_by_restaurant_id(params[:restaurant_id])
+      logger.debug "The object is #{@employees}"
+      #params[:restaurant_id] = @employees
+        respond_to do |format|
+          format.html { render "restaurant_employees"}
+          format.json { render json: @employees }
+        end
     end
+
+    
+  end
+  
+  def employee_by_restauration
+    @employees = Employee.find_by_restaurant(params[:restaurant])
+    render :action => 'index'
   end
 
   # GET /admin/employees/new

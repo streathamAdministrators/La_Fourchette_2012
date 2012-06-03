@@ -1,0 +1,22 @@
+<%= form_for([:admin, @product_type]) do |f| %>
+  <% if @product_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product_type.errors.count, "error") %> prohibited this admin_producttype from being saved:</h2>
+
+      <ul>
+      <% @product_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p class="field">
+   		<%= f.label :name %>
+   		<%= f.text_field :name %>
+  </p>
+
+  <div class="actions">
+    <%= f.submit :class => 'btn btn-primary btn-large' %>
+  </div>
+<% end %>

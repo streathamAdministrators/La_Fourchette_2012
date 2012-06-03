@@ -1,0 +1,34 @@
+<h1>Employees by Restaurant ID</h1>
+
+<% if @employees.empty? %>
+	<h3>No employees in database</h3>
+<% else %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Username</td>
+			<td>Restaurant</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @employees.each do |employee| %>
+		<tr>
+			<td><%= employee.id%></td>
+			<td><%= employee.username%></td>
+			<td><%= employee.restaurant_id%></td>
+		    <td><%= link_to 'Show', admin_employee_path(employee) %></td>
+		    <td><%= link_to 'Edit', edit_admin_employee_path(employee) %></td>
+		    <td><%= link_to 'Destroy', admin_employee_path(employee), confirm: 'Are you sure?', method: :delete %></td>
+	    </tr>
+	   <% end %>
+	</tbody>
+</table>
+<%end%>
+<br />
+
+<%= link_to 'New Employee', new_admin_employee_path, :class => 'btn btn-primary btn-large' %>

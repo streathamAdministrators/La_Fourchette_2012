@@ -12,11 +12,7 @@
 	      options[options.length] = new Option(employee[1], employee[2]);
 	    }
 	  });	
-	  if (options.length == 1) {
-	    $('employee_field').hide();
-	  } else {
-	    $('employee_field').show();
-	  }
+	  
 	}
 	
 	document.observe('dom:loaded', function() {
