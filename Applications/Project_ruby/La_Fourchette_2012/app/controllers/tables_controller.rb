@@ -53,18 +53,16 @@ class TablesController < ApplicationController
   
 
   def initTable
-    #num_table = Table.find(:all, :conditions => {:numero_table => 'table'})
     @table = Table.find_by_numero_table(params['table'])
-    if @table.id != nil && @table.is_available == true 
+    if @table != nil && @table.is_available == true 
       redirect_to :action => 'show', :id => @table.id
+      @table.is_available = 0
+      @table.save
+    else if @table.is_available == 0
+      redirect_to :action => 'index' #, notice: 'Table occupée'
     else
-      #index avec message la table n'existe pas
-      redirect_to :action => 'index' #, :notice => 'Table occupée ou inexistante' 
+      redirect_to :action => 'index' #, notice: 'Table inexistante
     end
-    
-    #if params['regis'] == 'test' && params['aubin'] == 'test'
-      #@test = "Regis !!"
-    #end
   end
 
 

@@ -1,25 +1,38 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+	<%= notice %>
+</p>
 
-Id:
-<%= @table.id %><br/>
+<div style="margin-bottom: 50px">
+	Id:
+	<%= @table.id %>
+	<br/>
 
-active: 
-<%= @table.is_active %><br/> 
+	active:
+	<%= @table.is_active %>
+	<br/>
 
-available:
-<%= @table.is_available %><br/> 
+	available:
+	<%= @table.is_available %>
+	<br/>
 
-nb_seat:
-<%= @table.nb_seat %><br/> 
+	nb_seat:
+	<%= @table.nb_seat %>
+	<br/>
 
-numero_table:
-<%= @table.numero_table %><br/>
+	numero_table:
+	<%= @table.numero_table %>
+	<br/>
 
-employee_id: 
-<%= @table.employee_id %><br/> 
+	employee_id:
+	<%= @table.employee_id %>
+	<br/>
 
-restaurant_id:
-<%= @table.restaurant_id %><br/>
+	restaurant_id:
+	<%= @table.restaurant_id %>
+	<br/>
+</div>
+
+<h1>Choix des menus</h1>
 <!--
 <%= link_to 'Edit', edit_table_path(@table) %> |
 <%= link_to 'Back', tables_path %>-->
