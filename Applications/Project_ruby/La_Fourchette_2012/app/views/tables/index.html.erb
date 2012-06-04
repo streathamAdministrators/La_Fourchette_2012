@@ -9,8 +9,8 @@
 
 
 <%= form_for @table, :url => { :action => "initTable" } do |f|%>
-	<%= f.label :table_id %>
-  	<%= f.text_field 'table' %>
+	<%= f.label :id %>
+  	<%= f.text_field :id %>
   	<div><%= f.submit 'Envoyer' %></div>
 <% end -%>
 
