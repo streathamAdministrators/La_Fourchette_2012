@@ -1,5 +1,8 @@
 class Admin::EmployeesController < ApplicationController
+  
+  #before_filter :login_required
   layout 'admin'
+  
   # GET /admin/employees
   # GET /admin/employees.json
   def index

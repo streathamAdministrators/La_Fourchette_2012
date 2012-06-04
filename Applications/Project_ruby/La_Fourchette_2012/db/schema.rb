@@ -56,17 +56,17 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
 
   add_index "items", ["product_type_id"], :name => "index_items_on_product_type_id"
 
+  create_table "items_meals", :force => true do |t|
+    t.integer "item_id", :null => false
+    t.integer "meal_id", :null => false
+  end
+
   create_table "meals", :force => true do |t|
     t.boolean  "is_active",  :null => false
     t.string   "name",       :null => false
     t.integer  "price"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "meals_items", :force => true do |t|
-    t.integer "meal_id", :null => false
-    t.integer "item_id", :null => false
   end
 
   create_table "order_states", :force => true do |t|

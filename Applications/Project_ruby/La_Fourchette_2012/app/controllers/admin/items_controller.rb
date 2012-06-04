@@ -1,56 +1,60 @@
 class Admin::ItemsController < ApplicationController
+  
+  #before_filter :login_required
   layout 'admin'
+  
   # GET /admin/items
   # GET /admin/items.json
   def index
-    @admin_items = Item.all
+    @items = Item.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @admin_item }
+      format.json { render json: @item }
     end
   end
 
   # GET /admin/items/1
   # GET /admin/items/1.json
   def show
-    @admin_item = Item.find(params[:id])
+    @item = Item.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @admin_item }
+      format.json { render json: @item }
     end
   end
 
   # GET /admin/items/new
   # GET /admin/items/new.json
   def new
-    @admin_item = Item.new
+    @item = Item.new
     @product_type = ProductType.all
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @admin_item }
+      format.json { render json: @item }
     end
   end
 
   # GET /admin/items/1/edit
   def edit
-    @admin_item = Item.find(params[:id])
+    @item = Item.find(params[:id])
+    @product_type = ProductType.all
   end
 
   # POST /admin/items
   # POST /admin/items.json
   def create
-    @admin_item = Item.new(params[:admin_item])
+    @item = Item.new(params[:item])
 
     respond_to do |format|
-      if @admin_item.save
-        format.html { redirect_to admin_item_path(@admin_item), notice: 'Item was successfully created.' }
-        format.json { render json: @admin_item, status: :created, location: @admin_item }
+      if @item.save
+        format.html { redirect_to admin_item_path(@item), notice: 'Item was successfully created.' }
+        format.json { render json: @item, status: :created, location: @item }
       else
         format.html { render action: "new" }
-        format.json { render json: @admin_item.errors, status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -58,15 +62,15 @@ class Admin::ItemsController < ApplicationController
   # PUT /admin/items/1
   # PUT /admin/items/1.json
   def update
-    @admin_item = Item.find(params[:id])
+    @item = Item.find(params[:id])
 
     respond_to do |format|
-      if @admin_item.update_attributes(params[:item])
-        format.html { redirect_to admin_item_path(@admin_item), notice: 'Item was successfully updated.' }
+      if @item.update_attributes(params[:item])
+        format.html { redirect_to admin_item_path(@item), notice: 'Item was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @admin_item.errors, status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -1,0 +1,60 @@
+<%= form_for([:admin, @meal]) do |f| %>
+  <% if @meal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meal.errors.count, "error") %> prohibited this admin_meal from being saved:</h2>
+
+      <ul>
+      <% @meal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p class="field">
+	<%= f.label :is_active %>
+    <%= f.radio_button :is_active, true %> <%= f.label :is_active, "Yes" %>
+	<%= f.radio_button :is_active, false %> <%= f.label :is_active, "No" %>
+  </p>
+  <p class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p class="field">
+	<%= f.label "Entrée" %>
+	<ul>
+		<% @entree.each do |p| %>
+		  	<li>
+	    		<label><%= check_box_tag :item_ids, p.id, @meal.items.include?(p), :name => 'meal[item_ids][]' %> <%= p.name %></label>
+			</li>
+		<% end %>
+	</ul>
+  </p>
+  <p class="field">
+	<%= f.label "Main Dish" %>
+	<ul>
+		<% @main_dish.each do |p| %>
+		  	<li>
+	    		<label><%= check_box_tag :item_ids, p.id, @meal.items.include?(p), :name => 'meal[item_ids][]' %> <%= p.name %></label>
+			</li>
+		<% end %>
+	</ul>
+  </p>
+  <p class="field">
+	<%= f.label "Dessert" %>
+	<ul>
+		<% @dessert.each do |p| %>
+		  	<li>
+	    		<label><%= check_box_tag :item_ids, p.id, @meal.items.include?(p), :name => 'meal[item_ids][]' %> <%= p.name %></label>
+			</li>
+		<% end %>
+	</ul>
+  </p>
+  <p class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </p>
+  <p class="actions">
+    <%= f.submit %>
+  </p>
+<% end %>

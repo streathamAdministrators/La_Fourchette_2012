@@ -1,58 +1,67 @@
 class Admin::TablesController < ApplicationController
-  before_filter :login_required
+  
+  #before_filter :login_required, :except => [:create] 
   layout 'admin'
+  
   # GET /admin/tables
   # GET /admin/tables.json
   def index
-    @admin_tables = Table.all
+    @tables = Table.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @admin_tables }
+      format.json { render json: @tables }
     end
   end
 
   # GET /admin/tables/1
   # GET /admin/tables/1.json
   def show
-    @admin_table = Table.find(params[:id])
+    @table = Table.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @admin_table }
+      format.json { render json: @table }
     end
   end
 
   # GET /admin/tables/new
   # GET /admin/tables/new.json
   def new
-    @admin_table = Table.new
+    @table = Table.new
     @restaurant = Restaurant.all
     @employee = Employee.all
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @admin_table }
+      format.json { render json: @table }
     end
   end
 
   # GET /admin/tables/1/edit
   def edit
-    @admin_table = Table.find(params[:id])
+    @table = Table.find(params[:id])
+    @restaurant = Restaurant.all
+    @employee = Employee.all
+    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @table }
+    end
   end
 
   # POST /admin/tables
   # POST /admin/tables.json
   def create
-    @admin_table = Table.new(params[:table])
+    @table = Table.new(params[:table])
 
     respond_to do |format|
-      if @admin_table.save
-        format.html { redirect_to admin_table_path(@admin_table), notice: 'Table was successfully created.' }
-        format.json { render json: @admin_table, status: :created, location: @admin_table }
+      if @table.save
+        format.html { redirect_to admin_table_path(@table), notice: 'Table was successfully created.' }
+        format.json { render json: @table, status: :created, location: @table }
       else
         format.html { render action: "new" }
-        format.json { render json: @admin_table.errors, status: :unprocessable_entity }
+        format.json { render json: @table.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,15 +69,15 @@ class Admin::TablesController < ApplicationController
   # PUT /admin/tables/1
   # PUT /admin/tables/1.json
   def update
-    @admin_table = Table.find(params[:id])
+    @table = Table.find(params[:id])
 
     respond_to do |format|
-      if @admin_table.update_attributes(params[:table])
-        format.html { redirect_to admin_table_path(@admin_table), notice: 'Table was successfully updated.' }
+      if @table.update_attributes(params[:table])
+        format.html { redirect_to admin_table_path(@table), notice: 'Table was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @admin_table.errors, status: :unprocessable_entity }
+        format.json { render json: @table.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -76,8 +85,8 @@ class Admin::TablesController < ApplicationController
   # DELETE /admin/tables/1
   # DELETE /admin/tables/1.json
   def destroy
-    @admin_table = Table.find(params[:id])
-    @admin_table.destroy
+    @table = Table.find(params[:id])
+    @table.destroy
 
     respond_to do |format|
       format.html { redirect_to admin_tables_url }

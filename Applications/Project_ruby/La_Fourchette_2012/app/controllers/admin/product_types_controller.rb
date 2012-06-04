@@ -1,5 +1,8 @@
 class Admin::ProductTypesController < ApplicationController
+  
+  #before_filter :login_required
   layout 'admin'
+  
   # GET /admin/producttypes
   # GET /admin/producttypes.json
   def index

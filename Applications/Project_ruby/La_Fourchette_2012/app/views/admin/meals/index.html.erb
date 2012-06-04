@@ -1,0 +1,34 @@
+<h1>Listing of Meals</h1>
+<p class="lead">List of the different meals of FoodInc</p>
+
+<% if @meals.empty? %>
+	<h3>No meals in database</h3>
+<% else %>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Is active</th>
+	<th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @meals.each do |meal| %>
+  <tr>
+    <td><%= meal.name %></td>
+    <td><%= meal.price %></td>
+    <td><%= meal.is_active %></td>
+	<td><%= link_to 'Show', admin_meal_path(meal) %></td>
+    <td><%= link_to 'Edit', edit_admin_meal_path(meal) %></td>
+    <td><%= link_to 'Destroy', admin_meal_path(meal), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Meal', new_admin_meal_path, :class => 'btn btn-primary btn-large' %>
+
+<% end %>

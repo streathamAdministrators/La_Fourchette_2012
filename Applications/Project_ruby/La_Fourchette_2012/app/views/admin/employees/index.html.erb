@@ -1,4 +1,5 @@
 <h1>Employees</h1>
+<p class="lead">List of the different employees of FoodInc</p>
 
 <% if @employees.empty? %>
 	<h3>No employees in database</h3>
@@ -8,10 +9,8 @@
 	<thead>
 		<tr>
 			<td>ID</td>
-			<td>Username</td>
-			<td>Password</td>
+			<td>Name</td>
 			<td>Restaurant</td>
-			<td></td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -21,8 +20,7 @@
 		<tr>
 			<td><%= employee.id%></td>
 			<td><%= employee.username%></td>
-			<td><%= employee.password%></td>
-			<td><%= employee.restaurant_id%></td>
+			<td><%= employee.restaurant.name%></td>
 		    <td><%= link_to 'Show', admin_employee_path(employee) %></td>
 		    <td><%= link_to 'Edit', edit_admin_employee_path(employee) %></td>
 		    <td><%= link_to 'Destroy', admin_employee_path(employee), confirm: 'Are you sure?', method: :delete %></td>
