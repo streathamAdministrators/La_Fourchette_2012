@@ -51,6 +51,9 @@ class Admin::MealsController < ApplicationController
   # POST /admin/meals.json
   def create
     @meal = Meal.new(params[:meal])
+    @entree = Item.find_all_by_product_type_id(1)
+    @main_dish = Item.find_all_by_product_type_id(2)
+    @dessert = Item.find_all_by_product_type_id(3)
 
     respond_to do |format|
       if @meal.save

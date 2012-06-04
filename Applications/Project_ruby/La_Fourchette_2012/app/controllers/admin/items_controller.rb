@@ -47,6 +47,7 @@ class Admin::ItemsController < ApplicationController
   # POST /admin/items.json
   def create
     @item = Item.new(params[:item])
+    @product_type = ProductType.all
 
     respond_to do |format|
       if @item.save

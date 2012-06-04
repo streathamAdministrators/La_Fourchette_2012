@@ -1,7 +1,8 @@
 <%= form_for([:admin, @product_type]) do |f| %>
   <% if @product_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product_type.errors.count, "error") %> prohibited this admin_producttype from being saved:</h2>
+    <div id="error_explanation" class="alert alert-error">
+	  <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4 class="alert-heading"><%= pluralize(@product_type.errors.count, "error") %> prohibited this admin_producttype from being saved:</h2>
 
       <ul>
       <% @product_type.errors.full_messages.each do |msg| %>

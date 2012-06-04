@@ -54,6 +54,8 @@ class Admin::TablesController < ApplicationController
   # POST /admin/tables.json
   def create
     @table = Table.new(params[:table])
+    @restaurant = Restaurant.all
+    @employee = Employee.all
 
     respond_to do |format|
       if @table.save
