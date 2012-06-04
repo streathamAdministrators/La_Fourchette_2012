@@ -49,46 +49,47 @@ class TablesController < ApplicationController
     end
   end
 
+  # POST /tables
+  # Permet d'initialiser la table en checkant son availability.
   def initTable
     @table = Table.find_by_numero_table(params['table'])
     if @table != nil && @table.is_available == true
-      redirect_to :action => 'show', :id => @table.id
-    @table.is_available = 0
-    @table.save
-    else if @table.is_available == 0
-        redirect_to :action => 'index' #, notice: 'Table occupée'
-      else
-        redirect_to :action => 'index' #, notice: 'Table inexistante
-      end
+      redirect_to table_path(@table) #:action => 'show', :id => @table.id
+      @table.is_available = 0
+      @table.save
+    elsif @table.is_available == 0
+      redirect_to tables_path #:action => 'index' #, notice: 'Table occupée'
+    else
+      redirect_to tables_path #:action => 'index' #, notice: 'Table inexistante
     end
+  end
 
-    # PUT /tables/1
-    # PUT /tables/1.json
-    def update
-      @table = Table.find(params[:id])
+  # PUT /tables/1
+  # PUT /tables/1.json
+  def update
+    @table = Table.find(params[:id])
 
-      respond_to do |format|
-        if @table.update_attributes(params[:table])
-          format.html { redirect_to @table, notice: 'Table was successfully updated.' }
-          format.json { head :no_content }
-        else
-          format.html { render action: "edit" }
-          format.json { render json: @table.errors, status: :unprocessable_entity }
-        end
-      end
-    end
-
-    # DELETE /tables/1
-    # DELETE /tables/1.json
-    def destroy
-      @table = Table.find(params[:id])
-      @table.destroy
-
-      respond_to do |format|
-        format.html { redirect_to tables_url }
+    respond_to do |format|
+      if @table.update_attributes(params[:table])
+        format.html { redirect_to @table, notice: 'Table was successfully updated.' }
         format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @table.errors, status: :unprocessable_entity }
       end
     end
   end
-  
+
+  # DELETE /tables/1
+  # DELETE /tables/1.json
+  def destroy
+    @table = Table.find(params[:id])
+    @table.destroy
+
+    respond_to do |format|
+      format.html { redirect_to tables_url }
+      format.json { head :no_content }
+    end
+  end
+    
 end
