@@ -7,7 +7,7 @@ class MealsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @meals }
+      format.json { render json: @meals, :only => [:id, :name, :price], :include => { :items => {:only => [:id, :name, :description, :price, :time], :include => {:product_type => { :only => [:id, :name]}}}} }
     end
   end
 
