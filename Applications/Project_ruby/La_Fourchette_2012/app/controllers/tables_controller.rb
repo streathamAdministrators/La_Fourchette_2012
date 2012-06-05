@@ -2,7 +2,6 @@ class TablesController < ApplicationController
   # GET /tables
   # GET /tables.json
   def index
-    @table = Table.new
   end
 
   # GET /tables/1
