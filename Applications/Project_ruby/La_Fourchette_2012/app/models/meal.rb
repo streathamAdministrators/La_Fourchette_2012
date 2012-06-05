@@ -1,3 +1,8 @@
 class Meal < ActiveRecord::Base
-  has_and_belongs_to_many :item
+  
+  validates :is_active, :name, :price, :item_ids, :presence => true
+  validates :name, :length => { :minimum => 3, :maximum => 30 }
+  
+  has_and_belongs_to_many :items
+  
 end

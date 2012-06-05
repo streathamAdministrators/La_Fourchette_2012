@@ -4,49 +4,57 @@
 
 <p>
   <b>Id :</b>
-  <%= @admin_table.id %>
+  <%= @table.id %>
 </p>
 
 <p>
   <b>Is active :</b>
-  <%= @admin_table.is_active %>
+  <%= @table.is_active %>
 </p>
 
 <p>
   <b>Available :</b>
-  <%= @admin_table.is_available %>
+  <%= @table.is_available %>
 </p>
 
 <p>
   <b>Number of seat :</b>
-  <%= @admin_table.nb_seat %>
+  <%= @table.nb_seat %>
 </p>
 
 <p>
   <b>Table number :</b>
-  <%= @admin_table.numero_table %>
+  <%= @table.number_table %>
 </p>
 
 <p>
   <b>Employee :</b>
-  <%= @admin_table.employee_id %>
+  <% if @table.employee != nil %>
+	<%= @table.employee.username %>
+  <% else %>
+	no employee assigned
+  <% end %>
 </p>
 
 <p>
   <b>Restaurant :</b>
-  <%= @admin_table.restaurant_id %>
+  <% if @table.restaurant != nil %>
+	<%= @table.restaurant.name %>
+  <% else %>
+	no restaurant assigned
+  <% end %>
 </p>
 
 <p>
   <b>Creation :</b>
-  <%= @admin_table.created_at %>
+  <%= @table.created_at %>
 </p>
 
 <p>
   <b>Update :</b>
-  <%= @admin_table.updated_at %>
+  <%= @table.updated_at %>
 </p>
 
 
-<%= link_to 'Edit', edit_admin_table_path(@admin_table) %> |
+<%= link_to 'Edit', edit_admin_table_path(@table) %> |
 <%= link_to 'Back', admin_tables_path %>

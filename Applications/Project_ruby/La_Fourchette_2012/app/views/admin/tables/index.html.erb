@@ -1,6 +1,7 @@
 <h1>Tables</h1>
+<p class="lead">List of the different tables of FoodInc</p>
 
-<% if @admin_tables.empty? %>
+<% if @tables.empty? %>
 	<h3>No tables in database</h3>
 <% else %>
 
@@ -21,18 +22,31 @@
 	    </tr>
 	</thead>
 	<tbody>
-		<% @admin_tables.each do |admin_table| %>
+		<% @tables.each do |table| %>
 		  <tr>
-		  	<td><%= admin_table.id%></td>
-			<td><%= admin_table.is_active%></td>
-			<td><%= admin_table.is_available%></td>
-			<td><%= admin_table.nb_seat%></td>
-			<td><%= admin_table.numero_table%></td>
-			<td><%= admin_table.employee_id%></td>
-			<td><%= admin_table.restaurant_id%></td>
-		    <td><%= link_to 'Show', admin_table_path(admin_table) %></td>
-		    <td><%= link_to 'Edit', edit_admin_table_path(admin_table) %></td>
-		    <td><%= link_to 'Destroy', admin_table_path(admin_table), confirm: 'Are you sure?', method: :delete %></td>
+		  	<td><%= table.id%></td>
+			<td><%= table.is_active%></td>
+			<td><%= table.is_available%></td>
+			<td><%= table.nb_seat%></td>
+			<td><%= table.number_table%></td>
+
+			<% if table.employee != nil %>
+				<td><%= table.employee.username %></td>
+			<% else %>
+				<td>no employee assigned</td>
+			<% end %>
+			<% if table.restaurant != nil %>
+				<td><%= table.restaurant.name %></td>
+			<% else %>
+				<td>no restaurant assigned</td>
+			<% end %>
+		    <td><%= link_to 'Show', admin_table_path(table) %></td>
+		    <td><%= link_to 'Edit', edit_admin_table_path(table) %></td>
+		  	<% if table.is_active%>
+	    		<td><%= link_to 'Desactivate', admin_table_desactivate_path(table), confirm: 'Are you sure?' %></td>
+	    	<%else%>
+	    		<td><%= link_to 'Activate', admin_table_activate_path(table), confirm: 'Are you sure?'%></td>
+	    	<% end %>
 		  </tr>
 		<% end %>
 	</tbody>

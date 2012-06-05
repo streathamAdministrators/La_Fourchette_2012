@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
     t.string   "password_hash", :null => false
     t.string   "password_salt", :null => false
     t.string   "username",      :null => false
-    t.integer  "restaurant_id", :null => false
+    t.integer  "restaurant_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
     t.string   "name",            :null => false
     t.string   "description",     :null => false
     t.decimal  "price",           :null => false
-    t.datetime "time"
+    t.integer  "time"
     t.integer  "product_type_id", :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
@@ -56,17 +56,17 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
 
   add_index "items", ["product_type_id"], :name => "index_items_on_product_type_id"
 
+  create_table "items_meals", :force => true do |t|
+    t.integer "item_id", :null => false
+    t.integer "meal_id", :null => false
+  end
+
   create_table "meals", :force => true do |t|
     t.boolean  "is_active",  :null => false
     t.string   "name",       :null => false
     t.integer  "price"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "meals_items", :force => true do |t|
-    t.integer "meal_id", :null => false
-    t.integer "item_id", :null => false
   end
 
   create_table "order_states", :force => true do |t|
@@ -96,7 +96,6 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
   create_table "restaurants", :force => true do |t|
     t.string   "city",       :null => false
     t.string   "name",       :null => false
-    t.boolean  "is_active",  :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

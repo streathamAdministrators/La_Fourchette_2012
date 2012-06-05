@@ -1,29 +1,32 @@
-<%= form_for(@admin_table) do |f| %>
+<%= form_for([:admin, @table]) do |f| %>
 
 <% javascript '/javascripts/dynamic_employee' %>
 
 
-  <% if @admin_table.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin_table.errors.count, "error") %> prohibited this admin_table from being saved:</h2>
+  <% if @table.errors.any? %>
+    <div id="error_explanation" class="alert alert-error">
+	  <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4 class="alert-heading"><%= pluralize(@table.errors.count, "error") %> prohibited this admin_table from being saved:</h4>
 
       <ul>
-      <% @admin_table.errors.full_messages.each do |msg| %>
+      <% @table.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-  
-  <p class="field">
-   		<%= f.label :is_active %>
-   		<%= f.text_field :is_active %>
- 	</p>
- 	
+
  	<p class="field">
-   		<%= f.label :is_available %>
-   		<%= f.text_field :is_available %>
- 	</p>
+		<%= f.label :is_active %>
+    	<%= f.radio_button :is_active, true %> <%= f.label :is_active, "Yes" %>
+		<%= f.radio_button :is_active, false %> <%= f.label :is_active, "No" %>
+    </p>
+
+	<p class="field">
+		<%= f.label :is_available %>
+    	<%= f.radio_button :is_available, true %> <%= f.label :is_available, "Yes" %>
+		<%= f.radio_button :is_available, false %> <%= f.label :is_available, "No" %>
+    </p>
  	
  	<p class="field">
    		<%= f.label :nb_seat %>
@@ -31,18 +34,18 @@
  	</p>
  	
  	<p class="field">
-   		<%= f.label :numero_table %>
-   		<%= f.text_field :numero_table %>
+   		<%= f.label :number_table %>
+   		<%= f.text_field :number_table %>
  	</p>
  	
  	<p class="restaurant_field">
    		<label for="table_restaurant_id">Restaurant</label>
-   		<%= collection_select(:admin_table, :restaurant_id, restaurant, :id, :city, { :prompt => 'select a restaurant'}) %>
+   		<%= collection_select(:table, :restaurant_id, restaurant, :id, :name, { :prompt => 'select a restaurant'}) %>
  	</p>
  	
  	<p class="employee_field">
  		<label for="table_employee_id">Employee</label>
-   		<%= collection_select(:admin_table, :employee_id, employee, :id, :username, { :prompt => 'select an employee'}) %>
+   		<%= collection_select(:table, :employee_id, employee, :id, :username, { :prompt => 'select an employee'}) %>
  	</p>
 
   <div class="actions">

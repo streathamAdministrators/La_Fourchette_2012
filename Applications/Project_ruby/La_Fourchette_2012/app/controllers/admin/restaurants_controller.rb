@@ -1,5 +1,13 @@
 class Admin::RestaurantsController < ApplicationController
+  
+  #before_filter :login_required
   layout 'admin'
+  
+  #GET /admin/restaurants/welcome
+  def welcome
+    
+  end
+  
   # GET /admin/restaurants
   # GET /admin/restaurants.json
   def index
@@ -81,4 +89,5 @@ class Admin::RestaurantsController < ApplicationController
       format.json { head :no_content }
     end
   end
+    
 end

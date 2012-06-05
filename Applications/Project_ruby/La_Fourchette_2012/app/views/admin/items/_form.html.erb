@@ -1,10 +1,11 @@
-<%= form_for([:admin, @admin_item]) do |f| %>
+<%= form_for([:admin, @item]) do |f| %>
 
-  <% if @admin_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin_item.errors.count, "error") %> prohibited this admin_item from being saved:</h2>
+  <% if @item.errors.any? %>
+    <div id="error_explanation" class="alert alert-error">
+	  <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4 class="alert-heading"><%= pluralize(@item.errors.count, "error") %> prohibited this admin_item from being saved:</h2>
       <ul>
-      <% @admin_item.errors.full_messages.each do |msg| %>
+      <% @item.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -17,9 +18,10 @@
  	</p>
  	
  	<p class="field">
-   		<%= f.label :is_active %>
-   		<%= f.text_field :is_active %>
- 	</p>
+		<%= f.label :is_active %>
+    	<%= f.radio_button :is_active, true %> <%= f.label :is_active, "Yes" %>
+		<%= f.radio_button :is_active, false %> <%= f.label :is_active, "No" %>
+    </p>
  	
  	<p class="field">
    		<%= f.label :description %>
@@ -38,7 +40,7 @@
  	
  	<p class="field">
    		<%= f.label :product_type %>
-   		<%= collection_select(:admin_item, :product_type_id, product_type, :id, :name, { :prompt => 'select product type'}) %>
+   		<%= collection_select(:item, :product_type_id, product_type, :id, :name, { :prompt => 'select product type'}) %>
  	</p>
  	
 

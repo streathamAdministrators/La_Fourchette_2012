@@ -9,7 +9,6 @@
  	<thead>
  		<tr>
  			<td>ID</td>
- 			<td>Is active</td>
  			<td>Name</td>
  			<td>City</td>
  			<td></td>
@@ -22,7 +21,6 @@
 	  <% @restaurants.each do |restaurant| %>
 	  <tr>
 	  	<td><%= restaurant.id%></td>
-	  	<td><%= restaurant.is_active%></td>
 	  	<td><%= restaurant.name%></td>
 	  	<td><%= restaurant.city%></td>
 	  	<td><%= link_to 'Employee', admin_employees_restaurant_path(restaurant) %></td>

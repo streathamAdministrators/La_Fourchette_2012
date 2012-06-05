@@ -4,7 +4,6 @@ LaFourchette2012::Application.routes.draw do
     root :to => 'tables#index'
 
     get "client/index"
-    match "/admin" => redirect("/admin/employees")
     
     #Gestion de l'authentification
     get "login" => "sessions#new", :as => 'login'
@@ -25,9 +24,18 @@ LaFourchette2012::Application.routes.draw do
 
       #Routes pour le namspace Admin
       namespace :admin do
-        resources :restaurants, :employees, :tables, :javascripts, :product_types, :items
+        root :to => 'restaurants#welcome', :as => 'welcome'
+        
+        resources :restaurants, :employees, :tables, :javascripts, :product_types, :items, :meals
+        
         get "/admin/javascripts/dynamic_employee", "/admin/javascripts/dynamic_restaurant"
         get '/employees/show/:restaurant_id' => "employees#show", :as => "employees_restaurant"
+        
+        match '/item/desactivate/:id' => 'items#desactivate', :as => 'item_desactivate'
+        match '/item/activate/:id' => 'items#activate', :as => 'item_activate'
+        
+        match '/table/desactivate/:id' => 'tables#desactivate', :as => 'table_desactivate'
+        match '/table/activate/:id' => 'tables#activate', :as => 'table_activate'
       end
       
     get "javascripts/dynamic_employee", "javascripts/dynamic_restaurant"

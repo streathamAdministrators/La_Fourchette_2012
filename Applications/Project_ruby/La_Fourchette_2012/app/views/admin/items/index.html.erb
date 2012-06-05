@@ -1,6 +1,7 @@
 <h1>Items</h1>
+<p class="lead">List of the different items of FoodInc</p>
 
-<% if @admin_items.empty? %>
+<% if @items.empty? %>
 	<h3>No items in database</h3>
 <% else %>
 
@@ -19,17 +20,21 @@
   		</tr>
 	</thead>
 	<tbody>
-		<% @admin_items.each do |admin_item| %>
+		<% @items.each do |item| %>
 		  <tr>
-		  	<td><%= admin_item.id%></td>
-		  	<td><%= admin_item.name%></td>
-		  	<td><%= admin_item.is_active%></td>
-		  	<td><%= admin_item.price%></td>
-		  	<td><%= admin_item.time%></td>
-		  	<td><%= admin_item.product_type%></td>
-		    <td><%= link_to 'Show', admin_item_path(admin_item) %></td>
-		    <td><%= link_to 'Edit', edit_admin_item_path(admin_item) %></td>
-		    <td><%= link_to 'Destroy', admin_item_path(admin_item), confirm: 'Are you sure?', method: :delete %></td>
+		  	<td><%= item.id%></td>
+		  	<td><%= item.name%></td>
+		  	<td><%= item.is_active%></td>
+		  	<td><%= item.price%></td>
+		  	<td><%= item.time%></td>
+		  	<td><%= item.product_type.name%></td>
+		    <td><%= link_to 'Show', admin_item_path(item) %></td>
+		    <td><%= link_to 'Edit', edit_admin_item_path(item) %></td>
+		    <% if item.is_active%>
+	    		<td><%= link_to 'Desactivate', admin_item_desactivate_path(item), confirm: 'Are you sure?' %></td>
+	    	<%else%>
+	    		<td><%= link_to 'Activate', admin_item_activate_path(item), confirm: 'Are you sure?'%></td>
+	    	<% end %>
 		  </tr>
 		<%end%>
 	</tbody>

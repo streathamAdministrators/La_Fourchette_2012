@@ -4,8 +4,8 @@
 	<% end -%>
 	
 	function restaurantSelected() {
-	  restaurant_id = $('admin_table_restaurant_id').getValue();
-	  options = $('admin_table_employee_id').options;
+	  restaurant_id = $('table_restaurant_id').getValue();
+	  options = $('table_employee_id').options;
 	  options.length = 1;
 	  employees.each(function(employee) {
 	    if (employee[0] == restaurant_id) {
@@ -17,5 +17,5 @@
 	
 	document.observe('dom:loaded', function() {
 	  restaurantSelected();
-	  $('admin_table_restaurant_id').observe('change', restaurantSelected);
+	  $('table_restaurant_id').observe('change', restaurantSelected);
 	});
