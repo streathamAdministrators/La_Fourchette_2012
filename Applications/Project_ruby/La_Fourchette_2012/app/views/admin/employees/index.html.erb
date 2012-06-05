@@ -20,8 +20,12 @@
 		<tr>
 			<td><%= employee.id%></td>
 			<td><%= employee.username%></td>
-			<td><%= employee.restaurant.name%></td>
-		    <td><%= link_to 'Show', admin_employee_path(employee) %></td>
+			<% if employee.restaurant != nil %>
+				<td><%= employee.restaurant.name %></td>
+			<% else %>
+				<td>no restaurant assigned</td>
+			<% end %>
+			<td><%= link_to 'Show', admin_employee_path(employee) %></td>
 		    <td><%= link_to 'Edit', edit_admin_employee_path(employee) %></td>
 		    <td><%= link_to 'Destroy', admin_employee_path(employee), confirm: 'Are you sure?', method: :delete %></td>
 	    </tr>

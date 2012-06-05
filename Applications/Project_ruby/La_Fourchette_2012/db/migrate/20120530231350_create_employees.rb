@@ -5,7 +5,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :password_salt, :null => false
       t.string :username, :null => false
       
-      t.references :restaurant, :null => false
+      t.references :restaurant
 
       t.timestamps
     end

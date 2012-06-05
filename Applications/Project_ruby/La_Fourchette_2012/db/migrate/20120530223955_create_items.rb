@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :name, :null => false
       t.string :description, :null => false
       t.decimal :price, :null => false
-      t.datetime :time
+      t.integer :time
       
       t.references :product_type, :null => false
 

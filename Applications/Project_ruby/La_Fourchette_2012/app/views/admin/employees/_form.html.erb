@@ -29,8 +29,13 @@
 	</p>
  	
  	<p class="field">
+<<<<<<< HEAD
+ 		<%= f.label :restaurant_id%>
+ 		<%= collection_select(:employee, :restaurant_id, restaurant, :id, :city, { :prompt => 'select a restaurant'}) %>
+=======
  		<%= f.label :restaurant_id %>
  		<%= collection_select(:employee, :restaurant_id, restaurant, :id, :name, { :prompt => 'Select a restaurant'}) %>
+>>>>>>> 09660540827d373bf3bed5933fc66f691003d073
  	</p>
 
 

@@ -29,11 +29,24 @@
 			<td><%= table.is_available%></td>
 			<td><%= table.nb_seat%></td>
 			<td><%= table.number_table%></td>
-			<td><%= table.employee.username%></td>
-			<td><%= table.restaurant.name%></td>
+
+			<% if table.employee != nil %>
+				<td><%= table.employee.username %></td>
+			<% else %>
+				<td>no employee assigned</td>
+			<% end %>
+			<% if table.restaurant != nil %>
+				<td><%= table.restaurant.name %></td>
+			<% else %>
+				<td>no restaurant assigned</td>
+			<% end %>
 		    <td><%= link_to 'Show', admin_table_path(table) %></td>
 		    <td><%= link_to 'Edit', edit_admin_table_path(table) %></td>
-		    <td><%= link_to 'Destroy', admin_table_path(table), confirm: 'Are you sure?', method: :delete %></td>
+		  	<% if table.is_active%>
+	    		<td><%= link_to 'Desactivate', admin_table_desactivate_path(table), confirm: 'Are you sure?' %></td>
+	    	<%else%>
+	    		<td><%= link_to 'Activate', admin_table_activate_path(table), confirm: 'Are you sure?'%></td>
+	    	<% end %>
 		  </tr>
 		<% end %>
 	</tbody>

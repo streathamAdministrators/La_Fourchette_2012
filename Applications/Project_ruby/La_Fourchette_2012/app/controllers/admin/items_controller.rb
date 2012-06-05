@@ -76,15 +76,24 @@ class Admin::ItemsController < ApplicationController
     end
   end
 
-  # DELETE /admin/items/1
-  # DELETE /admin/items/1.json
-  def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-
-    respond_to do |format|
-      format.html { redirect_to admin_items_url }
-      format.json { head :no_content }
+    def desactivate 
+      @item = Item.find(params[:id])
+      @item.update_attributes :is_active => false
+    
+      respond_to do |format|
+        format.html { redirect_to admin_items_url }
+        format.json { head :no_content }
+      end
     end
-  end
+
+    def activate 
+      @item = Item.find(params[:id])
+      @item.update_attributes :is_active => true
+      
+      respond_to do |format|
+        format.html { redirect_to admin_items_url }
+        format.json { head :no_content }
+      end
+    end
+  
 end
