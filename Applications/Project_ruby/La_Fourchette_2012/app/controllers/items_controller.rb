@@ -4,10 +4,14 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    #@items.to_json(:include => :product_types)
+    #@items.each do |i|
+    #  i['product_type_name'] = i.product_type.name
+    #end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @items }
+      format.json { render json: @items, :only => [:id, :name, :description, :price, :time], :include => {:product_type => { :only => [:id, :name]}}}
     end
   end
 
