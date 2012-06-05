@@ -1,8 +1,9 @@
 <%= form_for([:admin, @employee]) do |f| %>
 
   <% if @employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this admin_employee from being saved:</h2>
+    <div id="error_explanation" class="alert alert-error">
+	  <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4 class="alert-heading"><%= pluralize(@employee.errors.count, "error") %> prohibited this admin_employee from being saved:</h4>
 
       <ul>
       <% @employee.errors.full_messages.each do |msg| %>
@@ -28,8 +29,13 @@
 	</p>
  	
  	<p class="field">
+<<<<<<< HEAD
  		<%= f.label :restaurant_id%>
  		<%= collection_select(:employee, :restaurant_id, restaurant, :id, :city, { :prompt => 'select a restaurant'}) %>
+=======
+ 		<%= f.label :restaurant_id %>
+ 		<%= collection_select(:employee, :restaurant_id, restaurant, :id, :name, { :prompt => 'Select a restaurant'}) %>
+>>>>>>> 09660540827d373bf3bed5933fc66f691003d073
  	</p>
 
 

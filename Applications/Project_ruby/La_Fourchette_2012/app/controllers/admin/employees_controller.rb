@@ -47,11 +47,6 @@ class Admin::EmployeesController < ApplicationController
   def new
     @employee = Employee.new
     @restaurant = Restaurant.all
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @employee }
-    end
   end
 
   # GET /admin/employees/1/edit
@@ -64,6 +59,7 @@ class Admin::EmployeesController < ApplicationController
   # POST /admin/employees.json
   def create
     @employee = Employee.new(params[:employee])
+    @restaurant = Restaurant.all
 
     respond_to do |format|
       if @employee.save
