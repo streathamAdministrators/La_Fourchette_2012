@@ -78,7 +78,7 @@ class Admin::ItemsController < ApplicationController
 
     def desactivate 
       @item = Item.find(params[:id])
-      @item.update_attributes :is_active => false
+      @item.update_attribute(:is_active, false)
     
       respond_to do |format|
         format.html { redirect_to admin_items_url }
@@ -88,7 +88,7 @@ class Admin::ItemsController < ApplicationController
 
     def activate 
       @item = Item.find(params[:id])
-      @item.update_attributes :is_active => true
+      @item.update_attribute(:is_active, true)
       
       respond_to do |format|
         format.html { redirect_to admin_items_url }

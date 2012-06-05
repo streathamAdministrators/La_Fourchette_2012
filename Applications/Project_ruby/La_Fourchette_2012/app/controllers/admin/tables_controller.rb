@@ -86,17 +86,17 @@ class Admin::TablesController < ApplicationController
 
   def desactivate 
       @table = Table.find(params[:id])
-      @table.update_attributes :is_active => false
-    
-      respond_to do |format|
+      @table.update_attribute(:is_active, false)
+      
+      respond_to do |format|    
         format.html { redirect_to admin_tables_url }
         format.json { head :no_content }
-      end
+      end 
     end
 
     def activate 
       @table = Table.find(params[:id])
-      @table.update_attributes :is_active => true
+      @table.update_attribute(:is_active, true)
       
       respond_to do |format|
         format.html { redirect_to admin_tables_url }
