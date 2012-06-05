@@ -9,7 +9,9 @@
 
 
 <%= form_for @table, :url => { :action => "initTable" } do |f|%>
-	<%= f.label :id %>
-  	<%= f.text_field :id %>
+	<div class="field">
+		<%= f.label "Choix number table"%>
+		<%= collection_select(:table, :id, @tables, :id, :number_table, { :prompt => 'Select a table'}) %>
+	</div>
   	<div><%= f.submit 'Envoyer' %></div>
 <% end -%>
