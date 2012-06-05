@@ -29,8 +29,8 @@
 			<td><%= table.is_available%></td>
 			<td><%= table.nb_seat%></td>
 			<td><%= table.number_table%></td>
-			<td><%= table.employee_id%></td>
-			<td><%= table.restaurant_id%></td>
+			<td><%= table.employee.username%></td>
+			<td><%= table.restaurant.name%></td>
 		    <td><%= link_to 'Show', admin_table_path(table) %></td>
 		    <td><%= link_to 'Edit', edit_admin_table_path(table) %></td>
 		    <td><%= link_to 'Destroy', admin_table_path(table), confirm: 'Are you sure?', method: :delete %></td>
