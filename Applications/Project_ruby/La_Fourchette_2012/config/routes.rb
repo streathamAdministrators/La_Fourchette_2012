@@ -21,7 +21,9 @@ LaFourchette2012::Application.routes.draw do
     
     get "tables/show"
     get "tables/index"
-
+    
+    resources :meals, :items
+    
       #Routes pour le namspace Admin
       namespace :admin do
         root :to => 'restaurants#welcome', :as => 'welcome'
