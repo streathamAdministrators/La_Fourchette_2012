@@ -1,5 +1,4 @@
 class App.Collections.Todos extends Backbone.Collection
-
   url: '/todos'
 
   # Reference to this collection's model.

@@ -1,10 +1,12 @@
-class TablesController < ApplicationController
+class MealsController < ApplicationController
   # GET /tables
   # GET /tables.json
   def index
-    
+    @Meals = Meal.all
+    respond_to do |format|
+      format.json { render json: @Meals }
+    end
   end
-  
 
   # GET /tables/1
   # GET /tables/1.json

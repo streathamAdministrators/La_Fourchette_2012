@@ -11,6 +11,8 @@ LaFourchette2012::Application.routes.draw do
     get "logout" => "sessions#destroy", :as => 'logout'
 
     resources :sessions
+    
+    resources :meals
 
   #  resources :admin, :namespace => "admin", :controller => "admin"
   

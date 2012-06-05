@@ -16,14 +16,17 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-family: inherit;
   vertical-align: baseline;
 }
+
 body {
   line-height: 1;
   color: black;
   background: white;
 }
+
 ol, ul {
   list-style: none;
 }
+
 a img {
   border: none;
 }
@@ -31,6 +34,7 @@ a img {
 html {
   background: #eeeeee;
 }
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
