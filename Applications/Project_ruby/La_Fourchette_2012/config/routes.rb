@@ -46,6 +46,8 @@ LaFourchette2012::Application.routes.draw do
         
         resources :waiters, :kitchen
         
+        get '/tables' => 'waiters#table', :as => 'waiter_table'
+        
         get '/check_orders' => 'waiters#check_orders'
         
       end
