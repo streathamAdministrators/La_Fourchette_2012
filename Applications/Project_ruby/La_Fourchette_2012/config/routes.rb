@@ -40,6 +40,16 @@ LaFourchette2012::Application.routes.draw do
         match '/table/activate/:id' => 'tables#activate', :as => 'table_activate'
       end
       
+      #Routes pour le namespace staff
+      namespace :staff do
+        root :to => 'waiters#index', :as => 'index'
+        
+        resources :waiters, :kitchen
+        
+        get '/check_orders' => 'waiters#check_orders'
+        
+      end
+      
     get "javascripts/dynamic_employee", "javascripts/dynamic_restaurant"
 
    # map.connect :admin, :namespace => "admin", :controller => "admin"
