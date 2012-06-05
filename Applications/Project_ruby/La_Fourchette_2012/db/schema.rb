@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
     t.string   "password_hash", :null => false
     t.string   "password_salt", :null => false
     t.string   "username",      :null => false
-    t.integer  "restaurant_id", :null => false
+    t.integer  "restaurant_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
     t.string   "name",            :null => false
     t.string   "description",     :null => false
     t.decimal  "price",           :null => false
-    t.datetime "time"
+    t.integer  "time"
     t.integer  "product_type_id", :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
@@ -96,7 +96,6 @@ ActiveRecord::Schema.define(:version => 20120531145158) do
   create_table "restaurants", :force => true do |t|
     t.string   "city",       :null => false
     t.string   "name",       :null => false
-    t.boolean  "is_active",  :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

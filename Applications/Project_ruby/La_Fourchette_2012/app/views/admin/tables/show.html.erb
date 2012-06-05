@@ -29,12 +29,20 @@
 
 <p>
   <b>Employee :</b>
-  <%= @table.employee_id %>
+  <% if @table.employee != nil %>
+	<%= @table.employee.username %>
+  <% else %>
+	no employee assigned
+  <% end %>
 </p>
 
 <p>
   <b>Restaurant :</b>
-  <%= @table.restaurant_id %>
+  <% if @table.restaurant != nil %>
+	<%= @table.restaurant.name %>
+  <% else %>
+	no restaurant assigned
+  <% end %>
 </p>
 
 <p>

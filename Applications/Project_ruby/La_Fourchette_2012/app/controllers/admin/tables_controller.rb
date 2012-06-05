@@ -82,15 +82,23 @@ class Admin::TablesController < ApplicationController
     end
   end
 
-  # DELETE /admin/tables/1
-  # DELETE /admin/tables/1.json
-  def destroy
-    @table = Table.find(params[:id])
-    @table.destroy
-
-    respond_to do |format|
-      format.html { redirect_to admin_tables_url }
-      format.json { head :no_content }
+  def desactivate 
+      @table = Table.find(params[:id])
+      @table.update_attributes :is_active => false
+    
+      respond_to do |format|
+        format.html { redirect_to admin_tables_url }
+        format.json { head :no_content }
+      end
     end
-  end
+
+    def activate 
+      @table = Table.find(params[:id])
+      @table.update_attributes :is_active => true
+      
+      respond_to do |format|
+        format.html { redirect_to admin_tables_url }
+        format.json { head :no_content }
+      end
+    end
 end

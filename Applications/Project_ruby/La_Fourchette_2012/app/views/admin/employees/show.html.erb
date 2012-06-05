@@ -13,13 +13,12 @@
 </p>
 
 <p>
-  <b>Password :</b>
-  <%= @employee.password %>
-</p>
-
-<p>
   <b>Restaurant :</b>
-  <%= @employee.restaurant_id %>
+  <% if @employee.restaurant != nil %>
+	<%= @employee.restaurant.name %>
+  <% else %>
+	no employee assigned
+  <% end %>
 </p>
 
 <p>
