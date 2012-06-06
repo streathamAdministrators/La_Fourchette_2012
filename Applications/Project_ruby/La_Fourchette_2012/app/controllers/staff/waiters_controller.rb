@@ -14,15 +14,13 @@ class Staff::WaitersController < ApplicationController
     
     @elements = Array.new
     @product_types = ProductType.all
-    #@elements_test = Array.new
-    #@p_name
     @elements_final = Hash.new
     
     
     @orders.each do |o|
       @elements = Array.new(Element.find_all_by_order_id(o.id))
       @product_types.each do |p|
-        @elements_test = @elements.select {|k,v| k.item.product_type_id = p.id}
+        @elements_test = @elements.select {|k,v| k.item.product_type.id == p.id}
         @elements_final[p.name] = @elements_test
       end
     end
@@ -40,7 +38,6 @@ class Staff::WaitersController < ApplicationController
     @tables_available = @tables.select {|k,v| k.is_available == true }
     @tables_not_available = @tables.select {|k,v| k.is_available == false }
     
-    #@tables_available = @tables.is_available
   end
   
 end
