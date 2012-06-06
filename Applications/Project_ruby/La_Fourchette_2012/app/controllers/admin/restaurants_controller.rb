@@ -92,9 +92,10 @@ class Admin::RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @restaurant.update_attribute(:is_active, false)
         
-    @employee = Employee.find_by_restaurant_id(params[:id])
+    #@employee = Employee.find_by_restaurant_id(params[:id])
+    @employees = Employee.all
     if @employee != nil
-      @employee.each do |employee|
+      @employees.each do |employee|
         employee.update_attribute(:is_active, false)
       end     
     end
