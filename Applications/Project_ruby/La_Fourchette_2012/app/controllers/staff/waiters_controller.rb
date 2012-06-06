@@ -11,8 +11,25 @@ class Staff::WaitersController < ApplicationController
   
   def index
     @orders = Order.find_all_by_table_id_and_order_state_id(params[:table_id], 1)
-    @elements = @orders.select {|k,v| k.elements == @orders.id}
-    logger.debug "The object is #{@elements}"
+    
+    @elements = Array.new
+    @product_types = ProductType.all
+    @elements_test = Hash.new
+    @elements_final = Hash.new
+    
+    
+    @orders.each do |o|
+      @elements = Array.new(Element.find_all_by_order_id(o.id))
+      @product_types.each do |p|
+        @elements_test[p.id] = @elements.select {|k,v| k.item.product_type_id = p.id}
+      end
+      @elements_final[o.id] = @elements_test
+    end
+    
+    
+    
+    logger.debug "The object is #{@elements_final}"
+    
   end
   
   def table
