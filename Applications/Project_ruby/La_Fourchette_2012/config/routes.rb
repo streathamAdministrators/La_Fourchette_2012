@@ -49,6 +49,7 @@ LaFourchette2012::Application.routes.draw do
         get '/tables' => 'waiters#table', :as => 'waiter_table'
         
         get '/check_orders' => 'waiters#check_orders'
+        get '/check_elements' => 'kitchen#check_elements'
         
       end
       

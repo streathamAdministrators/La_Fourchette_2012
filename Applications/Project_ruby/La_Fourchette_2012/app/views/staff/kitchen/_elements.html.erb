@@ -1,0 +1,30 @@
+<div class="result">
+
+<% if @elements.empty? %>
+	<h3>No element in database</h3>
+<% else %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Table</td>
+			<td>State</td>
+			<td>Item</td>
+			<td>Product Type</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @elements.each do |element| %>
+		<tr>
+			<td><%= element.id%></td>
+			<td><%= element.order.table.number_table%></td>
+			<td><%= element.element_state.name%></td>
+			<td><%= element.item.name%></td>
+			<td><%= element.item.product_type.name%></td>
+	    </tr>
+	   <% end %>
+	</tbody>
+</table>
+<%end%>
+</div>

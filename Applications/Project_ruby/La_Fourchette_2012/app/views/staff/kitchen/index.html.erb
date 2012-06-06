@@ -1,0 +1,26 @@
+<script>
+  
+var ajax_call = function(){
+	$.ajax({
+	        url: '/staff/check_elements',
+	        type: 'get',
+	        contentType: 'application/json; charset=UTF-8',
+	        success: function(res) {
+	            $('.result').html(res);
+	        },
+	        error: function() {
+	        	$('result').html('ERROR');
+	        }
+	    });
+}
+
+var interval = 1000 * 5 * 1;
+
+setInterval(ajax_call, interval);
+
+</script>
+
+
+<h1>Kitchen</h1>
+
+<%= render 'elements' %>
