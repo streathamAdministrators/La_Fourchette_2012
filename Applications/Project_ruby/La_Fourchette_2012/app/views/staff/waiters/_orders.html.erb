@@ -1,8 +1,17 @@
 <div class="result">
 <h1>Test avec employee</h1>
 
-<% if @elements.empty? %>
+<h1>Element final</h1>
+<%= @elements_final%>
+
+<% if @elements_final.empty? %>
 	<h3>No orders in database</h3>
 <% else %>
+	<% @elements_final.each do |k,v|%>
+		<h1><%= k %></h1>
+		<% v.each do |e|%>
+		<h2><%= e.item.name%></h2>
+		<% end %>
+	<% end %>
 
 <% end %>
