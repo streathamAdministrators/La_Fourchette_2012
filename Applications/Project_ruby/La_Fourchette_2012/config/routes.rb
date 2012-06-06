@@ -56,11 +56,13 @@ LaFourchette2012::Application.routes.draw do
         
         get '/orders/:table_id' => 'waiters#index'
         get '/check_orders/:table_id' => 'waiters#check_orders', :as => 'waiter_check_orders'
+        get '/change_order_states/:element_id' => 'waiters#change_order_states', :as => 'waiter_order_states'
         
         get '/elements' => 'kitchens#index', :as => 'element_index'
         get '/check_elements' => 'kitchens#check_elements', :as => 'kitchen_check_elements'
         match '/kitchens/accept/:id' => 'kitchens#accept', :as => 'kitchen_accept'
-        match '/kitchens/cooked/:id' => 'kitchens#cooked', :as => 'kitchen_cooked' 
+        match '/kitchens/cooked/:id' => 'kitchens#cooked', :as => 'kitchen_cooked'
+        
       end
       
     get "javascripts/dynamic_employee", "javascripts/dynamic_restaurant"
