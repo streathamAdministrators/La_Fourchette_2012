@@ -91,6 +91,11 @@ class Admin::RestaurantsController < ApplicationController
   def desactivate
     @restaurant = Restaurant.find(params[:id])
     @restaurant.update_attribute(:is_active, false)
+    
+    @employee = Employee.find_by_restaurant_id(params[:id])
+    @employee.each do |employee|
+      employee.update_attribute(:is_active, false)
+    end
 
     respond_to do |format|
       format.html { redirect_to admin_restaurants_url }

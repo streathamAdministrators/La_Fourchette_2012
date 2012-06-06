@@ -1,8 +1,8 @@
-<h1>Type de produit</h1>
-<p class="lead">Liste des differents type de produit de FoodInc</p>
+<h1>Produc Type</h1>
+<p class="lead">List of the different Product Type of FoodInc</p>
 
 <% if @product_types.empty? %>
-	<h3>Aucun type de produit enregistré</h3>
+	<h3>No product type in the database</h3>
 <% else %>
 
  <table class="table table-striped">
@@ -20,9 +20,9 @@
 	  <tr>
 	  	<th><%= product_type.id%></th>
 	  	<th><%= product_type.name%></th>
-	    <td><%= link_to 'Détails', admin_product_type_path(product_type) %></td>
-	    <td><%= link_to 'Editer', edit_admin_product_type_path(product_type) %></td>
-	    <td><%= link_to 'Supprimer', admin_product_type_path(product_type), confirm: 'Are you sure?', method: :delete %></td>
+	    <td><%= link_to 'Details', admin_product_type_path(product_type) %></td>
+	    <td><%= link_to 'Edit', edit_admin_product_type_path(product_type) %></td>
+	    <td><%= link_to 'Destroy', admin_product_type_path(product_type), confirm: 'Are you sure?', method: :delete %></td>
 	  </tr>
 	<% end %>	
 	</tbody>
@@ -30,4 +30,4 @@
 <% end %>
 <br />
 
-<%= link_to 'Nouveau type de produit', new_admin_product_type_path, :class => 'btn btn-primary btn-large'  %>
+<%= link_to 'New product type', new_admin_product_type_path, :class => 'btn btn-primary btn-large'  %>
