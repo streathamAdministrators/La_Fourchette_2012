@@ -3,6 +3,8 @@ class CreateRestaurants < ActiveRecord::Migration
     create_table :restaurants do |t|
       t.string :city, :null => false
       t.string :name, :null => false
+      
+      t.boolean :is_active, :null => false
 
       t.timestamps
     end

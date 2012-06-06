@@ -1,8 +1,7 @@
 class Admin::TablesController < ApplicationController
-  
-  #before_filter :login_required, :except => [:create] 
+
+  #before_filter :login_required, :except => [:create]
   layout 'admin'
-  
   # GET /admin/tables
   # GET /admin/tables.json
   def index
@@ -43,7 +42,7 @@ class Admin::TablesController < ApplicationController
     @table = Table.find(params[:id])
     @restaurant = Restaurant.all
     @employee = Employee.all
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @table }
@@ -84,23 +83,23 @@ class Admin::TablesController < ApplicationController
     end
   end
 
-  def desactivate 
-      @table = Table.find(params[:id])
-      @table.update_attribute(:is_active, false)
-      
-      respond_to do |format|    
-        format.html { redirect_to admin_tables_url }
-        format.json { head :no_content }
-      end 
-    end
+  def desactivate
+    @table = Table.find(params[:id])
+    @table.update_attribute(:is_active, false)
 
-    def activate 
-      @table = Table.find(params[:id])
-      @table.update_attribute(:is_active, true)
-      
-      respond_to do |format|
-        format.html { redirect_to admin_tables_url }
-        format.json { head :no_content }
-      end
+    respond_to do |format|
+      format.html { redirect_to admin_tables_url }
+      format.json { head :no_content }
     end
+  end
+
+  def activate
+    @table = Table.find(params[:id])
+    @table.update_attribute(:is_active, true)
+
+    respond_to do |format|
+      format.html { redirect_to admin_tables_url }
+      format.json { head :no_content }
+    end
+  end
 end

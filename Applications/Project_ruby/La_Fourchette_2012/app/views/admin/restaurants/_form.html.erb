@@ -10,6 +10,12 @@
       		</ul>
     	</div>
 	<% end %>
+ 	
+ 	<p class="field">
+ 		<%= f.label :is_active %> 		
+    	<%= f.radio_button :is_active, true %> <%= f.label :is_active, "Oui" %>
+		<%= f.radio_button :is_active, false %> <%= f.label :is_active, "Non" %>
+ 	</p>
 
 	<p class="field">
    		<%= f.label :name %>
@@ -20,6 +26,7 @@
    		<%= f.label :city %>
    		<%= f.text_field :city %>
  	</p>
+ 	
  	<p class="actions">
    		<%= f.submit :class => 'btn btn-primary btn-large' %>
  	</p>

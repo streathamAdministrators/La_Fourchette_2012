@@ -1,7 +1,7 @@
 class Employee < ActiveRecord::Base
   
   #Pour interdire toutes autres données que celles entrée ci-dessous.
-  attr_accessible :username, :password, :password_confirmation, :restaurant_id
+  attr_accessible :username, :password, :password_confirmation, :restaurant_id, :is_active
   attr_accessor :password
   
   before_save :encrypt_password

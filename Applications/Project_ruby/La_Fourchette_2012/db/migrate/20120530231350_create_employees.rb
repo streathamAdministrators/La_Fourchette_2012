@@ -5,6 +5,8 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :password_salt, :null => false
       t.string :username, :null => false
       
+      t.boolean :is_active, :null => false
+      
       t.references :restaurant
 
       t.timestamps

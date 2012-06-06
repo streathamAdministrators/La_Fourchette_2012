@@ -11,6 +11,7 @@
 			<td>ID</td>
 			<td>Nom</td>
 			<td>Restaurant</td>
+			<td>Is active</td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -25,9 +26,15 @@
 			<% else %>
 				<td>Aucun restaurant assigné</td>
 			<% end %>
+			<td><%= employee.is_active %></td>
 			<td><%= link_to 'Détails', admin_employee_path(employee) %></td>
 		    <td><%= link_to 'Editer', edit_admin_employee_path(employee) %></td>
-		    <td><%= link_to 'Supprimer', admin_employee_path(employee), confirm: 'Are you sure?', method: :delete %></td>
+		    
+		    <% if employee.is_active%>
+		    	<td><%= link_to 'Désactiver', admin_employee_desactivate_path(employee), confirm: 'Etes-vous sûr?' %></td>
+		    <% else %>
+		    	<td><%= link_to 'Activer', admin_employee_activate_path(employee), confirm: 'Etes-vous sûr?' %></td>
+		    <% end %>
 	    </tr>
 	   <% end %>
 	</tbody>

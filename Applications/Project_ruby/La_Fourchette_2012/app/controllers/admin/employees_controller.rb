@@ -88,15 +88,25 @@ class Admin::EmployeesController < ApplicationController
     end
   end
 
-  # DELETE /admin/employees/1
-  # DELETE /admin/employees/1.json
-  def destroy
+  def desactivate
     @employee = Employee.find(params[:id])
-    @employee.destroy
-
+    @employee.update_attribute(:is_active, false)
+    
     respond_to do |format|
       format.html { redirect_to admin_employees_url }
       format.json { head :no_content }
     end
   end
+  
+  def activate
+    @employee = Employee.find(params[:id])
+    @employee.update_attribute(:is_active, true)
+    
+    respond_to do |format|
+      format.html { redirect_to admin_employees_url }
+      format.json { head :no_content }
+    end
+  end
+  
+  
 end
