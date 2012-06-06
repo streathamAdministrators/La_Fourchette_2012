@@ -4,19 +4,19 @@ class Staff::KitchensController < ApplicationController
   layout 'waiters'
   
   def check_elements
-    @elements = Element.all
+    elements = Element.all
     
-    @elements_envoye = @elements.select {|k,v| k.element_state_id == 2}
-    @elements_accepte = @elements.select {|k,v| k.element_state_id == 3}
+    @elements_envoye = elements.select {|k,v| k.element_state_id == 2}
+    @elements_accepte = elements.select {|k,v| k.element_state_id == 3}
     
     render :partial => "elements"
   end
   
   def index
-    @elements = Element.all
+    elements = Element.all
     
-    @elements_envoye = @elements.select {|k,v| k.element_state_id == 2}
-    @elements_accepte = @elements.select {|k,v| k.element_state_id == 3}
+    @elements_envoye = elements.select {|k,v| k.element_state_id == 2}
+    @elements_accepte = elements.select {|k,v| k.element_state_id == 3}
   end
   
   def accept 
