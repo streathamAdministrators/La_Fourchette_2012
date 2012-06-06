@@ -12,7 +12,7 @@
 			<ol>
 			<% v.each do |e|%>
 				<li class="repo grid-1 available">
-					<%= link_to staff_waiter_order_states_path(e.id) do %>
+					<%= link_to staff_waiter_element_states_path(e.id) do %>
 						<h2>Name: <%= e.item.name %></h2>
 						<h3>Order n°: <%= e.order.id %></h3>
 					<% end %>
