@@ -1,7 +1,8 @@
 LaFourchette2012::Application.routes.draw do
     
     #Point d'entrée par l'index de la vue index de tables
-    root :to => 'clients#temp'
+    root :to => 'clients#index'
+    #root :to => 'clients#temp'
     
     #Gestion de l'authentification
     get "login" => "sessions#new", :as => 'login'
@@ -10,10 +11,10 @@ LaFourchette2012::Application.routes.draw do
     resources :sessions
   
     #Routes pour le controller Client
-    post "/clients/initTable" => "clients#initTable"
-    
-    get "clients/show" => ""
     get "clients/index"
+    post "/clients/initTable" => "clients#initTable"
+    get "clients/:id" => "clients#show"
+    
     
     resources :meals, :items
     
