@@ -27,4 +27,9 @@ class ClientsController < ApplicationController
       format.json { render json: @table }
     end
   end
+  
+  def temp
+    
+  end
+  
 end
