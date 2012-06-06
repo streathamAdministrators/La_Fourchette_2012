@@ -19,7 +19,8 @@ class Staff::WaitersController < ApplicationController
   end
   
   def get_all_orders_by_table
-     @orders = Order.find_all_by_table_id_and_order_state_id(params[:table_id], 1)
+     @id = params[:table_id]
+     @orders = Order.find_all_by_table_id_and_order_state_id(@id, 1)
 
       @elements = Array.new
       @product_types = ProductType.all
