@@ -38,6 +38,12 @@ LaFourchette2012::Application.routes.draw do
         
         match '/table/desactivate/:id' => 'tables#desactivate', :as => 'table_desactivate'
         match '/table/activate/:id' => 'tables#activate', :as => 'table_activate'
+        
+        match '/restaurant/desactivate/:id' => 'restaurants#desactivate', :as => 'restaurant_desactivate'
+        match '/restaurant/activate/:id' => 'restaurants#activate', :as => 'restaurant_activate'
+        
+        match '/employee/desactivate/:id' => 'employees#desactivate', :as => 'employee_desactivate'
+        match '/employee/activate/:id' => 'employees#activate', :as => 'employee_activate'
       end
       
       #Routes pour le namespace staff
