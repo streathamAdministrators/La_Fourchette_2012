@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
     @tables = Table.find_all_by_is_available(true)
   end
   
-    # POST /tables
+  # POST /tables
   # Permet d'initialiser la table en checkant son availability.
   def initTable
     @table = Table.find(params[:table]['id'])
