@@ -1,25 +1,8 @@
 <div class="result">
 <h1>Test avec employee</h1>
 
-<% if @data.empty? %>
-	<h3>No employees in database</h3>
+<% if @elements.empty? %>
+	<h3>No orders in database</h3>
 <% else %>
 
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<td>ID</td>
-			<td>Name</td>
-		</tr>
-	</thead>
-	<tbody>
-		<% @data.each do |employee| %>
-		<tr>
-			<td><%= employee.id%></td>
-			<td><%= employee.username%></td>
-	    </tr>
-	   <% end %>
-	</tbody>
-</table>
-<%end%>
-</div>
+<% end %>
