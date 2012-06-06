@@ -1,4 +1,3 @@
-
 class Staff::KitchensController < ApplicationController
   
   layout 'waiters'
