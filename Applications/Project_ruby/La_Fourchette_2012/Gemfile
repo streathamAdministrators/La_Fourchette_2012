@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead:
 gem 'rails'
-
+gem 'inherited_resources'
 gem 'sqlite3'
 
 #gem 'ruby-debug-ide', '0.4.16'
@@ -16,15 +16,11 @@ gem 'bcrypt-ruby', :require => "bcrypt"
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  
+  gem 'ejs'
+  gem 'uglifier'
+  gem 'coffee-rails'
   gem 'jquery-rails'
-  
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
-  gem 'uglifier', '>= 1.0.3'
+  gem 'backbone-rails'
 end
 
 gem 'jquery-rails'
-gem 'backbone-rails'
