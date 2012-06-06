@@ -1,43 +1,24 @@
 <div id="wrapper" class="grid clearfix">
+	<h1 class="grid-4">Table available</h1>
 	<ol>
-	<% @tables.each do |t| %>
-		<li class="repo grid-1">
-			<h2>Table number <%= t.number_table %></h2>
-			<h3>Number Seat <%= t.nb_seat %></h3>
+	<% @tables_available.each do |t| %>
+		<li class="repo grid-1 available">
+			<a href="#">
+				<h2>Table number <%= t.number_table %></h2>
+				<h3>Number Seat <%= t.nb_seat %></h3>
+			</a>
 		</li>
 	<% end %>
 	</ol>
-</div>
-
-<div id="wrapper" class="grid clearfix">
+	<h1 class="grid-4">Table not available</h1>
 	<ol>
-		<li class="repo grid-1">
-			<a href="http://twitter.github.com/bootstrap/">
-				<h2>Salade Verte</h2>
-				<h3>Entrée</h3>
-				<p>An HTML, CSS, and JS toolkit designed to kickstart development of webapps and sites</p>
+	<% @tables_not_available.each do |t| %>
+		<li class="repo grid-1 not_available">
+			<a href="#">
+				<h2>Table number <%= t.number_table %></h2>
+				<h3>Number Seat <%= t.nb_seat %></h3>
 			</a>
 		</li>
-		<li class="repo grid-1">
-			<a href="http://twitter.github.com/bootstrap/">
-				<h2>Apple Pie</h2>
-				<h3>Dessert</h3>
-				<p>An HTML, CSS, and JS toolkit designed to kickstart development of webapps and sites</p>
-			</a>
-		</li>
-		<li class="repo grid-1">
-			<a href="http://twitter.github.com/bootstrap/">
-				<h2>Apple John</h2>
-				<h3>Dessert</h3>
-				<p>An HTML, CSS, and JS toolkit designed to kickstart development of webapps and sites</p>
-			</a>
-		</li>
-		<li class="repo grid-1">
-			<a href="http://twitter.github.com/bootstrap/">
-				<h2>bootstrap</h2>
-				<h3>Main Dish</h3>
-				<p>An HTML, CSS, and JS toolkit designed to kickstart development of webapps and sites</p>
-			</a>
-		</li>
+	<% end %>
 	</ol>
 </div>
