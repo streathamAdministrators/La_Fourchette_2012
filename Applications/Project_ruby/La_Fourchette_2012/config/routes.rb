@@ -1,26 +1,19 @@
 LaFourchette2012::Application.routes.draw do
     
     #Point d'entrée par l'index de la vue index de tables
-    root :to => 'tables#index'
-
-    get "client/index"
+    root :to => 'clients#temp'
     
     #Gestion de l'authentification
     get "login" => "sessions#new", :as => 'login'
     get "logout" => "sessions#destroy", :as => 'logout'
 
     resources :sessions
-
-  #  resources :admin, :namespace => "admin", :controller => "admin"
   
-    #Routes pour le controller Table
-    #1: Routes scaffolding de base
-    #2: Routes post pour la methode initTable
-    resources :tables
-    post "/tables/initTable" => "tables#initTable"
+    #Routes pour le controller Client
+    post "/clients/initTable" => "clients#initTable"
     
-    get "tables/show"
-    get "tables/index"
+    get "clients/show" => ""
+    get "clients/index"
     
     resources :meals, :items
     
