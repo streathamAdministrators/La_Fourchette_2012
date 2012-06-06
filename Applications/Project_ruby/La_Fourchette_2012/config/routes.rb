@@ -1,8 +1,8 @@
 LaFourchette2012::Application.routes.draw do
     
     #Point d'entrée par l'index de la vue index de tables
-    root :to => 'clients#index'
-    #root :to => 'clients#temp'
+    #root :to => 'clients#index'
+    root :to => 'clients#temp'
     
     #Gestion de l'authentification
     get "login" => "sessions#new", :as => 'login'
