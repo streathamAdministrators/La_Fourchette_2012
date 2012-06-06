@@ -21,14 +21,15 @@ class Staff::WaitersController < ApplicationController
     @orders.each do |o|
       @elements = Array.new(Element.find_all_by_order_id(o.id))
       @product_types.each do |p|
-        @elements_test[p.id] = @elements.select {|k,v| k.item.product_type_id = p.id}
+        @elements_test[p] = @elements.select {|k,v| k.item.product_type_id = p.id}
       end
-      @elements_final[o.id] = @elements_test
+      #@elements_final[o] = @elements_test
     end
     
     
     
-    logger.debug "The object is #{@elements_final}"
+    logger.debug "The object is #{@elements_test}"
+    logger.debug "The object orders is #{@orders}"
     
   end
   

@@ -1,8 +1,14 @@
 <div class="result">
 <h1>Test avec employee</h1>
 
-<% if @elements.empty? %>
+<% if @elements_test.empty? %>
 	<h3>No orders in database</h3>
 <% else %>
+	<% @elements_test.each do |e|%>
+		<h1><%= e %></h1>
+		<% e.each do |d| %>
+		<h2><%= d %></h2>
+		<% end %>
+	<% end %>
 
 <% end %>
