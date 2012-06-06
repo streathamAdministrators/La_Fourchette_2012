@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Is active:</b>
+  <b>Is active : </b>
   <%= @meal.is_active %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <b>Nom : </b>
   <%= @meal.name %>
 </p>
 
 <p>
-  <b>Price:</b>
+  <b>Prix : </b>
   <%= @meal.price %>
 </p>
 
 
-<%= link_to 'Edit', edit_admin_meal_path(@meal) %> |
-<%= link_to 'Back', admin_meals_path %>
+<%= link_to 'Editer', edit_admin_meal_path(@meal) %> |
+<%= link_to 'Retour', admin_meals_path %>

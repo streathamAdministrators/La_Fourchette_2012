@@ -1,5 +1,5 @@
 <h1>Restaurants</h1>
-<p class="lead">List of the different restaurants of FoodInc</p>
+<p class="lead">Liste des differents restaurants de FoodInc</p>
 
 <% if @restaurants.empty? %>
 	<h3>No restaurant in database</h3>
@@ -9,8 +9,8 @@
  	<thead>
  		<tr>
  			<td>ID</td>
- 			<td>Name</td>
- 			<td>City</td>
+ 			<td>Nom</td>
+ 			<td>Ville</td>
  			<td></td>
  			<td></td>
  			<td></td>
@@ -23,10 +23,10 @@
 	  	<td><%= restaurant.id%></td>
 	  	<td><%= restaurant.name%></td>
 	  	<td><%= restaurant.city%></td>
-	  	<td><%= link_to 'Employee', admin_employees_restaurant_path(restaurant) %></td>
-	    <td><%= link_to 'Show', admin_restaurant_path(restaurant) %></td>
-	    <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>
-	    <td><%= link_to 'Destroy', admin_restaurant_path(restaurant), confirm: 'Are you sure?', method: :delete %></td>
+	  	<td><%= link_to 'Serveurs', admin_employees_restaurant_path(restaurant) %></td>
+	    <td><%= link_to 'Détails', admin_restaurant_path(restaurant) %></td>
+	    <td><%= link_to 'Editer', edit_admin_restaurant_path(restaurant) %></td>
+	    <td><%= link_to 'Supprimer', admin_restaurant_path(restaurant), confirm: 'Are you sure?', method: :delete %></td>
 	  </tr>
 	<% end %>
  	</tbody>
@@ -34,5 +34,5 @@
 <% end %>
 <br />
 
-<%= link_to 'New Restaurant', new_admin_restaurant_path, :class => 'btn btn-primary btn-large' %>
+<%= link_to 'Nouveau restaurant', new_admin_restaurant_path, :class => 'btn btn-primary btn-large' %>
 

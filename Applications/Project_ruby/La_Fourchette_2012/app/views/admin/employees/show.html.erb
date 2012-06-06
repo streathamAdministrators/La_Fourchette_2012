@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Employee details :</h2>
+<h2>Serveurs détails :</h2>
 
 <p>
   <b>Id :</b>
@@ -22,14 +22,14 @@
 </p>
 
 <p>
-  <b>Creation :</b>
+  <b>Date de création :</b>
   <%= @employee.created_at %>
 </p>
 
 <p>
-  <b>Update :</b>
+  <b>Date de mise à jour :</b>
   <%= @employee.updated_at %>
 </p>
 
-<%= link_to 'Edit', edit_admin_employee_path(@employee) %> |
-<%= link_to 'Back', admin_employees_path %>
+<%= link_to 'Editer', edit_admin_employee_path(@employee) %> |
+<%= link_to 'Retour', admin_employees_path %>

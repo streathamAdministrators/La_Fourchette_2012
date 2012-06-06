@@ -1,14 +1,14 @@
-<h1>Listing of Meals</h1>
-<p class="lead">List of the different meals of FoodInc</p>
+<h1>Menus</h1>
+<p class="lead">Liste des differents menus de FoodInc</p>
 
 <% if @meals.empty? %>
-	<h3>No meals in database</h3>
+	<h3>Aucun menu enregistré</h3>
 <% else %>
 
 <table class="table table-striped">
   <tr>
-    <th>Name</th>
-    <th>Price</th>
+    <th>Nom</th>
+    <th>Prix</th>
     <th>Is active</th>
 	<th></th>
     <th></th>
@@ -20,15 +20,15 @@
     <td><%= meal.name %></td>
     <td><%= meal.price %></td>
     <td><%= meal.is_active %></td>
-	<td><%= link_to 'Show', admin_meal_path(meal) %></td>
-    <td><%= link_to 'Edit', edit_admin_meal_path(meal) %></td>
-    <td><%= link_to 'Destroy', admin_meal_path(meal), confirm: 'Are you sure?', method: :delete %></td>
+	<td><%= link_to 'Détails', admin_meal_path(meal) %></td>
+    <td><%= link_to 'Editer', edit_admin_meal_path(meal) %></td>
+    <td><%= link_to 'Supprimer', admin_meal_path(meal), confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 <% end %>
 <br />
 
-<%= link_to 'New Meal', new_admin_meal_path, :class => 'btn btn-primary btn-large' %>
+<%= link_to 'Nouveau menu', new_admin_meal_path, :class => 'btn btn-primary btn-large' %>
 
 
