@@ -11,6 +11,7 @@
  			<td>ID</td>
  			<td>Name</td>
  			<td>City</td>
+ 			<td>Is active</td>
  			<td></td>
  			<td></td>
  			<td></td>
@@ -23,10 +24,16 @@
 	  	<td><%= restaurant.id%></td>
 	  	<td><%= restaurant.name%></td>
 	  	<td><%= restaurant.city%></td>
+	  	<td><%= restaurant.is_active %></td>
 	  	<td><%= link_to 'Employee', admin_employees_restaurant_path(restaurant) %></td>
 	    <td><%= link_to 'Show', admin_restaurant_path(restaurant) %></td>
 	    <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>
-	    <td><%= link_to 'Destroy', admin_restaurant_path(restaurant), confirm: 'Are you sure?', method: :delete %></td>
+	    
+	    <% if restaurant.is_active %>
+	    	<td><%= link_to 'Desactivate', admin_restaurant_desactivate_path(restaurant), confirm: 'Are you sure?' %></td>
+	    <% else %>
+	    	<td><%= link_to 'Activate', admin_restaurant_activate_path(restaurant), confirm: 'Are you sure?'%></td>
+	    <% end %>
 	  </tr>
 	<% end %>
  	</tbody>
