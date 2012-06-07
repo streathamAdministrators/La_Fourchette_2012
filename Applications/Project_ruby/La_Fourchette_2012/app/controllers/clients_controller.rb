@@ -14,7 +14,7 @@ class ClientsController < ApplicationController
   def initTable
     @table = Table.find(params[:table]['id'])
     if @table.update_attribute(:is_available, false)
-      redirect_to table_path(@table), notice: 'Bienvenue sur la table.'
+      redirect_to show_path(@table), notice: 'Bienvenue sur la table.'
     else 
       redirect_to :root
     end
@@ -28,6 +28,28 @@ class ClientsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @table }
+    end
+  end
+  
+  # GET /meals
+  # GET /meals.json
+  def meal
+    @meals = Meal.all
+
+    respond_to do |format|
+      #format.html # index.html.erb
+      format.json { render json: @meals, :only => [:id, :name, :price], :include => { :items => {:only => [:id, :name, :description, :price, :time], :include => {:product_type => { :only => [:id, :name]}}}} }
+    end
+  end
+  
+    # GET /items
+  # GET /items.json
+  def item
+    @items = Item.all
+
+    respond_to do |format|
+      #format.html # index.html.erb
+      format.json { render json: @items, :only => [:id, :name, :description, :price, :time], :include => {:product_type => { :only => [:id, :name]}}}
     end
   end
   
