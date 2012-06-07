@@ -3,7 +3,8 @@ class App.Routers.Cisco extends Backbone.Router
   
   routes:
     "choice"      : "navChoice"
-    "items"        : "navItems"
+    "items"       : "navItems"
+    ".*"            : "final"
   
   
   navChoice: -> 
@@ -16,8 +17,11 @@ class App.Routers.Cisco extends Backbone.Router
       success:  ->
         @choiceCollectionView = new App.Views.ItemsCollectionView
           collection: @Items
+        @resolveView @choiceCollectionView
+  final: ->
+    alert "final post"
         
-    @resolveView @choiceCollectionView
+    
   
   resolveView: (view) ->
     view.render()

@@ -18,4 +18,4 @@ window.App =
 
 $ ->
   window.router = new App.Routers.Cisco()
-  Backbone.history.start();
+  Backbone.history.start()
