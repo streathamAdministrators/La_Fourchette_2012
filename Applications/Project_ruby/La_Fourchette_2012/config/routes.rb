@@ -1,26 +1,22 @@
 LaFourchette2012::Application.routes.draw do
     
     #Point d'entrée par l'index de la vue index de tables
-    root :to => 'tables#index'
-
-    get "client/index"
+    root :to => 'clients#index'
+    #root :to => 'clients#temp'
     
     #Gestion de l'authentification
     get "login" => "sessions#new", :as => 'login'
     get "logout" => "sessions#destroy", :as => 'logout'
 
     resources :sessions
-
-  #  resources :admin, :namespace => "admin", :controller => "admin"
   
-    #Routes pour le controller Table
-    #1: Routes scaffolding de base
-    #2: Routes post pour la methode initTable
-    resources :tables
-    post "/tables/initTable" => "tables#initTable"
+    #Routes pour le controller Client
+    get "/clients/index"
+    post "/clients/initTable" => "clients#initTable"
+    get "/clients/:id" => "clients#show", :as => 'show'
+    get "/meals" => "clients#meal" 
+    get "/items" => "clients#item"
     
-    get "tables/show"
-    get "tables/index"
     
     resources :meals, :items
     
@@ -53,13 +49,16 @@ LaFourchette2012::Application.routes.draw do
         resources :waiters, :kitchen
         
         get '/tables' => 'waiters#table', :as => 'waiter_table'
+        get '/orders/:table_id' => 'waiters#order', :as => 'order'
         
-        get '/orders/:table_id' => 'waiters#index'
         get '/check_orders/:table_id' => 'waiters#check_orders', :as => 'waiter_check_orders'
-        get '/change_order_states/:element_id' => 'waiters#change_order_states', :as => 'waiter_order_states'
+        
+        get '/change_element_states/:element_id' => 'waiters#change_element_states', :as => 'waiter_element_states'
+        
         
         get '/elements' => 'kitchens#index', :as => 'element_index'
         get '/check_elements' => 'kitchens#check_elements', :as => 'kitchen_check_elements'
+        
         match '/kitchens/accept/:id' => 'kitchens#accept', :as => 'kitchen_accept'
         match '/kitchens/cooked/:id' => 'kitchens#cooked', :as => 'kitchen_cooked'
         
