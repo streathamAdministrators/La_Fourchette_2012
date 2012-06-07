@@ -1,4 +1,7 @@
 class ClientsController < ApplicationController
+  
+  layout 'client'
+  
   # GET /tables
   # GET /tables.json
   def index
