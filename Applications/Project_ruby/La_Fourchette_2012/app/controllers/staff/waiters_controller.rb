@@ -46,7 +46,9 @@ class Staff::WaitersController < ApplicationController
   def change_element_states
     id = params[:element_id]
     element = Element.find(id)
-    element.update_attribute(:element_state_id, 2)
+    if element.element_state.id == 1
+      element.update_attribute(:element_state_id, 2)
+    end
     
     #get the table Id
     table_id = element.order.table.id
