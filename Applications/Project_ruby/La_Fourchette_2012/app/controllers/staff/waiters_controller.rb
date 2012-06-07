@@ -48,6 +48,8 @@ class Staff::WaitersController < ApplicationController
     element = Element.find(id)
     if element.element_state.id == 1
       element.update_attribute(:element_state_id, 2)
+    elsif element.element_state.id == 4
+      element.update_attribute(:element_state_id, 5)
     end
     
     #get the table Id
