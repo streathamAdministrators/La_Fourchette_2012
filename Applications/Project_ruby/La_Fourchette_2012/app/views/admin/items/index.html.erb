@@ -1,19 +1,19 @@
 <h1>Items</h1>
-<p class="lead">Liste des differents items de FoodInc</p>
+<p class="lead">List of the different items of FoodInc</p>
 
 <% if @items.empty? %>
-	<h3>Aucun item enregistré</h3>
+	<h3>No item database</h3>
 <% else %>
 
 <table class="table table-striped">
 	<thead>
 		<tr>
 		    <th>Id</th>
-		    <th>Nom</th>
+		    <th>Name</th>
 		    <th>Is active</th>
-		    <th>Prix</th>
-		    <th>Temps</th>
-		    <th>Type de produit</th>
+		    <th>Price</th>
+		    <th>Time</th>
+		    <th>Product Type</th>
 		    <th></th>
 		    <th></th>
 		    <th></th>
@@ -28,12 +28,12 @@
 		  	<td><%= item.price%></td>
 		  	<td><%= item.time%></td>
 		  	<td><%= item.product_type.name%></td>
-		    <td><%= link_to 'Détails', admin_item_path(item) %></td>
-		    <td><%= link_to 'Editer', edit_admin_item_path(item) %></td>
+		    <td><%= link_to 'Details', admin_item_path(item) %></td>
+		    <td><%= link_to 'Edit', edit_admin_item_path(item) %></td>
 		    <% if item.is_active%>
-	    		<td><%= link_to 'Désactiver', admin_item_desactivate_path(item), confirm: 'Are you sure?' %></td>
+	    		<td><%= link_to 'Desactivate', admin_item_desactivate_path(item), confirm: 'Are you sure?' %></td>
 	    	<%else%>
-	    		<td><%= link_to 'Activer', admin_item_activate_path(item), confirm: 'Are you sure?'%></td>
+	    		<td><%= link_to 'Activate', admin_item_activate_path(item), confirm: 'Are you sure?'%></td>
 	    	<% end %>
 		  </tr>
 		<%end%>

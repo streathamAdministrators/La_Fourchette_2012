@@ -82,15 +82,25 @@ class Admin::MealsController < ApplicationController
     end
   end
 
-  # DELETE /admin/meals/1
-  # DELETE /admin/meals/1.json
-  def destroy
+  def activate
     @meal = Meal.find(params[:id])
-    @meal.destroy
-
+    @meal.update_attribute(:is_active, true)
+    
     respond_to do |format|
-      format.html { redirect_to admin_meals_url }
+      format.html { redirect_to admin_meals_url}
       format.json { head :no_content }
     end
   end
+  
+  def desactivate
+    @meal = Meal.find(params[:id])
+    @meal.update_attribute(:is_active, false)
+    
+    respond_to do |format|
+      format.html {redirect_to admin_meals_url}
+      format.json { head :no_content }
+    end
+  end
+  
+  
 end

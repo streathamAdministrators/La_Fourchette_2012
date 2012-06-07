@@ -14,7 +14,7 @@
 			<ol id="repos">
 			<% v.each do |e|%>
 				<li class="repo grid-1 <%= if e.element_state.id == 1 then 'initial' elsif e.element_state.id == 2 then 'send' elsif e.element_state.id == 3 then 'accept' elsif e.element_state.id == 4 then 'cook' elsif e.element_state.id == 5 then 'serve' else '' end %>">
-					<%= link_to staff_waiter_order_element_path(e.id) do %>
+					<%= link_to staff_waiter_element_states_path(e.id) do %>
 						<h2><%= e.item.name %></h2>
 						<h3>Order n°: <%= e.order.id %></h3>
 					<% end %>
@@ -24,4 +24,3 @@
 		<% end %>
 	<% end %>
 </div>
-

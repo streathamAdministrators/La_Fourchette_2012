@@ -1,7 +1,7 @@
-<h1>Serveurs par Restaurant</h1>
+<h1>Waiters by Restaurant</h1>
 
 <% if @employees.empty? %>
-	<h3>Aucun serveur enregistré</h3>
+	<h3>No waiter in database</h3>
 <% else %>
 
 <table class="table table-striped">
@@ -10,6 +10,7 @@
 			<td>ID</td>
 			<td>Username</td>
 			<td>Restaurant</td>
+			<td>Is active</td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -21,9 +22,14 @@
 			<td><%= employee.id%></td>
 			<td><%= employee.username%></td>
 			<td><%= employee.restaurant_id%></td>
-		    <td><%= link_to 'Détails', admin_employee_path(employee) %></td>
-		    <td><%= link_to 'Editer', edit_admin_employee_path(employee) %></td>
-		    <td><%= link_to 'Supprimer', admin_employee_path(employee), confirm: 'Are you sure?', method: :delete %></td>
+			<td><%= employee.is_active %></td>
+		    <td><%= link_to 'Details', admin_employee_path(employee) %></td>
+		    <td><%= link_to 'Edit', edit_admin_employee_path(employee) %></td>
+		    <% if employee.is_active %>
+		    	<td><%= link_to 'Desactivate', admin_employee_desactivate_path(employee), confirm: 'Are you sure?' %></td>
+		    <% else %>
+		    	<td><%= link_to 'Activate', admin_employee_activate_path(employee), confirm: 'Are you sure?' %></td>
+		    <% end %>
 	    </tr>
 	   <% end %>
 	</tbody>
@@ -31,4 +37,4 @@
 <%end%>
 <br />
 
-<%= link_to 'Nouveau serveur', new_admin_employee_path, :class => 'btn btn-primary btn-large' %>
+<%= link_to 'New waiter', new_admin_employee_path, :class => 'btn btn-primary btn-large' %>

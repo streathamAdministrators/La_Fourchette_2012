@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Table détails :</h2>
+<h2>Table details :</h2>
 
 <p>
   <b>Id :</b>
@@ -13,22 +13,22 @@
 </p>
 
 <p>
-  <b>Disponible :</b>
+  <b>Is available :</b>
   <%= @table.is_available %>
 </p>
 
 <p>
-  <b>Nombre de siège :</b>
+  <b>Number of seat :</b>
   <%= @table.nb_seat %>
 </p>
 
 <p>
-  <b>Numéro de table :</b>
+  <b>Table number :</b>
   <%= @table.number_table %>
 </p>
 
 <p>
-  <b>Serveur :</b>
+  <b>Waiter :</b>
   <% if @table.employee != nil %>
 	<%= @table.employee.username %>
   <% else %>
@@ -46,15 +46,15 @@
 </p>
 
 <p>
-  <b>Date de création :</b>
+  <b>Create date :</b>
   <%= @table.created_at %>
 </p>
 
 <p>
-  <b>Mise à jour :</b>
+  <b>Update date :</b>
   <%= @table.updated_at %>
 </p>
 
 
-<%= link_to 'Editer', edit_admin_table_path(@table) %> |
-<%= link_to 'Retour', admin_tables_path %>
+<%= link_to 'Edit', edit_admin_table_path(@table) %> |
+<%= link_to 'Back', admin_tables_path %>
