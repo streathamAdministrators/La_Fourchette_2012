@@ -2,21 +2,27 @@
 <html>
 <head>
   <title>LaFourchette2012</title>
+  <%= stylesheet_link_tag    "reset", :media => "all" %>
   <%= stylesheet_link_tag    "grid", :media => "all" %>
   <%= stylesheet_link_tag    "styles_waiter", :media => "all" %>
-  <%= stylesheet_link_tag    "reset", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "jquery.min.js" %>
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 </head>
 <body>
-	<div class="row">	 
-	 <div class="container">
-		 <div class="content">
-	        <%= yield %>
-	      </div>	
+	<div class="row">
+		<div class="navbar navbar-fixed-top">
+			<h1>FoodInc</h1>
+			<ul>
+				<li></li>
+			</ul>
+		</div>	 
+	 	<div id="wrapper" class="container">
+			<div class="content">
+		    	<%= yield %>
+		   	</div>	
+		</div>
 	</div>
-
 </body>
 </html>
