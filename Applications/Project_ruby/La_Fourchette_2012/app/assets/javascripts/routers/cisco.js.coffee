@@ -2,24 +2,24 @@
 class App.Routers.Cisco extends Backbone.Router
   
   routes:
-    "clients"      : "navChoice"
-    "meals" : "navMeal"
-    "items" : "navItems"
+    "choice"      : "navChoice"
+    "items"        : "navItems"
   
   
   navChoice: -> 
     @choiceView = new App.Views.ChoiceView()
     @resolveView @choiceView
-  
-    
-  navMeal: ->
-    @choiceView = new App.Views.ChoiceView()
-    @resolveView @choiceView
     
   navItems: ->
-    
+    @Items = new App.Collections.Items()
+    @Items.fetch
+      success:  ->
+        @choiceCollectionView = new App.Views.ItemsCollectionView
+          collection: @Items
+        
+    @resolveView @choiceCollectionView
   
   resolveView: (view) ->
     view.render()
-    $('#mainapp').html(view.el);
+    $('#mainapp').html view.el
     

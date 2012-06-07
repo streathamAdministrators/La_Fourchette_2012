@@ -8,3 +8,14 @@
 #= require_tree ./collections
 #= require_tree ./views
 #= require_tree ./routers
+
+
+window.App =
+  Models: {}
+  Collections: {}
+  Views: {}
+  Routers:{}
+
+$ ->
+  window.router = new App.Routers.Cisco()
+  Backbone.history.start();
