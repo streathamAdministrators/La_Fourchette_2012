@@ -39,16 +39,28 @@ class ClientsController < ApplicationController
     end
   end
   
-    # GET /items
+  # GET /items
   # GET /items.json
   def item
-    @items = Item.all
+    @items = Item.select {|k,v| k.product_type_id != 4 }
 
     respond_to do |format|
       #format.html # index.html.erb
       format.json { render json: @items, :only => [:id, :name, :description, :price, :time], :include => {:product_type => { :only => [:id, :name]}}}
     end
   end
+  
+  # GET /drinks
+  # GET /drinks.json
+  def drink
+    @drinks = Item.select {|k,v| k.product_type_id == 4 }
+    
+    respond_to do |format|
+      #format.html # index.html.erb
+      format.json { render json: @drinks, :only => [:id, :name, :description, :price, :time], :include => {:product_type => { :only => [:id, :name]}}}
+    end
+  end
+  
   
   def temp
     

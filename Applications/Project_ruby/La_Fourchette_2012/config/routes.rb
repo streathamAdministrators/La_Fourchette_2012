@@ -16,6 +16,7 @@ LaFourchette2012::Application.routes.draw do
     get "/clients/:id" => "clients#show", :as => 'show'
     get "/meals" => "clients#meal" 
     get "/items" => "clients#item"
+    get "/drinks" => "clients#drink"
     
     
     resources :meals, :items
