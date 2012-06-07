@@ -22,7 +22,7 @@
 	  	<th><%= product_type.name%></th>
 	    <td><%= link_to 'Details', admin_product_type_path(product_type) %></td>
 	    <td><%= link_to 'Edit', edit_admin_product_type_path(product_type) %></td>
-	    <td><%= link_to 'Destroy', admin_product_type_path(product_type), confirm: 'Are you sure?', method: :delete %></td>
+	    <td><%= link_to 'Delete', admin_product_type_path(product_type), confirm: 'Are you sure?', method: :delete %></td>
 	  </tr>
 	<% end %>	
 	</tbody>

@@ -77,7 +77,6 @@ class Admin::RestaurantsController < ApplicationController
     end
   end
 
-
   def activate
     @restaurant = Restaurant.find(params[:id])
     @restaurant.update_attribute(:is_active, true)
@@ -90,17 +89,17 @@ class Admin::RestaurantsController < ApplicationController
 
   def desactivate
     @restaurant = Restaurant.find(params[:id])
+    @employees = Employee.find_all_by_restaurant_id(@restaurant.id)
+
     @restaurant.update_attribute(:is_active, false)
-        
-    #@employee = Employee.find_by_restaurant_id(params[:id])
-    @employees = Employee.all
-    if @employee != nil
-      @employees.each do |employee|
-        employee.update_attribute(:is_active, false)
-      end     
+
+    @employees.each do |employee|
+      @tables = Table.find_all_by_employee_id(employee.id)
+      employee.update_attribute(:is_active, false)
+      @tables.each do |table|
+        table.update_attribute(:is_active, false)
+      end
     end
-    
-    
 
     respond_to do |format|
       format.html { redirect_to admin_restaurants_url }
