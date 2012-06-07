@@ -1,19 +1,21 @@
-<div class="result">
-<h1>Test avec employee</h1>
-
-<h1>Element final</h1>
-
+<ul class="legend">
+	<li class="initial"><span></span>Initial</li>
+	<li class="send"><span></span>Send</li>
+	<li class="accept"><span></span>Accept</li>
+	<li class="cook"><span></span>Cook</li>
+	<li class="serve"><span></span>Serve</li>
+</ul>
 <div id="wrapper" class="grid clearfix">
 	<% if @elements_final.empty?%>
 		<h3>No orders in database</h3>
 	<% else %>
 		<% @elements_final.each do |k,v| %>
 			<h1 class="grid-4"><%= k %></h1>
-			<ol>
+			<ol id="repos">
 			<% v.each do |e|%>
-				<li class="repo grid-1 available">
+				<li class="repo grid-1 <%= if e.element_state.id == 1 then 'initial' elsif e.element_state.id == 2 then 'send' elsif e.element_state.id == 3 then 'accept' elsif e.element_state.id == 4 then 'cook' elsif e.element_state.id == 5 then 'serve' else '' end %>">
 					<%= link_to staff_waiter_order_states_path(e.id) do %>
-						<h2>Name: <%= e.item.name %></h2>
+						<h2><%= e.item.name %></h2>
 						<h3>Order n°: <%= e.order.id %></h3>
 					<% end %>
 				</li>

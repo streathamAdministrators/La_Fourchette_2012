@@ -1,67 +1,37 @@
-<div class="result">
+<div id="wrapper" class="grid clearfix">
+	
+	<h1 class="grid-4">Element Envoye</h1>
 
-<h1>Element Envoye</h1>
-<% if @elements_envoye.empty? %>
-	<h3>No element envoye for the moment</h3>
-<% else %>
-
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<td>ID</td>
-			<td>Table</td>
-			<td>State</td>
-			<td>Item</td>
-			<td>Product Type</td>
-			<td></td>
-		</tr>
-	</thead>
-	<tbody>
+	<% if @elements_envoye.empty? %>
+		<h3 class="grid-4">No element envoye for the moment</h3>
+	<% else %>
+		<ol class="repos">
 		<% @elements_envoye.each do |element| %>
-		<tr>
-			<td><%= element.id%></td>
-			<td><%= element.order.table.number_table%></td>
-			<td><%= element.element_state.name%></td>
-			<td><%= element.item.name%></td>
-			<td><%= element.item.product_type.name%></td>
-			<td><%= link_to 'Accept', staff_kitchen_accept_path(element), confirm: 'let\'s go ?'%></td>
-	    </tr>
+			<li class="repo grid-1">
+			<%= link_to staff_kitchen_accept_path(element) do %>
+				<h2><%= element.item.name %></h2>
+				<h3>Order n°: <%= element.order.id %></h3>
+			<% end %>
+			</li>
 	   <% end %>
-	</tbody>
-</table>
-<%end%>
+	   </ol>
+	<%end%>
 
+	<h1 class="grid-4">Element Accepte</h1>
 
-<h1>Element Accepte</h1>
-
-<% if @elements_accepte.empty? %>
-	<h3>No element accepte for the moment</h3>
-<% else %>
-
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<td>ID</td>
-			<td>Table</td>
-			<td>State</td>
-			<td>Item</td>
-			<td>Product Type</td>
-			<td></td>
-		</tr>
-	</thead>
-	<tbody>
+	<% if @elements_accepte.empty? %>
+		<h3 class="grid-4">No element accepte for the moment</h3>
+	<% else %>	
+		<ol class="repos">
 		<% @elements_accepte.each do |element| %>
-		<tr>
-			<td><%= element.id%></td>
-			<td><%= element.order.table.number_table%></td>
-			<td><%= element.element_state.name%></td>
-			<td><%= element.item.name%></td>
-			<td><%= element.item.product_type.name%></td>
-			<td><%= link_to 'Cooked', staff_kitchen_cooked_path(element), confirm: 'have you finished ?'%></td>
-	    </tr>
+			<li class="repo grid-1">
+			<%= link_to staff_kitchen_cooked_path(element) do %>
+				<h2><%= element.item.name %></h2>
+				<h3>Order n°: <%= element.order.id %></h3>
+			<% end %>
+			</li>
 	   <% end %>
-	</tbody>
-</table>
-<%end%>
+	   </ol>
+	<%end%>
 
 </div>

@@ -14,14 +14,13 @@ var ajax_call = function(){
 	    });
 }
 
-var interval = 1000 * 5 * 1;
+var interval = 1000 * 60 * 1;
 
 setInterval(ajax_call, interval);
 
 </script>
 
-
-<h1>Waiters</h1>
-
-<%= render 'orders' %>
+<div class="result">
+	<%= render 'orders' %>
+</div>
 
