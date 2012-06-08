@@ -3,10 +3,10 @@
 	<ol>
 	<% @tables_available.each do |t| %>
 		<li class="repo grid-1 available">
-			<a href="#">
+			<%= link_to staff_order_path(t.id) do %>
 				<h2>Table number <%= t.number_table %></h2>
 				<h3>Number Seat <%= t.nb_seat %></h3>
-			</a>
+			<% end %>
 		</li>
 	<% end %>
 	</ol>
@@ -14,10 +14,10 @@
 	<ol>
 	<% @tables_not_available.each do |t| %>
 		<li class="repo grid-1 not_available">
-			<a href="#">
+			<%= link_to staff_order_path(t.id) do %>
 				<h2>Table number <%= t.number_table %></h2>
 				<h3>Number Seat <%= t.nb_seat %></h3>
-			</a>
+			<% end %>
 		</li>
 	<% end %>
 	</ol>
