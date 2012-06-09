@@ -38,25 +38,42 @@ class Staff::WaitersController < ApplicationController
     @tables = Table.all
     
     @tables_available = @tables.select {|k,v| k.is_available == true }
+    
     @tables_not_available = @tables.select {|k,v| k.is_available == false }
     
   end
   
   
   def change_element_states
+
     id = params[:element_id]
     element = Element.find(id)
     if element.element_state.id == 1
       element.update_attribute(:element_state_id, 2)
     elsif element.element_state.id == 4
       element.update_attribute(:element_state_id, 5)
-    end
     
+    
+    order = element.order
+    order_element = Element.find_all_by_order_id(order.id)
+    is_ready_for_payment = true
+    
+      order_element.each do |e|
+        if e.element_state_id != 5
+          is_ready_for_payment = false
+        end
+      end
+    
+      if is_ready_for_payment == true
+        order.update_attribute(:order_state_id, 2)
+      end
+    
+    end
     #get the table Id
     table_id = element.order.table.id
     
     respond_to do |format|
-      format.html{ redirect_to staff_order_path(table_id) }
+      format.html{ redirect_to staff_order_path(table_id)}
     end
     
   end

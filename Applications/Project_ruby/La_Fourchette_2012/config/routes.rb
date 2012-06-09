@@ -53,19 +53,20 @@ LaFourchette2012::Application.routes.draw do
       namespace :staff do
         root :to => 'waiters#index', :as => 'index'
         
-        resources :waiters, :kitchen
+        resources :waiters, :kitchen, :bank
+        
+        get '/payment' => 'banks#payable_order', :as => 'payable_order'
+        get '/payment/:order_id' => 'bank#close_order', :as => 'payment'
+        get '/check_payment' => 'bank#check_payable_orders', :as => 'check_payment'
         
         get '/tables' => 'waiters#table', :as => 'waiter_table'
         get '/orders/:table_id' => 'waiters#order', :as => 'order'
-        
         get '/check_orders/:table_id' => 'waiters#check_orders', :as => 'waiter_check_orders'
-        
         get '/change_element_states/:element_id' => 'waiters#change_element_states', :as => 'waiter_element_states'
         
         
         get '/elements' => 'kitchens#index', :as => 'element_index'
         get '/check_elements' => 'kitchens#check_elements', :as => 'kitchen_check_elements'
-        
         match '/kitchens/accept/:id' => 'kitchens#accept', :as => 'kitchen_accept'
         match '/kitchens/cooked/:id' => 'kitchens#cooked', :as => 'kitchen_cooked'
         

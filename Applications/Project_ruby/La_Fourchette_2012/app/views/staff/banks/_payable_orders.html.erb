@@ -1,0 +1,17 @@
+<div id="wrapper" class="grid clearfix">
+	<% if @payable_order.empty?%>
+		<h3>No payable orders for the moment</h3>
+	<% else %>
+		
+		<% @payable_order.each do |o| %>
+			<ol id="repos">
+				<li class="repo grid-1">
+					<%= link_to staff_check_payment_path(o.id) do %>
+						<h2><%= o.price %></h2>
+						<h3>Order n°: <%= o.id %></h3>
+					<% end %>
+				</li>
+			</ol>
+		<% end %>
+	<% end %>
+</div>

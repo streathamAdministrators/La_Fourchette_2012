@@ -9,6 +9,7 @@
 	<% if @elements_final.empty?%>
 		<h3>No orders in database</h3>
 	<% else %>
+		
 		<% @elements_final.each do |k,v| %>
 			<h1 class="grid-4"><%= k %></h1>
 			<ol id="repos">

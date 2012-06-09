@@ -2,7 +2,7 @@
   
 var ajax_call = function(){
 	$.ajax({
-	        url: '/staff/check_orders/' + <%= escape_javascript(@id) %>,
+	        url: '/staff/check_payable_orders',
 	        type: 'get',
 	        contentType: 'application/json; charset=UTF-8',
 	        success: function(res) {
@@ -22,6 +22,5 @@ setInterval(ajax_call, interval);
 
 <div class="result">
 
-	<%= render 'orders' %>
+	<%= render 'payable_orders' %>
 </div>
-
