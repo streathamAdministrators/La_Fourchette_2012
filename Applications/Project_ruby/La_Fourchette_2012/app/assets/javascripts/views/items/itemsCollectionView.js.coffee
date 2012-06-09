@@ -2,20 +2,34 @@
 class App.Views.ItemsCollectionView extends Backbone.View
 
   id: 'items'
+  current_product_type_id: 0
   
-  template: JST["templates/items"]
+  
+  template: JST["templates/items/items"]
+  
+  initialize: ->
+    #@collection.on('change', @render, @)
   
   addOne: (itemModel) ->
     itemView = new App.Views.ItemView
       model: itemModel
-    @$el.append itemView.render().el
-  
-  addAll: ->
-    @collection.foreach(@addOne, @)
-  
+      
+    id = itemModel.get('product_type').id
+
+    if @current_product_type_id isnt id
+       name = itemModel.get('product_type').name
+       @$el.append("<div id='#{id}' class='product_type'><h1>#{name}</h1></div>")
+       @current_product_type_id = id
+      
+    @$el.child.attr('id', id).append itemView.render().el
+
+    
   render: ->
-    @addAll
+    @collection.forEach(@addOne, @)
     @
+    
+    
+    
     
     
   
