@@ -8,4 +8,168 @@ body {
 	padding: 60px;
 }
 
+.container_16 {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+#content {
+	margin: 50px 0;
+	float: left;
+}
+
+.hide {
+	display: none;
+}
+
+/**
+Page Choices
+**/
+
+.choices {
+	width: 326px;
+	height: 131px;
+	padding: 10px 10px 10px 10px;
+	background-color: #f3f1d7;
+	margin: 30px 0 30px 0;
+	-webkit-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+}
+
+.choices h3 {
+	font-size: 34px;
+	margin-bottom: 10px;	
+}
+
+.choices p{
+	font-size: 17px;
+	color: #868576;
+}
+
+#sidebar-container {
+	width: 347px;
+	background: url('../img/aside-bg.png') repeat-y;
+	height: 598px;
+	padding: 40px;
+	float: right;
+	color: white;
+	font-family: Georgia;
+}
+
+#sidebar-container h1 {
+	font-size: 59px;
+	border-bottom: 3px solid white;
+	padding-bottom: 10px;
+	margin-bottom: 40px;
+}
+
+#sidebar-container ul {
+	margin-bottom: 40px;
+}
+
+#sidebar-container ul li {
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+#sidebar-container ul li span.number-article {
+	margin: 0 12px 0 3px;
+}
+
+#sidebar-container .total {
+	width: 100%;
+	font-size: 39px;
+	padding-top: 10px;
+	border-top: 4px solid #fff;
+}
+
+/**
+Page Menus
+**/
+
+.meals {
+	float: left;
+	width: 279px;
+	padding: 10px 10px 20px 10px;
+	background-color: #f3f1d7;
+	margin: 30px 0 30px 0;
+	-webkit-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+	margin-right: 42px;
+}
+
+.meals h3 {
+	font-size: 34px;
+	margin-bottom: 10px;	
+}
+
+.meals p{
+	font-size: 17px;
+	color: #868576;
+}
+
+.meals h4 {
+	margin: 10px 0 10px 0;
+	font-size: 18px;
+}
+
+.meals ul li {
+	font-size: 17px;
+	color: #868576;
+}
+
+/**
+Page 
+**/
+.product_types {
+	float: left;
+	width: 321px;
+}
+
+.elements {
+	width: 186px;
+	height: 115px;
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+	margin: 30px 0 30px 0;
+	-webkit-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+}
+
+.img-element {
+	width: 186px;
+	height: 86px;
+	background-color: gray;
+	margin-bottom: 12px;
+	position: relative;
+}
+
+.img-element p{
+	color: white;
+	height: 82px;
+	overflow: hidden;
+	top: 0;
+	position: absolute;
+	background-color: black;
+	font-size: 12px;
+	text-align: justify;
+	padding: 2px;
+}
+/**
+Propriete particuliere
+**/
+
+.first {
+	margin-left: 0;
+}
+
+.last {
+	margin-right: 0;
+}
+
+
+
 

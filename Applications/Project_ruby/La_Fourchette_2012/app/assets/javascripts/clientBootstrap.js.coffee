@@ -18,4 +18,8 @@ window.App =
 
 $ ->
   window.router = new App.Routers.Cisco()
+  window.order = new App.Models.Order
+    tableid: window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1)
+    
+  window.command = new App.Models.Comand()
   Backbone.history.start()

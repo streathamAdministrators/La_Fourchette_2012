@@ -1,12 +1,13 @@
 
 class App.Views.ItemView extends Backbone.View
 
-  className: 'item'
+  className: 'elements'
   
   template: JST["templates/items/item"]
   
   initialize: ->
-    #@model.on('change', @render, @)
+    
+    @template = @options.template if @options.template?
       
   render: -> 
       $(@el).html @template @model.toJSON()

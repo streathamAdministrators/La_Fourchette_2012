@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <title>LaFourchette2012</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -11,5 +15,7 @@
 
 <%= yield %>
 
+<div id="order">	
+</div>
 </body>
 </html>

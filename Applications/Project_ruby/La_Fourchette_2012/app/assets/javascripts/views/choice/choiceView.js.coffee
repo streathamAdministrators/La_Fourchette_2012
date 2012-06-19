@@ -6,26 +6,24 @@ class App.Views.ChoiceView extends Backbone.View
   template: JST["templates/choice"]
   
   events:
-      "click #meals"  : "navigateMeals"
-      "click #items"  : "navigateItems"
-      "click #drinks" : "navigateDrinks"
+      "click #choice-1"  : "navigateMeals"
+      "click #choice-2"  : "navigateItems"
+      "click #choice-3" : "navigateDrinks"
+      
       
   render: -> 
       $(@el).html @template
       @
     
   navigateMeals: ->
-      alert "meals !"
+      window.router.navigate("/meals", {trigger:true})
       
   navigateItems: -> 
-      alert "items !"
+      window.router.navigate("/items", {trigger:true})
 
   navigateDrinks: ->
-      alert "Ca va trigger"
-      window.router.navigate("/items", {trigger:true})
-  
-  
-      
+      window.router.navigate("/drinks", {trigger:true})
+
 
 
 
