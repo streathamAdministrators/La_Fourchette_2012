@@ -19,7 +19,8 @@ group :assets do
   gem 'ejs'
   gem 'uglifier'
   gem 'coffee-rails'
+  gem 'jquery-rails'
   gem 'backbone-rails'
 end
 
-gem 'jquery-rails'
+
