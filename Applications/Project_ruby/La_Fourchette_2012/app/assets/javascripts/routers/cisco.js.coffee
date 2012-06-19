@@ -9,8 +9,6 @@ class App.Routers.Cisco extends Backbone.Router
     
   
   initialize: ->
-        _.extend(@, Backbone.Events)
-        @on("render:fadeIn", @In)
         
         @orderView = new App.Views.OrderView
           model : window.order
@@ -63,12 +61,9 @@ class App.Routers.Cisco extends Backbone.Router
   resolveView: (view, sidebar) ->
     view.render()
     container = $('#content')
-    container = $('#sidebar-container') if sidebar is true
+    container = $('#sidebar-container').find('#contentbill') if sidebar is true
     
     container.css("display", "none")
     container.html view.el
-    @trigger "render:fadeIn"
-
-  In: ->
-    $('#content').fadeIn 1000
+    container.fadeIn 1000
     

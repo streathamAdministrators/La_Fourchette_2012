@@ -1,7 +1,7 @@
 
 class App.Views.MealView extends Backbone.View
 
-  className: 'meal'
+  className: 'meals'
   current_product_type_id: 0
   lazy: false
   
@@ -25,9 +25,10 @@ class App.Views.MealView extends Backbone.View
     
     @collectionItems.reset(collection)
     
-    @itemsCollectionView = new App.Views.ItemsCollectionView
+    @itemsCollectionMealView = new App.Views.ItemsCollectionMealView
       collection: @collectionItems
+      id_meal: @model.get('id')
       
-    @itemsCollectionView.render()
+    @itemsCollectionMealView.render()
     
-    $(@el).find('#meal-'+@model.id).append @itemsCollectionView.el
+    $(@el).append @itemsCollectionMealView.el

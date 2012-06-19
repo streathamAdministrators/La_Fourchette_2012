@@ -35,6 +35,7 @@ Page Choices
 	-webkit-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
 	-moz-box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
 	box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+	cursor:hand;
 }
 
 .choices h3 {
@@ -49,12 +50,17 @@ Page Choices
 
 #sidebar-container {
 	width: 347px;
-	background: url('../img/aside-bg.png') repeat-y;
+	background: url('aside-bg.png') repeat-y;
 	height: 598px;
 	padding: 40px;
 	float: right;
 	color: white;
 	font-family: Georgia;
+}
+
+#contentbill{
+	height: 400px;
+	width: 347px;
 }
 
 #sidebar-container h1 {

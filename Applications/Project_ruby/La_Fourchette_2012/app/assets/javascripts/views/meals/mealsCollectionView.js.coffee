@@ -12,6 +12,7 @@ class App.Views.MealsCollectionView extends Backbone.View
   addMeal: (mealModel) ->
       mealView = new App.Views.MealView
         model: mealModel
+        id: 'meal-'+mealModel.get('id')
       
       @$el.append mealView.render().el
       
