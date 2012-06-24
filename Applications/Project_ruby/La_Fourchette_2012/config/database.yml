@@ -23,30 +23,30 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 
-test:
+#test:
   adapter: sqlite3
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
 
-production:
+#production:
   adapter: sqlite3
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
 
-#test:
- # adapter: mysql2
- # encoding: utf8
- # database: la_fourchette_db_test
- # username: root
- # password:
- # socket: /tmp/mysql.sock
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: la_fourchette_db_test
+  username: root
+  password:
+  socket: /tmp/mysql.sock
 
-#production:
- # adapter: mysql2
- # encoding: utf8
- # database: la_fourchette_db_production
- # username: root
- # password:
- # socket: /tmp/mysql.sock
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: la_fourchette_db_production
+  username: root
+  password:
+  socket: /tmp/mysql.sock
